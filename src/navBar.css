@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+.NavBar {
+  background-color: #a2c08b;
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  height: 10%;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  width: auto;
+}
+
+img {
+  height: 100%;
+  width: auto;
+}
+
+ul {
+  list-style-type: none;
+}

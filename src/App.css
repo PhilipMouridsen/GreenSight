@@ -1,7 +1,25 @@
+
 .App {
   text-align: center;
 }
 
+.NavBar {
+  background-color: #A2C08B;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.buttons{
+  display: flex;
+  width: auto;
+}
+
+
+ul {
+  list-style-type: none;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -1,4 +1,5 @@
 import React from "react";
+import NavBar from "../NavBar.js"
 import "./App.css";
 //import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -23,6 +24,7 @@ function App() {
       <button id="create-button">
         Don't have an account yet? Create one here!
       </button>
+      <NavBar />
     </div>
     //</Router>
   );

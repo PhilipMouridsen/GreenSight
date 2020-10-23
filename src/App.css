@@ -5,10 +5,20 @@
 
 .NavBar {
   background-color: #A2C08B;
+  height: 15%;
+  width: 100%;
+}
+.NavBar {
+  background-color: #A2C08B;
+
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+
+  position: fixed;
+  bottom: 0;
+
 }
 
 .buttons{
@@ -16,10 +26,16 @@
   width: auto;
 }
 
+img{
+  height: 30%;
+  width:auto;
+}
+
 
 ul {
   list-style-type: none;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

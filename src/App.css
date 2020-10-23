@@ -1,7 +1,50 @@
+
 .App {
   text-align: center;
 }
 
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+.NavBar {
+  background-color: #A2C08B;
+  height: 15%;
+  width: 100%;
+=======
+.NavBar {
+  background-color: #A2C08B;
+>>>>>>> 1fc810417181a44467349919a3d3f8f3e6309403
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+<<<<<<< HEAD
+  position: fixed;
+  bottom: 0;
+=======
+>>>>>>> 1fc810417181a44467349919a3d3f8f3e6309403
+}
+
+.buttons{
+  display: flex;
+  width: auto;
+}
+
+<<<<<<< HEAD
+img{
+  height: 30%;
+  width:auto;
+}
+=======
+>>>>>>> 1fc810417181a44467349919a3d3f8f3e6309403
+
+ul {
+  list-style-type: none;
+}
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+=======
+>>>>>>> 1fc810417181a44467349919a3d3f8f3e6309403
 .App-logo {
   height: 40vmin;
   pointer-events: none;

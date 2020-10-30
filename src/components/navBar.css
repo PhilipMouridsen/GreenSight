@@ -5,9 +5,8 @@
 .NavBar {
   background-color: #a2c08b;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
   position: fixed;
+  justify-content: space-between;
   bottom: 0;
   height: 50px;
   width: 100%;

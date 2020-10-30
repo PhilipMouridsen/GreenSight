@@ -1,3 +1,4 @@
+
 import React from "react";
 import Header from "./Header.js";
 import "./Dashboard.css";
@@ -17,4 +18,3 @@ function Dashboard(){
     )
 }
 
-export default Dashboard;

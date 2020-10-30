@@ -31,3 +31,8 @@ button {
   background-color: #ffffff;
   color: #7fc79e;
 }
+
+.header{
+  display: flex;
+  justify-content: center;
+}

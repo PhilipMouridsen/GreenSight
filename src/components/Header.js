@@ -1,12 +1,15 @@
 import React from "react";
-import logo from "./img/Header.jpg";
+import Logo from "./Banner.png";
+import "./App/App.css";
 
 
 function Header (){
     return(
 
-        <div>
-            <img src={logo} alt="header" />
+        <div className="header">
+           <img src={Logo} alt="header" />
         </div>
     )
 }
+
+export default Header;

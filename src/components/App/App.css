@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   color: white;
-  margin-bottom: 150px;
+
 }
 
 h1 {
@@ -33,7 +33,3 @@ button {
   color: #7fc79e;
 }
 
-.header{
-  display: flex;
-  justify-content: center;
-}

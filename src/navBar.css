@@ -5,24 +5,14 @@
 .NavBar {
   background-color: #a2c08b;
   display: flex;
-  /* flex-direction: row; */
+  align-items: center;
   justify-content: space-around;
   position: fixed;
   bottom: 0;
-  height: 10%;
+  height: 50px;
   width: 100%;
 }
 
-.buttons {
-  display: flex;
-  width: auto;
-}
-
 img {
-  height: 100%;
-  width: auto;
-}
-
-ul {
-  list-style-type: none;
+  height: 70%;
 }

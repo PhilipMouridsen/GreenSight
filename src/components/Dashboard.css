@@ -1,0 +1,22 @@
+.circle{
+    height: 400px;
+    width: 400px;
+    background-color:white;
+    border-radius: 50%;
+    display: inline-block;
+    border: 10px solid #A2C08B;
+    display: flex;
+    align-self: center;
+}
+
+.Dashboard{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+}
+
+.textIn{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+}

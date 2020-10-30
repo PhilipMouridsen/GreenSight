@@ -4,6 +4,7 @@ import "./App.css";
 import Logo from "../Banner.png";
 import LoginPage from "../LoginPage/LoginPage";
 import Dashboard from "../Dashboard";
+import Create from "../Create";
 import { Route, Switch, Link } from "react-router-dom";
 import ProgressBar from "../ProgressBar";
 
@@ -25,7 +26,8 @@ function App() {
       <Switch>
         <Route exact path="/" component={LoginPage} />
         <Route path="/dashboard" component={Dashboard} />
-        <Route path="/create" component={LoginPage} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/create" component={Create} />
       </Switch>
     </div>
   );

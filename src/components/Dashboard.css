@@ -3,8 +3,7 @@
     width: 250px;
     background-color:white;
     border-radius: 50%;
-    display: inline-block;
-    border: 10px solid #A2C08B;
+    border: 6px solid #A2C08B;
     display: flex;
     align-self: center;
     position:relative;
@@ -13,7 +12,6 @@
 
 .Dashboard{
     display: flex;
-    align-self: center;
     flex-direction: column;
 }
 
@@ -27,3 +25,9 @@
     transform: translate(-50%,-50%);
 }
 
+.progressbar{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    width: 100%;
+}

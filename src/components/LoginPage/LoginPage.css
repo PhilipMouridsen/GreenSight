@@ -1,0 +1,17 @@
+input{
+    margin: 5%;
+    width: 70%;
+}
+
+button{
+    margin: 5%;
+}
+
+/* .img{
+    display: none;
+    visibility: hidden;
+} */
+
+@media (min-height: 700px) {
+
+}

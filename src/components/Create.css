@@ -1,5 +1,10 @@
 h1 {
   top: 0;
+  font-size: 18px;
+}
+
+h2 {
+font-size: 14px;
 }
 
 #question {
@@ -8,18 +13,44 @@ h1 {
   height: 40px;
   text-align: center;
   border-radius: 10px;
+  margin: 20px;
+}
+
+#question:hover {
+  box-shadow: 0 0 10px gray;
 }
 
 .questions {
   display: flex;
   justify-content: space-around;
-  padding: 20px;
+  padding: 7% 0 0 0;
 }
 
-.Next{
-    background-color: white;
-    color: #7fc79e;
-    width: 40%;
-    height: 40px;
-    border-radius: 20px;
+.Next {
+  background-color: white;
+  color: #7fc79e;
+  width: 40%;
+  height: 40px;
+  border-radius: 20px;
+  margin: 10%;
+}
+
+.threeCircles {
+  display: flex;
+  position: absolute;
+  bottom: 60px;
+  right: 37%;
+}
+
+.progressCircle {
+  height: 10px;
+  width: 10px;
+  margin: 10px;
+  border-radius: 50%;
+  background-color: gray;
+  box-shadow: 0px 2px 4px gray;
+}
+
+#current{
+  background-color: #76cce7;
 }

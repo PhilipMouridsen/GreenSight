@@ -8,7 +8,8 @@ import Create from "../Create";
 import { Route, Switch, Link } from "react-router-dom";
 import userprofile from "../userprofile";
 import Settings from "../settings/Settings";
-import friends from "../friends"
+import friends from "../friends";
+import Challanges from "../ChooseChallange";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/userprofile" component={userprofile} />
         <Route path="/settings" component={Settings} />
         <Route path="/friends" component={friends} />
+        <Route path="/challange" component={Challanges} />
       </Switch>
     </div>
   );

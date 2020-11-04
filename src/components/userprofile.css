@@ -1,0 +1,23 @@
+#profilepic{
+    vertical-align: middle;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #A2C08B;
+    margin-top: 23px;
+    margin-left: 30px;
+    display: flex;
+}
+
+.info{
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+}
+
+.text{
+    flex-direction: column;
+    margin-top: 25px;
+    padding-left: 30px;
+    text-align: left;
+}

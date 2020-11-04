@@ -1,12 +1,13 @@
 .circle{
     height: 250px;
     width: 250px;
-    background-color:blue;
+    background-color:white;
     border-radius: 50%;
     border: 6px solid #A2C08B;
     display: flex;
     align-self: center;
-    margin: 30px;
+    position:relative;
+    margin-top: 20px;
 }
 
 .Dashboard{
@@ -19,6 +20,9 @@
     display: flex;
     align-self: center;
     flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
-
 

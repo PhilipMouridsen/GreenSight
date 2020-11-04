@@ -6,7 +6,7 @@ function Create() {
   return (
     <div className="create">
       <h1>First tell us something about yourself </h1>
-      <h2>How do you usually commute?</h2>
+      <h2 classname="subtext">How do you usually commute?</h2>
 
       <div className="questions">
         <button id="question">Bike</button>

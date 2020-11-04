@@ -15,7 +15,7 @@ function LoginPage() {
       <br />
       <button>Login</button>
       <br />
-      <Link to="/NavBar">
+      <Link to="/create">
         <button id="create-button">
           Don't have an account yet? Create one here!
         </button>

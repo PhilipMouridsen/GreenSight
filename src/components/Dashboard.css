@@ -1,7 +1,7 @@
 .circle{
-    height: 300px;
-    width: 300px;
-    background-color:white;
+    height: 250px;
+    width: 250px;
+    background-color:blue;
     border-radius: 50%;
     border: 6px solid #A2C08B;
     display: flex;
@@ -15,9 +15,10 @@
     flex-direction: column;
 }
 
-.text{
-width: 100%;
-display: flex;
-align-self: center;
-flex-direction: column;
+.textIn{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
 }
+
+

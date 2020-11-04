@@ -1,3 +1,9 @@
+.challangesContainer{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
 .challangeBtn{
     border-radius: 10px;
     border-color: white;
@@ -7,5 +13,6 @@
 .challanges{
     display: flex;
     align-content: center;
-    flex-direction: row;
+    flex-direction: column;
+    width: 100%;
 }

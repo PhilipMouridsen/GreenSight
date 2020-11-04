@@ -13,6 +13,7 @@ function Challange() {
             <button className="challangeBtn">Use public transport to commute (31days)</button>
             <button className="challangeBtn">Don't fly an airplane (365days)</button>
         </div>
+        <br /><br /><br />
         </div>
     );
 }

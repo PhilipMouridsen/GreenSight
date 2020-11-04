@@ -1,18 +1,21 @@
 .challangesContainer{
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 100%;
 }
 
 .challangeBtn{
     border-radius: 10px;
+    height: 50%;
     border-color: white;
     background-color: #7FC79E;
+    padding: 17px;
 }
 
 .challanges{
     display: flex;
     align-content: center;
+    justify-content: center;
     flex-direction: column;
     width: 80%;
 }

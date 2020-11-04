@@ -7,13 +7,14 @@ import Dashboard from "../Dashboard";
 import Create from "../Create";
 import { Route, Switch, Link } from "react-router-dom";
 import userprofile from "../userprofile";
+import friends from "../friends";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <Link to="/">
-          <img src={Logo} alt="logo"></img>
+          <img  classname="logo" src={Logo} alt="logo"></img>
         </Link>
       </header>
       <NavBar />
@@ -23,6 +24,7 @@ function App() {
         <Route path="/login" component={LoginPage} />
         <Route path="/create" component={Create} />
         <Route path="/userprofile" component={userprofile} />
+        <Route path="/friends" component={friends} />
       </Switch>
     </div>
   );

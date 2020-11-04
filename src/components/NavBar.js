@@ -35,7 +35,7 @@ function NavBar() {
       </div>
 
       <div className="icons">
-        <Link to="/dashboard">
+        <Link to="/settings">
           <img src={settings} alt="settigns-button" />
         </Link>
       </div>

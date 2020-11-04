@@ -7,7 +7,8 @@ import Dashboard from "../Dashboard";
 import Create from "../Create";
 import { Route, Switch, Link } from "react-router-dom";
 import userprofile from "../userprofile";
-import friends from "../friends";
+import Settings from "../settings/Settings";
+import friends from "../friends"
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/login" component={LoginPage} />
         <Route path="/create" component={Create} />
         <Route path="/userprofile" component={userprofile} />
+        <Route path="/settings" component={Settings} />
         <Route path="/friends" component={friends} />
       </Switch>
     </div>

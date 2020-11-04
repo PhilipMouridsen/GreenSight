@@ -12,14 +12,19 @@ function Create() {
         <button id="question">Bike</button>
         <button id="question">Train</button>
       </div>
-      
+
       <div className="questions">
-      <button id="question">Walk</button>
-      <button id="question">Public tansportation</button>
+        <button id="question">Walk</button>
+        <button id="question">Public tansportation</button>
       </div>
 
       <button className="Next">Next</button>
 
+      <div className="threeCircles">
+        <div className="progressCircle" id="current"></div>
+        <div className="progressCircle"></div>
+        <div className="progressCircle"></div>
+      </div>
     </div>
   );
 }

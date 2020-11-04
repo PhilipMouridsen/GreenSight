@@ -1,0 +1,11 @@
+.challangeBtn{
+    border-radius: 10px;
+    border-color: white;
+    background-color: #7FC79E;
+}
+
+.challanges{
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+}

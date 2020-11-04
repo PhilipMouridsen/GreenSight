@@ -2,6 +2,7 @@ import React from 'react'
 import "./Dashboard.css";
 import { Route, Switch, Link } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
+import "./Dashboard.css";
 
 
 const testData = [

@@ -1,4 +1,6 @@
-import React, { Component }  from 'react';
+import React from 'react';
+import "./ProgressBar.css";
+
 
 
 const ProgressBar = (props) => {
@@ -17,7 +19,7 @@ const ProgressBar = (props) => {
       width: `${completed}%`,
       backgroundColor: bgcolor,
       borderRadius: 'inherit',
-      textAlign: 'right'
+      textAlign: 'right',
     }
   
     const labelStyles = {
@@ -26,7 +28,7 @@ const ProgressBar = (props) => {
     }
   
     return (
-      <div style={containerStyles}>
+      <div className="fuckyou" style={containerStyles}>
         <div style={fillerStyles}>
           <span style={labelStyles}>{`${completed}%`}</span>
         </div>

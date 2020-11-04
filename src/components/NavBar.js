@@ -29,7 +29,7 @@ function NavBar() {
       </div>
 
       <div className="icons">
-        <Link to="/dashboard">
+        <Link to="/userprofile">
           <img src={account} alt="account-button" />
         </Link>
       </div>

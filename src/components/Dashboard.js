@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Dashboard.css";
 import { Route, Switch, Link } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
 
@@ -17,12 +18,12 @@ export default function Dashboard() {
             <h1> You saved </h1>
             <h2> ****** *** CO2</h2>
         </p>
-        <div className="progressbar">
+       </div>
+       <div className="progressbar">
         {testData.map((item, idx) => (
         <ProgressBar key={idx} bgcolor={item.bgcolor} completed={item.completed} />
       ))}
       </div>
-       </div>
     </div>
   );
 }

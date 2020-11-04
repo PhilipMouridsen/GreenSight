@@ -1,3 +1,16 @@
+# **Greensight- Group 6**
+
+This app will help you reduce your carbon footprint, by doing challenges that changes your lifestyle in such a way that reduces your carbon footprint. 
+As a user, you are able to choose challenges (like for example, "Eat vegan for 3 months"), and tick off each day you have done/fullfilled the challenge. Once your are done with a challenge, the app will update your dashboard, telling you how much CO2 you have saved so far. 
+
+We hope this app will help to make a better world, and a better future for our children and our descendant!
+
+When designing the app we are focusing on Mobile first design princples. The final product should be a Web App that is ideally saved on the users phone's Home Screen so it resembles a phone application.
+
+//Greensight Team
+
+_______________________________________________________________________________________________________________
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

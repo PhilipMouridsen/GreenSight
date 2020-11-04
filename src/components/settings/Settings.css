@@ -1,0 +1,111 @@
+body {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  align-items: center;
+}
+
+.Logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+h1 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+
+.Diet {
+  width: 335px;
+  left: 20px;
+  top: 105px;
+
+  padding-left: 20px;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+}
+
+input[type="checkbox"] + label {
+  display: block;
+  margin: 0.8em;
+  cursor: pointer;
+  padding: 0.2em;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label:before {
+  content: "\2714";
+  border: 0.1em solid #c4c4c4;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: 0.2s;
+}
+
+input[type="checkbox"] + label:active:before {
+  transform: scale(0);
+}
+
+input[type="checkbox"]:checked + label:before {
+  background-color: #eeb4c0;
+  border-color: #eeb4c0;
+  color: #eeb4c0;
+}
+
+input[type="checkbox"]:disabled + label:before {
+  transform: scale(1);
+  border-color: #aaa;
+}
+
+input[type="checkbox"]:checked:disabled + label:before {
+  transform: scale(1);
+  background-color: #eeb4c0;
+  border-color: #eeb4c0;
+}
+
+.Transport {
+  margin-top: 40px;
+  width: 335px;
+  left: 20px;
+  top: 363px;
+  padding-left: 20px;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+}
+
+.Recycle {
+  margin-top: 40px;
+  width: 335px;
+  left: 20px;
+  top: 363px;
+  padding-left: 20px;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+}

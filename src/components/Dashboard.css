@@ -1,0 +1,28 @@
+.circle{
+    height: 250px;
+    width: 250px;
+    background-color:white;
+    border-radius: 50%;
+    border: 6px solid #A2C08B;
+    display: flex;
+    align-self: center;
+    position:relative;
+    margin-top: 20px;
+}
+
+.Dashboard{
+    display: flex;
+    flex-direction: column;
+}
+
+.textIn{
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.progressbar{
+    width: 90%;
+}

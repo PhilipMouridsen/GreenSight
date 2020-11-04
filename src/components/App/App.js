@@ -1,30 +1,36 @@
 import React from "react";
+import NavBar from "../NavBar.js";
 import "./App.css";
-//import { BrowserRouter as Router, Route } from "react-router-dom";
+import Logo from "../Banner.png";
+import LoginPage from "../LoginPage/LoginPage";
+import Dashboard from "../Dashboard";
+import Create from "../Create";
+import { Route, Switch, Link } from "react-router-dom";
+import userprofile from "../userprofile";
+import Settings from "../settings/Settings";
+import friends from "../friends";
+import Challanges from "../ChooseChallange";
 
 function App() {
   return (
-    //<Router>
     <div className="App">
       <header className="App-header">
-        <h1>Green Sight</h1>
+        <Link to="/">
+          <img  classname="logo" src={Logo} alt="logo"></img>
+        </Link>
       </header>
-      <input type="text" placeholder="Username" id="username" name="username" />
-      < br/>
-      <input
-        type="password"
-        placeholder="Password"
-        id="password"
-        name="password"
-      />
-      <br/>
-      <button>Login</button>
-      <br/>
-      <button id="create-button">
-        Don't have an account yet? Create one here!
-      </button>
+      <NavBar />
+      <Switch>
+        <Route exact path="/" component={LoginPage} />
+        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/create" component={Create} />
+        <Route path="/userprofile" component={userprofile} />
+        <Route path="/settings" component={Settings} />
+        <Route path="/friends" component={friends} />
+        <Route path="/challange" component={Challanges} />
+      </Switch>
     </div>
-    //</Router>
   );
 }
 

@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .NavBar {
   background-color: #a2c08b;
   display: flex;
@@ -9,10 +5,12 @@
   bottom: 0;
   width: 100%;
   height: 10%;
-  justify-content: space-evenly;
+  justify-content: space-evenly; 
+  text-align: center;
 }
 
 .icon {
   width: 50%;
   height: 50%;
+  margin-top: 14px;
 }

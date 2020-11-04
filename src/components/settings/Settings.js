@@ -42,6 +42,7 @@ function App() {
             <label for="Transport3">Others</label>
             <input type="checkbox" id="Recycle4" name="Recycle-4" value="All"/>
             <label for="Recycle4">All Plastics</label>
+            <br /><br /><br />
 </form>
       </body>
       

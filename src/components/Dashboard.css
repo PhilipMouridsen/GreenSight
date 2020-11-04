@@ -16,8 +16,6 @@
 }
 
 .textIn{
-    display: flex;
-    align-self: center;
     flex-direction: column;
     position: absolute;
     top: 50%;
@@ -26,7 +24,5 @@
 }
 
 .progressbar{
-    align-self: center;
-    flex-direction: column;
-    width: 100%;
+    width: 90%;
 }

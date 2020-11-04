@@ -23,7 +23,7 @@ function NavBar() {
       </div>
 
       <div className="icons">
-        <Link to="/dashboard">
+        <Link to="/Challange">
           <img src={plus} alt="plus-button" className="icon"/>
         </Link>
       </div>

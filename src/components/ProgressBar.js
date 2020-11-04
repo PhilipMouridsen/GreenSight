@@ -28,15 +28,11 @@ const ProgressBar = (props) => {
     }
   
     return (
-     <div className="ProgressContainer">
      <div className="fuckyou" style={containerStyles}>
         <div style={fillerStyles}>
           <span style={labelStyles}>{`${completed}%`}</span>
         </div>
-        <button>+</button>
       </div>
-
-     </div>
     );
   };
   

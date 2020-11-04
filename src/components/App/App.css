@@ -1,11 +1,5 @@
-.App {
-  text-align: center;
-}
-
 .App-header {
-  background-color: #a2c08b;
-  align-items: center;
-  justify-content: center;
+  background-color: #A2C08B;
   color: white;
 }
 
@@ -13,6 +7,10 @@ h1 {
   margin-top: 0px;
   padding: 20px;
   color: black;
+}
+
+.logo{
+  width: 100%;
 }
 
 input {
@@ -31,4 +29,3 @@ button {
   background-color: #ffffff;
   color: #7fc79e;
 }
-

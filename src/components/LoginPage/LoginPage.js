@@ -1,17 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./LoginPage.css";
+import Leaf from "../leaf.png";
 
 function LoginPage() {
   return (
     <div className="App">
-      <input type="text" placeholder="Username" id="username" name="username" />
       <br />
+      <br />
+      <br />
+      <br />
+      <input type="text" placeholder="Username" id="username" name="username" />
       <input
         type="password"
         placeholder="Password"
         id="password"
         name="password"
       />
+      <br />
       <br />
       <button>Login</button>
       <br />
@@ -20,6 +26,7 @@ function LoginPage() {
           Don't have an account yet? Create one here!
         </button>
       </Link>
+          {/* <img src={Leaf} alt="leaf"></img> */}
     </div>
   );
 }

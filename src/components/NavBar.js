@@ -12,25 +12,25 @@ function NavBar() {
     <div className="NavBar">
       <div className="icons">
         <Link to="/dashboard">
-          <img src={home} alt="home-button" />
+          <img src={home} alt="home-button" className="icon"/>
         </Link>
       </div>
 
       <div className="icons">
         <Link to="/">
-          <img src={wrld} alt="wrld-button" />
+          <img src={wrld} alt="wrld-button" className="icon"/>
         </Link>
       </div>
 
       <div className="icons">
         <Link to="/dashboard">
-          <img src={plus} alt="plus-button" />
+          <img src={plus} alt="plus-button" className="icon"/>
         </Link>
       </div>
 
       <div className="icons">
         <Link to="/userprofile">
-          <img src={account} alt="account-button" />
+          <img src={account} alt="account-button" className="icon"/>
         </Link>
       </div>
 

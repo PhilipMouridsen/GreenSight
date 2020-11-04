@@ -4,7 +4,7 @@ h1 {
 }
 
 h2 {
-font-size: 14px;
+  font-size: 14px;
 }
 
 #question {
@@ -38,8 +38,7 @@ font-size: 14px;
 .threeCircles {
   display: flex;
   position: absolute;
-  bottom: 60px;
-  right: 37%;
+  left: 40%;
 }
 
 .progressCircle {
@@ -51,6 +50,6 @@ font-size: 14px;
   box-shadow: 0px 2px 4px gray;
 }
 
-#current{
+#current {
   background-color: #76cce7;
 }

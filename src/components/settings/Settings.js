@@ -7,7 +7,6 @@ import "./Settings.css";
 function App() {
     return (
       <body>
-          <img src={Logo} alt="logo" className="Logo"></img>
           <h1>Settings</h1>
           <p className="Diet">Diet Preferences</p>
           <form>

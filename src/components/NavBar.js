@@ -17,7 +17,7 @@ function NavBar() {
       </div>
 
       <div className="icons">
-        <Link to="/">
+        <Link to="/explore">
           <img src={wrld} alt="wrld-button" className="icon"/>
         </Link>
       </div>
@@ -36,7 +36,7 @@ function NavBar() {
 
       <div className="icons">
         <Link to="/settings">
-          <img src={settings} alt="settigns-button" />
+          <img src={settings} alt="settigns-button" className="icon"/>
         </Link>
       </div>
     </div>

@@ -7,7 +7,7 @@ We hope this app will help to make a better world, and a better future for our c
 
 When designing the app we are focusing on Mobile first design princples. The final product should be a Web App that is ideally saved on the users phone's Home Screen so it resembles a phone application.
 
-##Data Model
+## Data Model
 
 Our thoughts for our data model is presented here: 
 We plan to make 3 collections: Account, Challenges and Challenges chosen.

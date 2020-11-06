@@ -1,6 +1,14 @@
+#root{
+  width: 100%;
+}
+
 .App-header {
   background-color: #A2C08B;
   color: white;
+}
+
+.App{
+  width: 100%;
 }
 
 h1 {
@@ -11,6 +19,7 @@ h1 {
 
 .logo{
   width: 100%;
+  box-sizing: border-box;
 }
 
 input {

@@ -38,3 +38,7 @@ button {
   background-color: #ffffff;
   color: #7fc79e;
 }
+
+.App{
+  width:100vw;
+}

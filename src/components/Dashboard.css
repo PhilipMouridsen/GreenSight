@@ -13,6 +13,7 @@
 .Dashboard{
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .textIn{
@@ -24,5 +25,9 @@
 }
 
 .progressbar{
-    width: 90%;
+    width: 100%;
+    padding:24px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }

@@ -50,6 +50,9 @@ function friends() {
              <p>CO2 saved: ***** ***</p>
              </div>
              </div>
+             <br />
+      <br />
+      <br />
         </div>
       );
     }

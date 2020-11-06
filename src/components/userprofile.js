@@ -16,7 +16,7 @@ function userprofile() {
       </div>
       <div className="buttons">
         <Link to="/userprofile">
-          <h3>ACHIEVMENTS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+          <h3>ACHIEVMENTS</h3>
         </Link>
         <Link to="/friends">
           <h3>FRIENDS</h3>

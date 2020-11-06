@@ -35,55 +35,52 @@ h1 {
   display: flex;
 }
 
+input[type="checkbox"] + label {
+  display: block;
+  margin: 0.8em;
+  cursor: pointer;
+  padding: 0.2em;
+}
 
-input[type=checkbox] + label {
-    display: block;
-    margin: 0.8em;
-    cursor: pointer;
-    padding: 0.2em;
-  }
-  
-  input[type=checkbox] {
-    display: none;
-  }
-  
-  input[type=checkbox] + label:before {
-    content: "\2714";
-    border: 0.1em solid #C4C4C4;
-    border-radius: 0.2em;
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    padding-left: 0.2em;
-    padding-bottom: 0.3em;
-    margin-right: 0.2em;
-    vertical-align: bottom;
-    color: transparent;
-    transition: .2s;
-  }
-  
-  input[type=checkbox] + label:active:before {
-    transform: scale(0);
-  }
-  
-  input[type=checkbox]:checked + label:before {
-    background-color:  #EEB4C0;
-    border-color: #EEB4C0;
-    color: #EEB4C0;
-  }
-  
-  input[type=checkbox]:disabled + label:before {
-    transform: scale(1);
-    border-color: #aaa;
-  }
-  
-  input[type=checkbox]:checked:disabled + label:before {
-    transform: scale(1);
-    background-color: #EEB4C0;
-    border-color: #EEB4C0;
-  }
+input[type="checkbox"] {
+  display: none;
+}
 
+input[type="checkbox"] + label:before {
+  content: "\2714";
+  border: 0.1em solid #c4c4c4;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: 0.2s;
+}
 
+input[type="checkbox"] + label:active:before {
+  transform: scale(0);
+}
+
+input[type="checkbox"]:checked + label:before {
+  background-color: #eeb4c0;
+  border-color: #eeb4c0;
+  color: #eeb4c0;
+}
+
+input[type="checkbox"]:disabled + label:before {
+  transform: scale(1);
+  border-color: #aaa;
+}
+
+input[type="checkbox"]:checked:disabled + label:before {
+  transform: scale(1);
+  background-color: #eeb4c0;
+  border-color: #eeb4c0;
+}
 
 .Transport {
   margin-top: 40px;
@@ -99,7 +96,7 @@ input[type=checkbox] + label {
   display: flex;
 }
 
-.Recycle{
+.Recycle {
   margin-top: 40px;
   width: 335px;
   left: 20px;
@@ -112,8 +109,3 @@ input[type=checkbox] + label {
   line-height: 22px;
   display: flex;
 }
-
-
-
-
-

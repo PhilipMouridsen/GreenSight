@@ -7,6 +7,10 @@ body {
   align-items: center;
 }
 
+p {
+  box-sizing: border-box;
+  padding: 0px;
+}
 .Logo {
   display: block;
   margin-left: auto;
@@ -22,7 +26,7 @@ h1 {
 }
 
 .Diet {
-  width: 335px;
+  width: 100%;
   left: 20px;
   top: 105px;
 
@@ -84,7 +88,7 @@ input[type="checkbox"]:checked:disabled + label:before {
 
 .Transport {
   margin-top: 40px;
-  width: 335px;
+  width: 100%;
   left: 20px;
   top: 363px;
   padding-left: 20px;
@@ -98,7 +102,7 @@ input[type="checkbox"]:checked:disabled + label:before {
 
 .Recycle {
   margin-top: 40px;
-  width: 335px;
+  width: 100%;
   left: 20px;
   top: 363px;
   padding-left: 20px;

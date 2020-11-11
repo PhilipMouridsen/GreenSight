@@ -19,7 +19,6 @@ p {
 }
 
 h1 {
-  font-style: normal;
   font-weight: bold;
   font-size: 24px;
   text-align: center;
@@ -29,10 +28,8 @@ h1 {
   width: 100%;
   left: 20px;
   top: 105px;
-
   padding-left: 20px;
 
-  font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 22px;
@@ -149,7 +146,6 @@ h1 {
   top: 363px;
   padding-left: 20px;
 
-  font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 22px;
@@ -163,7 +159,6 @@ h1 {
   top: 363px;
   padding-left: 20px;
 
-  font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 22px;
@@ -172,8 +167,10 @@ h1 {
 
 .logoutbtn{
 
-width: 150px;
+width: 100%;
 height: 50px;
 background: #7FC79E;
+border-color: #7FC79E;
 border-radius: 20px;
+font-size: 18px;
 }

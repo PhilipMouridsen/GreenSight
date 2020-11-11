@@ -31,11 +31,13 @@ function App() {
           <input type="radio" name="recycle" id="bags" value="bags" class="recycle-option"/><label for="bags" class="recycle-label"> Plastic Bags </label>
           <input type="radio" name="recycle" id="others" value="others" class="recycle-option"/><label for="others" class="recycle-label"> Others </label>
           <input type="radio" name="recycle" id="all" value="all" class="recycle-option"/><label for="all" class="recycle-label"> All Plastics </label>
-            <br /><br /><br />
           </form>
+          <br /><br />
 
           <button type="button" class="logoutbtn">Logout</button>
+          <br /><br /><br />
       </body>
+      
       
     );
   }

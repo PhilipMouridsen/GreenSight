@@ -169,3 +169,11 @@ h1 {
   line-height: 22px;
   display: flex;
 }
+
+.logoutbtn{
+
+width: 150px;
+height: 50px;
+background: #7FC79E;
+border-radius: 20px;
+}

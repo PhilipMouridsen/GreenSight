@@ -1,5 +1,5 @@
 body {
-  font-family: Lato;
+  font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -39,18 +39,14 @@ h1 {
   display: flex;
 }
 
-input[type="checkbox"] + label {
+/*DIET*/
+.diet-label {
   display: block;
-  margin: 0.8em;
-  cursor: pointer;
-  padding: 0.2em;
+  padding-left: 30px;
 }
 
-input[type="checkbox"] {
-  display: none;
-}
-
-input[type="checkbox"] + label:before {
+/*the box styling*/
+.diet-label:before {
   content: "\2714";
   border: 0.1em solid #c4c4c4;
   border-radius: 0.2em;
@@ -60,30 +56,90 @@ input[type="checkbox"] + label:before {
   padding-left: 0.2em;
   padding-bottom: 0.3em;
   margin-right: 0.2em;
-  vertical-align: bottom;
+  margin-bottom: 1em;
   color: transparent;
   transition: 0.2s;
 }
 
-input[type="checkbox"] + label:active:before {
-  transform: scale(0);
-}
-
-input[type="checkbox"]:checked + label:before {
-  background-color: #eeb4c0;
-  border-color: #eeb4c0;
+.diet-option:checked + .diet-label:before {
   color: #eeb4c0;
-}
-
-input[type="checkbox"]:disabled + label:before {
-  transform: scale(1);
-  border-color: #aaa;
-}
-
-input[type="checkbox"]:checked:disabled + label:before {
-  transform: scale(1);
   background-color: #eeb4c0;
   border-color: #eeb4c0;
+  /*content: color;*/
+}
+
+.diet-option {
+  position: absolute;
+  margin-left: -1000px;
+}
+
+/*TRANSPORT*/
+.transport-label {
+  display: block;
+  padding-left: 30px;
+}
+
+/*the box styling*/
+.transport-label:before {
+  content: "\2714";
+  border: 0.1em solid #c4c4c4;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  margin-bottom: 1em;
+  color: transparent;
+  transition: 0.2s;
+}
+
+.transport-option:checked + .transport-label:before {
+  color: #eeb4c0;
+  background-color: #eeb4c0;
+  border-color: #eeb4c0;
+  /*content: color;*/
+}
+
+.transport-option {
+  position: absolute;
+  margin-left: -1000px;
+}
+
+
+/*RECYCLE*/
+.recycle-label {
+  display: block;
+  padding-left: 30px;
+}
+
+/*the box styling*/
+.recycle-label:before {
+  content: "\2714";
+  border: 0.1em solid #c4c4c4;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  margin-bottom: 1em;
+  color: transparent;
+  transition: 0.2s;
+}
+
+.recycle-option:checked + .recycle-label:before {
+  color: #eeb4c0;
+  background-color: #eeb4c0;
+  border-color: #eeb4c0;
+  /*content: color;*/
+}
+
+.recycle-option {
+  position: absolute;
+  margin-left: -1000px;
 }
 
 .Transport {
@@ -112,4 +168,12 @@ input[type="checkbox"]:checked:disabled + label:before {
   font-size: 18px;
   line-height: 22px;
   display: flex;
+}
+
+.logoutbtn{
+
+width: 150px;
+height: 50px;
+background: #7FC79E;
+border-radius: 20px;
 }

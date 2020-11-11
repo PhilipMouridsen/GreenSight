@@ -5,7 +5,7 @@ import Leaf from "../leaf.png";
 
 function LoginPage() {
   return (
-    <div className="App">
+    <div className="loginPage">
       <br />
       <br />
       <br />

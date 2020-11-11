@@ -1,6 +1,14 @@
+.create{
+  text-align: center;
+}
+
 h1 {
   top: 0;
   font-size: 18px;
+}
+
+h2 {
+  font-size: 16px;
 }
 
 .subtext {

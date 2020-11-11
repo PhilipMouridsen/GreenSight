@@ -10,6 +10,8 @@ import userprofile from "../userprofile";
 import Settings from "../settings/Settings";
 import friends from "../friends";
 import Challanges from "../ChooseChallange";
+import Explore from "../Explore"
+import studentecco from "../studentecco";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         <Route path="/settings" component={Settings} />
         <Route path="/friends" component={friends} />
         <Route path="/challange" component={Challanges} />
+        <Route path="/explore" component={Explore} />
+        <Route path="/studentecco" component={studentecco} />
       </Switch>
     </div>
   );

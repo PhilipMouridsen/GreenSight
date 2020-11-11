@@ -1,16 +1,25 @@
+#root{
+  width: 100%;
+}
+
 .App-header {
   background-color: #A2C08B;
   color: white;
+  width: 100%;
+}
+
+.App{
+  width: 100%;
+}
+
+img{
+  width: 100%;
 }
 
 h1 {
   margin-top: 0px;
   padding: 20px;
   color: black;
-}
-
-.logo{
-  width: 100%;
 }
 
 input {

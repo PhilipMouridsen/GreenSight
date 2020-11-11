@@ -3,6 +3,7 @@ import "./Dashboard.css";
 import { Route, Switch, Link } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
 import "./Dashboard.css";
+import leafpic from "./leaf.png";
 
 
 const testData = [
@@ -15,6 +16,7 @@ export default function Dashboard() {
   return (
       <div className="Dashboard">
       <div className="circle">
+      <img id="leafpicture" src={leafpic} alt="eco-picture" />
         <p className="textIn">
             <h1> You saved </h1>
             <h2> ****** *** CO2</h2>

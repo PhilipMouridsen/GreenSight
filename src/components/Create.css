@@ -16,6 +16,7 @@ h2 {
 }
 
 #question {
+  border-color: #7fc79e;
   background-color: #7fc79e;
   width: 40%;
   height: 40px;
@@ -36,6 +37,7 @@ h2 {
 
 .Next {
   background-color: white;
+  border-color: #7fc79e;
   color: #7fc79e;
   width: 40%;
   height: 40px;

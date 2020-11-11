@@ -10,38 +10,27 @@ function App() {
           <h1>Settings</h1>
           <p className="Diet">Diet Preferences</p>
           <form>
-            <input type="checkbox" id="Diet1" name="myCheckbox" value="Vegan" onClick={selectOnlyThis()}/>
-            <label for="Diet1">Vegan</label>
-            <input type="checkbox" id="Diet2" name="myCheckbox" value="Vegetarian" onClick={selectOnlyThis()}/>
-            <label for="Diet2">Vegetarian</label>
-            <input type="checkbox" id="Diet3" name="myCheckbox" value="Omnivore" onClick={selectOnlyThis()}/>
-            <label for="Diet3">Omnivore</label>
-            <input type="checkbox" id="Diet4" name="myCheckbox" value="Pescetarian" onClick={selectOnlyThis()}/>
-            <label for="Diet4">Pescetarian</label>
+          <input type="radio" name="diet" id="vegan" value="vegan" class="diet-option"/><label for="vegan" class="diet-label"> Vegan </label>
+          <input type="radio" name="diet" id="vegetarian" value="vegetarian" class="diet-option"/><label for="vegetarian" class="diet-label"> Vegetarian </label>
+          <input type="radio" name="diet" id="pescetarian" value="pescetarian" class="diet-option"/><label for="pescetarian" class="diet-label"> Pescetarian </label>
+          <input type="radio" name="diet" id="omnivore" value="omnivore" class="diet-option"/><label for="omnivore" class="diet-label"> Omnivore </label>
 </form>
 
           <p className="Transport">Transport Preferences</p>
           <form>
-            <input type="checkbox" id="Transport1" name="Transport-1" value="Car"/>
-            <label for="Transport1">Car</label>
-            <input type="checkbox" id="Transport2" name="Transport-2" value="Bike"/>
-            <label for="Transport2">Bike</label>
-            <input type="checkbox" id="Transport3" name="Transport-3" value="Public" />
-            <label for="Transport3">Public Transportation</label>
-            <input type="checkbox" id="Transport4" name="Transport-4" value="Walking"/>
-            <label for="Transport4">Walking</label>
+          <input type="radio" name="transport" id="car" value="car" class="transport-option"/><label for="car" class="transport-label"> Car </label>
+          <input type="radio" name="transport" id="bike" value="bike" class="transport-option"/><label for="bike" class="transport-label"> Bike </label>
+          <input type="radio" name="transport" id="public" value="public" class="transport-option"/><label for="public" class="transport-label"> Public Transportation </label>
+          <input type="radio" name="transport" id="walking" value="walking" class="transport-option"/><label for="walking" class="transport-label"> Walking </label>
 </form>          
 
           <p className="Recycle">Recycling habbits</p>
           <form>
-            <input type="checkbox" id="Recycle1" name="Recycle-1" value="None"/>
-            <label for="Recycle1">None</label>
-            <input type="checkbox" id="Recycle2" name="Recycle-2" value="Bags"/>
-            <label for="Recycle2">Plastic Bags</label>
-            <input type="checkbox" id="Recycle3" name="Recycle-3" value="Others" />
-            <label for="Transport3">Others</label>
-            <input type="checkbox" id="Recycle4" name="Recycle-4" value="All"/>
-            <label for="Recycle4">All Plastics</label>
+
+          <input type="radio" name="recycle" id="none" value="none" class="recycle-option"/><label for="none" class="recycle-label"> None </label>
+          <input type="radio" name="recycle" id="bags" value="bags" class="recycle-option"/><label for="bags" class="recycle-label"> Plastic Bags </label>
+          <input type="radio" name="recycle" id="others" value="others" class="recycle-option"/><label for="others" class="recycle-label"> Others </label>
+          <input type="radio" name="recycle" id="all" value="all" class="recycle-option"/><label for="all" class="recycle-label"> All Plastics </label>
             <br /><br /><br />
 </form>
       </body>
@@ -49,7 +38,7 @@ function App() {
     );
   }
 
-  function selectOnlyThis() {
+  function selectOnlyThis(id) {
     console.log("Select method called");
     /*for (var i = 1;i <= 4; i++)
     {

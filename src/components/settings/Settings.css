@@ -1,45 +1,28 @@
-body {
+.settings {
   font-family: 'Lato', sans-serif;
-  font-style: normal;
-  font-weight: normal;
   font-size: 18px;
-  line-height: 22px;
-  align-items: center;
-}
-
-p {
-  box-sizing: border-box;
-  padding: 0px;
-}
-.Logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
 }
 
 h1 {
-  font-weight: bold;
   font-size: 24px;
   text-align: center;
 }
 
-.Diet {
-  width: 100%;
-  left: 20px;
-  top: 105px;
-  padding-left: 20px;
-
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 22px;
-  display: flex;
+p{
+  box-sizing: border-box;
 }
 
 /*DIET*/
 .diet-label {
   display: block;
   padding-left: 30px;
+}
+
+.Diet {
+  width: 100%;
+  padding-left: 20px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 /*the box styling*/
@@ -59,10 +42,8 @@ h1 {
 }
 
 .diet-option:checked + .diet-label:before {
-  color: #eeb4c0;
   background-color: #eeb4c0;
   border-color: #eeb4c0;
-  /*content: color;*/
 }
 
 .diet-option {
@@ -93,10 +74,8 @@ h1 {
 }
 
 .transport-option:checked + .transport-label:before {
-  color: #eeb4c0;
   background-color: #eeb4c0;
   border-color: #eeb4c0;
-  /*content: color;*/
 }
 
 .transport-option {
@@ -104,6 +83,13 @@ h1 {
   margin-left: -1000px;
 }
 
+.Transport {
+  margin-top: 40px;
+  width: 100%;
+  padding-left: 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
 
 /*RECYCLE*/
 .recycle-label {
@@ -128,10 +114,8 @@ h1 {
 }
 
 .recycle-option:checked + .recycle-label:before {
-  color: #eeb4c0;
   background-color: #eeb4c0;
   border-color: #eeb4c0;
-  /*content: color;*/
 }
 
 .recycle-option {
@@ -139,37 +123,20 @@ h1 {
   margin-left: -1000px;
 }
 
-.Transport {
-  margin-top: 40px;
-  width: 100%;
-  left: 20px;
-  top: 363px;
-  padding-left: 20px;
-
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 22px;
-  display: flex;
-}
-
 .Recycle {
   margin-top: 40px;
   width: 100%;
-  left: 20px;
-  top: 363px;
   padding-left: 20px;
-
   font-weight: bold;
   font-size: 18px;
-  line-height: 22px;
-  display: flex;
 }
 
 .logoutbtn{
-width: 90%;
-height: 50px;
+height: 40px;
 background: #7FC79E;
 border-color: #7FC79E;
 border-radius: 20px;
-font-size: 18px;
+font-size: 14px;
+width: 25%;
+margin-left: 20px;
 }

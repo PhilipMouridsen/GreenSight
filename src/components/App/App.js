@@ -12,6 +12,9 @@ import friends from "../friends";
 import Challanges from "../ChooseChallange";
 import Explore from "../Explore"
 import studentecco from "../studentecco";
+import plasticarticle from "../plasticarticle";
+import paperarticle from "../paperarticle"
+
 
 function App() {
   return (
@@ -33,7 +36,9 @@ function App() {
         <Route path="/challange" component={Challanges} />
         <Route path="/explore" component={Explore} />
         <Route path="/studentecco" component={studentecco} />
-      </Switch>
+        <Route path="/plasticarticle" component={plasticarticle} />
+        <Route path="/paperarticle" component={paperarticle} />
+=      </Switch>
     </div>
   );
 }

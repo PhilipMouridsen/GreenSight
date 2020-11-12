@@ -22,7 +22,7 @@ function Explore() {
         </div>
       </div>
       <div className="ArticleComponent">
-        <Link>
+        <Link to="/plasticarticle">
         <img id="ecostudentspicture" src={lessplastic} alt="eco-picture" />
         </Link>
         <div className="textblog">
@@ -30,7 +30,7 @@ function Explore() {
         </div>
       </div>
       <div className="ArticleComponent">
-        <Link>
+        <Link to="/paperarticle">
         <img id="ecostudentspicture" src={paper} alt="eco-picture" />
         </Link>
         <div className="textblog">

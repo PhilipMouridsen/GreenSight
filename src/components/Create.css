@@ -1,6 +1,14 @@
+.create{
+  text-align: center;
+}
+
 h1 {
   top: 0;
   font-size: 18px;
+}
+
+h2 {
+  font-size: 16px;
 }
 
 .subtext {
@@ -8,6 +16,7 @@ h1 {
 }
 
 #question {
+  border-color: #7fc79e;
   background-color: #7fc79e;
   width: 40%;
   height: 40px;
@@ -28,6 +37,7 @@ h1 {
 
 .Next {
   background-color: white;
+  border-color: #7fc79e;
   color: #7fc79e;
   width: 40%;
   height: 40px;

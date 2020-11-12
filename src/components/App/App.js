@@ -10,18 +10,20 @@ import userprofile from "../userprofile";
 import Settings from "../settings/Settings";
 import friends from "../friends";
 import Challanges from "../ChooseChallange";
-import Explore from "../Explore"
+import Explore from "../Explore";
 import studentecco from "../studentecco";
 import plasticarticle from "../plasticarticle";
 import paperarticle from "../paperarticle"
 
+import ScrollToTop from "../ScrollToTop";
 
 function App() {
   return (
     <div className="App">
+      <ScrollToTop />
       <header className="App-header">
         <Link to="/">
-          <img  classname="logo" src={Logo} alt="logo"></img>
+          <img classname="logo" src={Logo} alt="logo"></img>
         </Link>
       </header>
       <NavBar />

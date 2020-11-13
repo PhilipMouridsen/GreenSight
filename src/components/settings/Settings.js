@@ -6,6 +6,8 @@ function App() {
   return (
     <div className="settings">
       <h1>Settings</h1>
+      <hr/>
+      <br />
       <p className="Diet">Diet Preferences</p>
       <form>
         <input

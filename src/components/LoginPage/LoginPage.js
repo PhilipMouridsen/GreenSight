@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import "./LoginPage.css";
 import Leaf from "../leaf.png";
 import Header from "../header/Header";
+import { firebaseAppAuth, provider } from "../../firebase";
 
-function LoginPage() {
+export default function LoginPage() {
+  const handleSignIn = () => firebaseAppAuth.signInWithPopup(provider);
+
   return (
     <div className="loginPage">
       <Header />
@@ -21,7 +24,7 @@ function LoginPage() {
       />
       <br />
       <br />
-      <button>Login</button>
+      <button onClick={handleSignIn}>Login</button>
       <br />
       <Link to="/create">
         <button id="create-button">
@@ -32,5 +35,3 @@ function LoginPage() {
     </div>
   );
 }
-
-export default LoginPage;

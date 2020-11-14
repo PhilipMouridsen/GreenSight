@@ -7,7 +7,7 @@ function Header() {
       <div className="header">
         <header className="App-header">
           <Link to="/">
-            <img classname="logo" src={Logo} alt="logo"></img>
+            <img className="logo" src={Logo} alt="logo"></img>
           </Link>
         </header>
         </div>

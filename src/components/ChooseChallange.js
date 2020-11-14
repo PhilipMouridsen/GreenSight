@@ -6,6 +6,7 @@ function Challange() {
     <div className="challangesContainer">
       <div className="challanges">
         <h1 className="newchallenge">Choose New Challange</h1>
+        <hr/>
         <button className="challangeBtn">Eat Vegetarian (31days)</button>
 
         <button className="challangeBtn">Take the bike to work (14days)</button>

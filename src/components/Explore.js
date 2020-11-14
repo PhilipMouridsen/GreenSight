@@ -13,6 +13,7 @@ function Explore() {
       <div className="popoular">
       <h1>POPULAR ARTICLES</h1>
       </div>
+      <hr/>
       <div className="ArticleComponent">
         <Link to="/studentecco">
         <img id="ecostudentspicture" src={studenteco} alt="eco-picture" />

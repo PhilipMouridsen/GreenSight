@@ -2,46 +2,166 @@ import React from "react";
 import Logo from "../Banner.png";
 import "./Settings.css";
 
-
-
 function App() {
-    return (
-      <body>
-          <h1>Settings</h1>
-          <p className="Diet">Diet Preferences</p>
-          <form>
-          <input type="radio" name="diet" id="vegan" value="vegan" class="diet-option"/><label for="vegan" class="diet-label"> Vegan </label>
-          <input type="radio" name="diet" id="vegetarian" value="vegetarian" class="diet-option"/><label for="vegetarian" class="diet-label"> Vegetarian </label>
-          <input type="radio" name="diet" id="pescetarian" value="pescetarian" class="diet-option"/><label for="pescetarian" class="diet-label"> Pescetarian </label>
-          <input type="radio" name="diet" id="omnivore" value="omnivore" class="diet-option"/><label for="omnivore" class="diet-label"> Omnivore </label>
-        </form>
+  return (
+    <div className="settings">
+      <h1>Settings</h1>
+      <hr/>
+      <br />
+      <p className="Diet">Diet Preferences</p>
+      <form>
+        <input
+          type="radio"
+          name="diet"
+          id="vegan"
+          value="vegan"
+          className="diet-option"
+        />
+        <label for="vegan" className="diet-label">
+          {" "}
+          Vegan{" "}
+        </label>
+        <input
+          type="radio"
+          name="diet"
+          id="vegetarian"
+          value="vegetarian"
+          className="diet-option"
+        />
+        <label for="vegetarian" className="diet-label">
+          {" "}
+          Vegetarian{" "}
+        </label>
+        <input
+          type="radio"
+          name="diet"
+          id="pescetarian"
+          value="pescetarian"
+          className="diet-option"
+        />
+        <label for="pescetarian" className="diet-label">
+          {" "}
+          Pescetarian{" "}
+        </label>
+        <input
+          type="radio"
+          name="diet"
+          id="omnivore"
+          value="omnivore"
+          className="diet-option"
+        />
+        <label for="omnivore" className="diet-label">
+          {" "}
+          Omnivore{" "}
+        </label>
+      </form>
 
-          <p className="Transport">Transport Preferences</p>
-          <form>
-          <input type="radio" name="transport" id="car" value="car" class="transport-option"/><label for="car" class="transport-label"> Car </label>
-          <input type="radio" name="transport" id="bike" value="bike" class="transport-option"/><label for="bike" class="transport-label"> Bike </label>
-          <input type="radio" name="transport" id="public" value="public" class="transport-option"/><label for="public" class="transport-label"> Public Transportation </label>
-          <input type="radio" name="transport" id="walking" value="walking" class="transport-option"/><label for="walking" class="transport-label"> Walking </label>
-        </form>          
+      <p className="Transport">Transport Preferences</p>
+      <form>
+        <input
+          type="radio"
+          name="transport"
+          id="car"
+          value="car"
+          className="transport-option"
+        />
+        <label for="car" className="transport-label">
+          {" "}
+          Car{" "}
+        </label>
+        <input
+          type="radio"
+          name="transport"
+          id="bike"
+          value="bike"
+          className="transport-option"
+        />
+        <label for="bike" className="transport-label">
+          {" "}
+          Bike{" "}
+        </label>
+        <input
+          type="radio"
+          name="transport"
+          id="public"
+          value="public"
+          className="transport-option"
+        />
+        <label for="public" className="transport-label">
+          {" "}
+          Public Transportation{" "}
+        </label>
+        <input
+          type="radio"
+          name="transport"
+          id="walking"
+          value="walking"
+          className="transport-option"
+        />
+        <label for="walking" className="transport-label">
+          {" "}
+          Walking{" "}
+        </label>
+      </form>
 
-          <p className="Recycle">Recycling habbits</p>
-          <form>
+      <p className="Recycle">Recycling habbits</p>
+      <form>
+        <input
+          type="radio"
+          name="recycle"
+          id="none"
+          value="none"
+          className="recycle-option"
+        />
+        <label for="none" className="recycle-label">
+          {" "}
+          None{" "}
+        </label>
+        <input
+          type="radio"
+          name="recycle"
+          id="bags"
+          value="bags"
+          className="recycle-option"
+        />
+        <label for="bags" className="recycle-label">
+          {" "}
+          Plastic Bags{" "}
+        </label>
+        <input
+          type="radio"
+          name="recycle"
+          id="others"
+          value="others"
+          className="recycle-option"
+        />
+        <label for="others" className="recycle-label">
+          {" "}
+          Others{" "}
+        </label>
+        <input
+          type="radio"
+          name="recycle"
+          id="all"
+          value="all"
+          className="recycle-option"
+        />
+        <label for="all" className="recycle-label">
+          {" "}
+          All Plastics{" "}
+        </label>
+      </form>
+      <br />
+      <br />
+      <button type="button" className="logoutbtn">
+        Logout
+      </button>
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
+  );
+}
 
-          <input type="radio" name="recycle" id="none" value="none" class="recycle-option"/><label for="none" class="recycle-label"> None </label>
-          <input type="radio" name="recycle" id="bags" value="bags" class="recycle-option"/><label for="bags" class="recycle-label"> Plastic Bags </label>
-          <input type="radio" name="recycle" id="others" value="others" class="recycle-option"/><label for="others" class="recycle-label"> Others </label>
-          <input type="radio" name="recycle" id="all" value="all" class="recycle-option"/><label for="all" class="recycle-label"> All Plastics </label>
-          </form>
-          <br /><br />
-
-          <button type="button" class="logoutbtn">Logout</button>
-          <br /><br /><br />
-      </body>
-      
-      
-    );
-  }
-
-
-  
-  export default App;
+export default App;

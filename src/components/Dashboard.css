@@ -16,6 +16,14 @@
     width: 100%;
 }
 
+#leafpicture{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1ex;
+    width: 100px;
+    height: 90px;
+}
+
 .textIn{
     flex-direction: column;
     position: absolute;

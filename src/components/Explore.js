@@ -13,6 +13,7 @@ function Explore() {
       <div className="popoular">
       <h1>POPULAR ARTICLES</h1>
       </div>
+      <hr/>
       <div className="ArticleComponent">
         <Link to="/studentecco">
         <img id="ecostudentspicture" src={studenteco} alt="eco-picture" />
@@ -22,7 +23,7 @@ function Explore() {
         </div>
       </div>
       <div className="ArticleComponent">
-        <Link>
+        <Link to="/plasticarticle">
         <img id="ecostudentspicture" src={lessplastic} alt="eco-picture" />
         </Link>
         <div className="textblog">
@@ -30,7 +31,7 @@ function Explore() {
         </div>
       </div>
       <div className="ArticleComponent">
-        <Link>
+        <Link to="/paperarticle">
         <img id="ecostudentspicture" src={paper} alt="eco-picture" />
         </Link>
         <div className="textblog">

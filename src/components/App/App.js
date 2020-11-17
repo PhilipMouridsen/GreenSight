@@ -1,7 +1,6 @@
 import React from "react";
 import NavBar from "../NavBar.js";
 import "./App.css";
-import Logo from "../Banner.png";
 import LoginPage from "../LoginPage/LoginPage";
 import Dashboard from "../Dashboard";
 import Create from "../Create";
@@ -10,17 +9,17 @@ import userprofile from "../userprofile";
 import Settings from "../settings/Settings";
 import friends from "../friends";
 import Challanges from "../ChooseChallange";
-import Explore from "../Explore"
+import Explore from "../Explore";
 import studentecco from "../studentecco";
+import plasticarticle from "../plasticarticle";
+import paperarticle from "../paperarticle"
+
+import ScrollToTop from "../ScrollToTop";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Link to="/">
-          <img  classname="logo" src={Logo} alt="logo"></img>
-        </Link>
-      </header>
+      <ScrollToTop />
       <NavBar />
       <Switch>
         <Route exact path="/" component={LoginPage} />
@@ -33,7 +32,9 @@ function App() {
         <Route path="/challange" component={Challanges} />
         <Route path="/explore" component={Explore} />
         <Route path="/studentecco" component={studentecco} />
-      </Switch>
+        <Route path="/plasticarticle" component={plasticarticle} />
+        <Route path="/paperarticle" component={paperarticle} />
+=      </Switch>
     </div>
   );
 }

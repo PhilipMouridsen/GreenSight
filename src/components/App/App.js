@@ -12,15 +12,25 @@ import Challanges from "../ChooseChallange";
 import Explore from "../Explore";
 import studentecco from "../studentecco";
 import plasticarticle from "../plasticarticle";
-import paperarticle from "../paperarticle"
-
+import paperarticle from "../paperarticle";
+import { firebaseAppAuth } from "../../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 import ScrollToTop from "../ScrollToTop";
 
 function App() {
+  const [user, loading] = useAuthState(firebaseAppAuth);
+
+  if (loading) {
+    return null;
+  }
+
+  return user ? <Dashboard /> : <LoginPage />;
+
   return (
     <div className="App">
       <ScrollToTop />
       <NavBar />
+
       <Switch>
         <Route exact path="/" component={LoginPage} />
         <Route path="/dashboard" component={Dashboard} />
@@ -34,7 +44,7 @@ function App() {
         <Route path="/studentecco" component={studentecco} />
         <Route path="/plasticarticle" component={plasticarticle} />
         <Route path="/paperarticle" component={paperarticle} />
-=      </Switch>
+      </Switch>
     </div>
   );
 }

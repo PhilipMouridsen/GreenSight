@@ -9,6 +9,7 @@ database.collection('Challenges').get().then((snapshot) => {
     console.log(doc.data());
   })
 })
+
 //const [isOpen, toggled] = isOpen(false);
 
 class Challange extends Component {

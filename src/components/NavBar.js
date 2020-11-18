@@ -13,31 +13,31 @@ function NavBar() {
       <div className="icons">
         <Link to="/dashboard"> 
           <img src={home} alt="home-button" className="icon"/>
-          <h4>Dashboard</h4></Link>
+          </Link>
       </div>
 
       <div className="icons">
         <Link to="/explore">
           <img src={wrld} alt="wrld-button" className="icon"/>
-          <h4>Explore</h4></Link>
+          </Link>
       </div>
 
       <div className="icons">
         <Link to="/Challange">
           <img src={plus} alt="plus-button" className="icon"/>
-          <h4>Add Challenges</h4></Link>
+          </Link>
       </div>
 
       <div className="icons">
         <Link to="/userprofile">
           <img src={account} alt="account-button" className="icon"/>
-          <h4>Profile</h4></Link>
+          </Link>
       </div>
 
       <div className="icons">
         <Link to="/settings">
           <img src={settings} alt="settigns-button" className="icon"/>
-          <h4>Settings</h4></Link>
+          </Link>
       </div>
     </div>
   );

@@ -19,6 +19,32 @@ const testData = [
 ];
 
 export default function Dashboard() {
+
+  const challengelist = document.querySelector('#challange-list')
+
+  // create element and render challenges 
+  function renderCafe(doc)
+  {
+    let li = document.createElement('li');
+    let name = document.createElement('span')
+    let CO2 = document.createElement('span')
+
+    li.setAttribute('data-is', doc.id);
+    name.textContent = doc.data().ChallangeName;
+    CO2.textContent = doc.data().CO2saved;
+
+    li.appendChild(name);
+    li.appendChild(CO2);
+
+    challengelist.appendChild(li);
+  }
+
+  database.collection('Challenges').get().then((snapshot) => {
+    snapshot.docs.forEach(doc  => {
+      renderCafe(doc);
+    })
+  })
+
   return (
     <div className="Dashboard">
       <Header />
@@ -28,6 +54,9 @@ export default function Dashboard() {
           <h1> You saved </h1>
            <h5>0.00 CO2</h5>
         </div>
+      </div>
+      <div>
+        <ul id="challange-list"></ul>
       </div>
       <div className="progressbar"> 
         <h3>Track your challenges!</h3>

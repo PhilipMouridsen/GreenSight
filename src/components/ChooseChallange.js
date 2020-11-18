@@ -1,5 +1,6 @@
 import React from "react";
 import "./chooseChallange.css";
+import Leaf from "./Leaf.js";
 
 function Challange() {
   return (

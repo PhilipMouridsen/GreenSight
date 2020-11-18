@@ -18,12 +18,13 @@ export default function Dashboard() {
       <Header />
       <div className="circle">
         <img id="leafpicture" src={leafpic} alt="eco-picture" />
-        <p className="textIn">
+        <div className="textIn">
           <h1> You saved </h1>
-          <h2> ****** *** CO2</h2>
-        </p>
+           <h5>0.00 CO2</h5>
+        </div>
       </div>
-      <div className="progressbar">
+      <div className="progressbar"> 
+        <h3>Track your challenges!</h3>
         {testData.map((item, idx) => (
           <ProgressBar
             key={idx}

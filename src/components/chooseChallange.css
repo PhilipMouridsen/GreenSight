@@ -2,6 +2,17 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    background-color: #fdfbef;
+}
+
+h1{
+    font-size: 21px;
+}
+
+hr{
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
 }
 
 .challangeBtn{
@@ -10,6 +21,11 @@
     border-color: #7FC79E;
     background-color: #7FC79E;
     padding: 17px;
+    font-family: 'Lato', sans-serif;
+    box-shadow:5px 5px 18px #888888;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 18px;
 }
 
 .challanges{
@@ -18,6 +34,7 @@
     justify-content: center;
     flex-direction: column;
     width: 80%;
+    font-family: 'Lato', sans-serif;
 }
 .newchallenge{
     margin-bottom: 1px;

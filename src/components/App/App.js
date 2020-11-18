@@ -15,19 +15,18 @@ import plasticarticle from "../plasticarticle";
 import paperarticle from "../paperarticle";
 import { firebaseAppAuth } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import paperarticle from "../paperarticle"
 import 'antd/dist/antd.css'
 
 import ScrollToTop from "../ScrollToTop";
 
 function App() {
-  const [user, loading] = useAuthState(firebaseAppAuth);
+//   const [user, loading] = useAuthState(firebaseAppAuth);
 
-  if (loading) {
-    return null;
-  }
+//   if (loading) {
+//     return null;
+//   }
 
-  return user ? <Dashboard /> : <LoginPage />;
+//   return user ? <Dashboard /> : <LoginPage />;
 
   return (
     <div className="App">

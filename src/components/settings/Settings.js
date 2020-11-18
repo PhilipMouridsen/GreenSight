@@ -1,11 +1,13 @@
 import React from "react";
-import Logo from "../Banner.png";
 import "./Settings.css";
+import Leaf from "../Leaf.js";
 
 function App() {
   return (
-    <div className="settings">
-      <h1>Settings</h1>
+    <div className="settings"> <Leaf></Leaf>
+      <h1>Settings </h1>
+      <hr/>
+      <br />
       <p className="Diet">Diet Preferences</p>
       <form>
         <input
@@ -13,9 +15,9 @@ function App() {
           name="diet"
           id="vegan"
           value="vegan"
-          class="diet-option"
+          className="diet-option"
         />
-        <label for="vegan" class="diet-label">
+        <label for="vegan" className="diet-label">
           {" "}
           Vegan{" "}
         </label>
@@ -24,9 +26,9 @@ function App() {
           name="diet"
           id="vegetarian"
           value="vegetarian"
-          class="diet-option"
+          className="diet-option"
         />
-        <label for="vegetarian" class="diet-label">
+        <label for="vegetarian" className="diet-label">
           {" "}
           Vegetarian{" "}
         </label>
@@ -35,9 +37,9 @@ function App() {
           name="diet"
           id="pescetarian"
           value="pescetarian"
-          class="diet-option"
+          className="diet-option"
         />
-        <label for="pescetarian" class="diet-label">
+        <label for="pescetarian" className="diet-label">
           {" "}
           Pescetarian{" "}
         </label>
@@ -46,9 +48,9 @@ function App() {
           name="diet"
           id="omnivore"
           value="omnivore"
-          class="diet-option"
+          className="diet-option"
         />
-        <label for="omnivore" class="diet-label">
+        <label for="omnivore" className="diet-label">
           {" "}
           Omnivore{" "}
         </label>
@@ -61,9 +63,9 @@ function App() {
           name="transport"
           id="car"
           value="car"
-          class="transport-option"
+          className="transport-option"
         />
-        <label for="car" class="transport-label">
+        <label for="car" className="transport-label">
           {" "}
           Car{" "}
         </label>
@@ -72,9 +74,9 @@ function App() {
           name="transport"
           id="bike"
           value="bike"
-          class="transport-option"
+          className="transport-option"
         />
-        <label for="bike" class="transport-label">
+        <label for="bike" className="transport-label">
           {" "}
           Bike{" "}
         </label>
@@ -83,9 +85,9 @@ function App() {
           name="transport"
           id="public"
           value="public"
-          class="transport-option"
+          className="transport-option"
         />
-        <label for="public" class="transport-label">
+        <label for="public" className="transport-label">
           {" "}
           Public Transportation{" "}
         </label>
@@ -94,9 +96,9 @@ function App() {
           name="transport"
           id="walking"
           value="walking"
-          class="transport-option"
+          className="transport-option"
         />
-        <label for="walking" class="transport-label">
+        <label for="walking" className="transport-label">
           {" "}
           Walking{" "}
         </label>
@@ -109,9 +111,9 @@ function App() {
           name="recycle"
           id="none"
           value="none"
-          class="recycle-option"
+          className="recycle-option"
         />
-        <label for="none" class="recycle-label">
+        <label for="none" className="recycle-label">
           {" "}
           None{" "}
         </label>
@@ -120,9 +122,9 @@ function App() {
           name="recycle"
           id="bags"
           value="bags"
-          class="recycle-option"
+          className="recycle-option"
         />
-        <label for="bags" class="recycle-label">
+        <label for="bags" className="recycle-label">
           {" "}
           Plastic Bags{" "}
         </label>
@@ -131,9 +133,9 @@ function App() {
           name="recycle"
           id="others"
           value="others"
-          class="recycle-option"
+          className="recycle-option"
         />
-        <label for="others" class="recycle-label">
+        <label for="others" className="recycle-label">
           {" "}
           Others{" "}
         </label>
@@ -142,16 +144,16 @@ function App() {
           name="recycle"
           id="all"
           value="all"
-          class="recycle-option"
+          className="recycle-option"
         />
-        <label for="all" class="recycle-label">
+        <label for="all" className="recycle-label">
           {" "}
           All Plastics{" "}
         </label>
       </form>
       <br />
       <br />
-      <button type="button" class="logoutbtn">
+      <button type="button" className="logoutbtn">
         Logout
       </button>
       <br />

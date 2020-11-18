@@ -1,7 +1,6 @@
 import React from "react";
 import NavBar from "../NavBar.js";
 import "./App.css";
-import Logo from "../Banner.png";
 import LoginPage from "../LoginPage/LoginPage";
 import Dashboard from "../Dashboard";
 import Create from "../Create";
@@ -22,11 +21,6 @@ function App() {
   return (
     <div className="App">
       <ScrollToTop />
-      <header className="App-header">
-        <Link to="/">
-          <img classname="logo" src={Logo} alt="logo"></img>
-        </Link>
-      </header>
       <NavBar />
       <Switch>
         <Route exact path="/" component={LoginPage} />

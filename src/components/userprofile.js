@@ -9,6 +9,7 @@ import PictureUploader from "./PictureUploader";
 import Philip from "../profilepics/philip.jpg";
 import Simona from "../profilepics/Simona.jpg";
 import ania from "../profilepics/ania.jpg";
+import Leaf from "./Leaf.js";
 
 class userprofile extends Component {
   
@@ -27,23 +28,24 @@ class userprofile extends Component {
   
   render(){
   return (
-    <div className="profile">
-      <div className="testtest">
+    <div className="profile"><Leaf></Leaf>
+      <h1>Profile</h1>
+      <hr/>
+      <br />
       <div className="info">
-      <Avatar id="avatar" size={120} icon="user" src={this.state.profileImage} />
-      <PictureUploader handleImageChange={this.handleImageChange} philip={Philip} simona={Simona} ania={ania}/>
-      </div>
-      <div className="text">
+        <div className="profilebox">
+        <img id="profilepic" src={profile} alt="profile-picture" />
+        <div className="text">
           <h2>Name</h2>
           <h2>Surname</h2>
+          <h2>CO2 saved</h2>
         </div>
         </div>
-      <div className="buttons">
-        <Link to="/userprofile">
-          <h3>ACHIEVMENTS</h3>
+      </div>
+      <div className="buttons"> Achievements
+        <Link to="/userprofile"> 
         </Link>
-        <Link to="/friends">
-          <h3>FRIENDS</h3>
+        <Link to="/friends"> Friends
         </Link>
       </div>
       <hr />

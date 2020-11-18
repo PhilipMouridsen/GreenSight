@@ -5,16 +5,44 @@
     border-radius: 50%;
     border: 2px solid #A2C08B;
     margin-top: 23px;
-    margin-left: 30px;
+    margin-bottom: 23px;
+    
     display: flex;
+    box-shadow:5px 5px 18px #888888;
+}
+
+p{
+    font-size: 15px;
+    margin-left: 25px;
+}
+
+.profilebox{
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    background-color: white;
+    box-shadow:5px 5px 18px #888888;
+    border-radius: 20px;
+}
+
+.profile{
+    font-family: 'Lato', sans-serif;
+    background-color: #fdfbef;
 }
 
 
 .info{
     display: flex;
     align-self: center;
-    flex-direction: column;
-    margin-left: 20px;
+    flex-direction: row;
+    
 }
 
 .text{
@@ -39,26 +67,20 @@ margin-left: 20px;
 
 .buttons{
     margin-top: 30px;
-    color:#404040;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     padding: 0 24px;
     box-sizing: border-box;
     width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
 }
 
 a:link{
     text-decoration: none;
-    text-decoration-color:#404040;
-}
-
-a:hover{
-    color:#83c6fb;
-}
-
-a:visited, a:active {
-    color: black;
+    
 }
 
 a:focus 
@@ -69,7 +91,8 @@ a:focus
 #ecopicture{
     width: 80px;
     height: 80px;
-    margin-top: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
 
 }
 
@@ -82,15 +105,13 @@ a:focus
     margin-right: 20px;
     margin-left: 30px;
     margin-bottom: 30px;
-    border: 2px solid #A2C08B;
+    /*border: 2px solid #A2C08B;*/
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 10px;
-}
-
-.textachievment{
-    margin-top: 10px;
-
+    background-color: white;
+    box-shadow:5px 5px 18px #888888;
+    border-radius: 20px;
 }
 
 .friendsComponent{
@@ -104,11 +125,15 @@ a:focus
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 10px;
+    background-color: white;
+    box-shadow:5px 5px 18px #888888;
+    border-radius: 20px;  
 }
 
 .textfriend{
     margin-top: 10px;   
     padding-left: 30px;
     text-align: left;
+    background-color: white;
 
 }

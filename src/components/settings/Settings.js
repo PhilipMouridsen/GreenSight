@@ -1,12 +1,15 @@
 import React from "react";
 import "./Settings.css";
 import Leaf from "../Leaf.js";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
-    <div className="settings"> <Leaf></Leaf>
+    <div className="settings">
+      {" "}
+      <Leaf></Leaf>
       <h1>Settings </h1>
-      <hr/>
+      <hr />
       <br />
       <p className="Diet">Diet Preferences</p>
       <form>
@@ -55,7 +58,6 @@ function App() {
           Omnivore{" "}
         </label>
       </form>
-
       <p className="Transport">Transport Preferences</p>
       <form>
         <input
@@ -103,7 +105,6 @@ function App() {
           Walking{" "}
         </label>
       </form>
-
       <p className="Recycle">Recycling habbits</p>
       <form>
         <input
@@ -153,9 +154,11 @@ function App() {
       </form>
       <br />
       <br />
-      <button type="button" className="logoutbtn">
-        Logout
-      </button>
+      <Link to="/">
+        <button type="button" className="logoutbtn">
+          Logout
+        </button>
+      </Link>
       <br />
       <br />
       <br />

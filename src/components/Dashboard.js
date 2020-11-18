@@ -5,6 +5,9 @@ import ProgressBar from "./ProgressBar";
 import "./Dashboard.css";
 import leafpic from "./leaf.png";
 import Header from "./header/Header";
+import { firebaseAppAuth, database } from "../firebase";
+
+
 
 const testData = [
   { bgcolor: "#ADE7FF", completed: 60 },
@@ -23,6 +26,7 @@ export default function Dashboard() {
           <h2> ****** *** CO2</h2>
         </p>
       </div>
+
       <div className="progressbar">
         {testData.map((item, idx) => (
           <ProgressBar

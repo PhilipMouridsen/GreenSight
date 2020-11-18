@@ -1,11 +1,11 @@
 import React from "react";
-import Logo from "../Banner.png";
 import "./Settings.css";
+import Leaf from "../Leaf.js";
 
 function App() {
   return (
-    <div className="settings">
-      <h1>Settings</h1>
+    <div className="settings"> <Leaf></Leaf>
+      <h1>Settings </h1>
       <hr/>
       <br />
       <p className="Diet">Diet Preferences</p>

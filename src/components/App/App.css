@@ -3,8 +3,8 @@
 }
 
 .App-header {
-  color: white;
-  width: 50%;
+  color: #a2c08b;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 14px;
@@ -16,6 +16,7 @@
 
 img{
   width: 100%;
+  
 }
 
 h1 {
@@ -43,4 +44,8 @@ button {
 
 .App{
   width:100vw;
+}
+
+img{
+  width:100%
 }

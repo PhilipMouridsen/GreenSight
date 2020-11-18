@@ -15,6 +15,9 @@ import plasticarticle from "../plasticarticle";
 import paperarticle from "../paperarticle";
 import { firebaseAppAuth } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import paperarticle from "../paperarticle"
+import 'antd/dist/antd.css'
+
 import ScrollToTop from "../ScrollToTop";
 
 function App() {

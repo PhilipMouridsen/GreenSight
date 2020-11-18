@@ -1,11 +1,17 @@
 import React from "react";
 import "./Explore.css";
 import paper from "./img/paper.jpg";
-
+import back from "../components/img/arrow.png"
+import { Link } from "react-router-dom";
 
 function paperarticle() {
   return (
     <div>
+        <div className="back">
+        <Link to="/explore">
+          <img src={back} alt="back-button" id="backbutton"/>
+        </Link>
+       </div>
      <h1 id="header">9 tips for living with less plastic</h1>
      <img id="stupidpicture" src={paper} alt="eco-picture" />
      <div className="article">

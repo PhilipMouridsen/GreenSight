@@ -28,6 +28,7 @@ function App() {
 
   return user ? (
     <div className="Dashboard">
+      <Link to="/dashboard"/>
       <ScrollToTop />
       <NavBar />
 

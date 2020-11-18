@@ -14,6 +14,7 @@ import Explore from "../Explore";
 import studentecco from "../studentecco";
 import plasticarticle from "../plasticarticle";
 import paperarticle from "../paperarticle"
+import 'antd/dist/antd.css'
 
 import ScrollToTop from "../ScrollToTop";
 

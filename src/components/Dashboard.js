@@ -4,6 +4,8 @@ import { Route, Switch, Link } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
 import "./Dashboard.css";
 import leafpic from "./leaf.png";
+import PictureUploader from "./PictureUploader";
+
 
 
 const testData = [

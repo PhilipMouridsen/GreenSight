@@ -1,11 +1,18 @@
 import React from "react";
 import "./Explore.css";
 import stupidpicture from "./img/green.jpeg";
+import back from "../components/img/arrow.png"
+import { Link } from "react-router-dom";
 
 
 function studentecco() {
   return (
     <div>
+       <div className="back">
+        <Link to="/explore">
+          <img src={back} alt="back-button" id="backbutton"/>
+        </Link>
+       </div>
      <h1 id="header">10 Eco-Friendly Tips for Students</h1>
      <img id="stupidpicture" src={stupidpicture} alt="eco-picture" />
      <div className="article">

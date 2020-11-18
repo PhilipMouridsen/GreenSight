@@ -1,19 +1,43 @@
-import React from "react";
+import React, { Component } from "react";
 import profile from "./img/default-profile.jpg";
 import "./userprofile.css";
 import { Link } from "react-router-dom";
 import eco from "./img/planet-earth.png";
+import 'antd/dist/antd.css'
+import {Avatar} from 'antd';
+import PictureUploader from "./PictureUploader";
+import Philip from "../profilepics/philip.jpg";
+import Simona from "../profilepics/Simona.jpg";
+import ania from "../profilepics/ania.jpg";
 
-function userprofile() {
+class userprofile extends Component {
+  
+  constructor(props){
+    super(props);
+    this.state={
+      profileImage: ''
+    }
+  }
+
+  handleImageChange = (profileImage) => {
+    this.setState({
+      profileImage
+    })
+  }
+  
+  render(){
   return (
     <div className="profile">
+      <div className="testtest">
       <div className="info">
-        <img id="profilepic" src={profile} alt="profile-picture" />
-        <div className="text">
+      <Avatar id="avatar" size={120} icon="user" src={this.state.profileImage} />
+      <PictureUploader handleImageChange={this.handleImageChange} philip={Philip} simona={Simona} ania={ania}/>
+      </div>
+      <div className="text">
           <h2>Name</h2>
           <h2>Surname</h2>
         </div>
-      </div>
+        </div>
       <div className="buttons">
         <Link to="/userprofile">
           <h3>ACHIEVMENTS</h3>
@@ -49,6 +73,7 @@ function userprofile() {
       <br />
     </div>
   );
+}
 }
 
 export default userprofile;

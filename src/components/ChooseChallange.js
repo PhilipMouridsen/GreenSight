@@ -2,8 +2,13 @@ import React, { Component } from "react";
 import "./chooseChallange.css";
 import Leaf from "./Leaf.js";
 import Dialog from "./Dialog";
+import { firebaseAppAuth, database }  from "../firebase"
 
-
+database.collection('Challenges').get().then((snapshot) => {
+  snapshot.docs.forEach(doc  => {
+    console.log(doc.data());
+  })
+})
 //const [isOpen, toggled] = isOpen(false);
 
 class Challange extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./chooseChallange.css";
-import Leaf from "./Leaf.js";
+import Leaf from "./Leaf";
 import Dialog from "./Dialog";
 import { database }  from "../firebase"
 

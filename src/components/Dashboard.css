@@ -48,6 +48,5 @@ h3{
     width: 100%;
     padding:24px;
     box-sizing: border-box;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    padding-top: 0px;
 }

@@ -2,8 +2,11 @@ import React from "react";
 import "./Settings.css";
 import Leaf from "../Leaf.js";
 import { Link } from "react-router-dom";
+import { firebaseAppAuth, provider } from "../../firebase";
 
-function App() {
+export default function settings() {
+  const handleSignIn = () => firebaseAppAuth.signOut();
+
   return (
     <div className="settings">
       {" "}
@@ -155,7 +158,7 @@ function App() {
       <br />
       <br />
       <Link to="/">
-        <button type="button" className="logoutbtn">
+        <button type="button" className="logoutbtn" onClick={handleSignIn}>
           Logout
         </button>
       </Link>
@@ -166,5 +169,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

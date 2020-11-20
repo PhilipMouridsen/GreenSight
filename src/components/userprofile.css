@@ -11,9 +11,10 @@
     box-shadow:5px 5px 18px #888888;
 }
 
-p{
+p {
     font-size: 15px;
     margin-left: 25px;
+    color: black;
 }
 
 .profilebox{
@@ -33,9 +34,7 @@ p{
 
 .profile{
     font-family: 'Lato', sans-serif;
-    background-color: #fdfbef;
 }
-
 
 .info{
     display: flex;

@@ -27,13 +27,12 @@ function App() {
   }
 
   return user ? (
-    <div className="Dashboard">
+    <div className="Main">
       <ScrollToTop />
       <NavBar />
 
       <Switch>
         <Route exact path="/" component={Dashboard} />
-        <Route path="/login" component={LoginPage} />
         <Route path="/create" component={Create} />
         <Route path="/userprofile" component={userprofile} />
         <Route path="/settings" component={Settings} />

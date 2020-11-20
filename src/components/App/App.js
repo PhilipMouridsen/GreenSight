@@ -31,11 +31,8 @@ function App() {
       <ScrollToTop />
       <NavBar />
 
-
       <Switch>
-        {Dashboard}
-        <Route exact path="/" component={LoginPage} />
-        <Route path="/dashboard" component={Dashboard} />
+        <Route exact path="/" component={Dashboard} />
         <Route path="/login" component={LoginPage} />
         <Route path="/create" component={Create} />
         <Route path="/userprofile" component={userprofile} />

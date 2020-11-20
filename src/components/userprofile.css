@@ -4,9 +4,7 @@
     height: 120px;
     border-radius: 50%;
     border: 2px solid #A2C08B;
-    margin-top: 23px;
-    margin-bottom: 23px;
-    
+    margin: 23px 0;
     display: flex;
     box-shadow:5px 5px 18px #888888;
 }
@@ -21,12 +19,8 @@ p {
     display: flex;
     align-self: center;
     flex-direction: row;
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-left: 30px;
-    margin-bottom: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin: 20px 30px;
+    padding: 5px;
     background-color: white;
     box-shadow:5px 5px 18px #888888;
     border-radius: 20px;
@@ -36,18 +30,9 @@ p {
     font-family: 'Lato', sans-serif;
 }
 
-.info{
-    display: flex;
-    align-self: center;
-    flex-direction: row;
-    
-}
-
 .text{
     flex-direction: column;
-    margin-top: 25px;
-    padding-left: 30px;
-    text-align: left;
+    margin: 20px 20px;
     color:#404040;
 }
 
@@ -56,11 +41,6 @@ p {
     align-self: center;
     flex-direction: row;
     margin-left: 20px;
-}
-
-#uploadButton{
-margin-top: 10px;
-margin-left: 20px;
 }
 
 .buttons{
@@ -84,14 +64,11 @@ a:link{
 a:focus 
 { color: #83c6fb; }
 
-
-
 #ecopicture{
     width: 80px;
     height: 80px;
     margin-top: auto;
     margin-bottom: auto;
-
 }
 
 .schievmentComponent{
@@ -116,13 +93,8 @@ a:focus
     display: flex;
     align-self: center;
     flex-direction: row;
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-left: 30px;
-    margin-bottom: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 10px;
+    margin: 30px;
+    padding: 10px;
     background-color: white;
     box-shadow:5px 5px 18px #888888;
     border-radius: 20px;  
@@ -133,5 +105,4 @@ a:focus
     padding-left: 30px;
     text-align: left;
     background-color: white;
-
 }

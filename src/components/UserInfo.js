@@ -19,7 +19,7 @@ export default function userInfo() {
           <img id="profilepic" src={photoUrl} alt="profile-picture" />
           <div className="text">
             <h2>Name: {name}</h2>
-            <h2>CO2 saved</h2>
+            <h2>CO2 saved: None :D</h2>
           </div>
         </div>
       </div>

@@ -11,8 +11,6 @@ import Header from "./header/Header";
 import { firebaseAppAuth, database } from "../firebase";
 import { render } from "@testing-library/react";
 
-
-
 const testData = [
   { bgcolor: "#ADE7FF", completed: 60 },
   { bgcolor: "#ADE7FF", completed: 30 },

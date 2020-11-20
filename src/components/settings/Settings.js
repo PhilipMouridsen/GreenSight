@@ -3,6 +3,8 @@ import "./Settings.css";
 import Leaf from "../Leaf.js";
 import { Link } from "react-router-dom";
 import { firebaseAppAuth, provider } from "../../firebase";
+import "firebase/auth";
+
 
 export default function settings() {
   const handleSignIn = () => firebaseAppAuth.signOut();

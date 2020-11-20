@@ -11,7 +11,7 @@ function NavBar() {
   return (
     <div className="NavBar">
       <div className="icons">
-        <Link to="/dashboard"> 
+        <Link to="/"> 
           <img src={home} alt="home-button" className="icon"/>
           </Link>
       </div>

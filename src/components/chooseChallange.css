@@ -63,10 +63,6 @@ hr{
     padding: 7px;
 }
 
-.dialog{
-    display: flex;
-    flex-direction: column;
-}
 
 .dialogHide{
     visibility: hidden;

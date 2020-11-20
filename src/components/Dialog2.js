@@ -4,13 +4,13 @@ import "./chooseChallange.css"
 
 function Dialog2 (){
     
-    const [isOpen, setOpennes] = useState(false);
+    const [isOpen, setOpennes] = useState(true);
 
-    const Close = () => isOpen(false);
+    const Close = () => setOpennes(false);
 
 
         return(
-            <div className="dialog">
+            <div className={isOpen ? "dialogBox" : "dialogHide"}>
                 Do you accept the challange?
             <div className="buttonArea">
             <button className= "approvalButton" onClick = {Close}> Approve </button>

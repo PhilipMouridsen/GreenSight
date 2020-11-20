@@ -17,29 +17,30 @@ database.collection('Challenges').get().then((snapshot) => {
 function Challange (){
   
   const [isPopped, setPop] = useState(false);
-
-  const Pop = () => {
-     const DialogON = () => isPopped (true);
-     <div className={isPopped ? "dialogBox" : "dialogHide"} > <Dialog2 /> </div>  
+  const DialogON = () => {
+    const Pop = () => {setPop (true)};
+    Pop();
+    <div className={isPopped ? "dialogBox" : "dialogHide"} > <Dialog2 /> </div>  
   }
+ // const Pop = () => {}
 
     return (
       <div className="challanges">
         <h1 className="newchallenge">Choose New Challange</h1>
         <button
           className="challangeBtn"
-          onClick={Pop}
+          onClick={DialogON}
         >
           Eat Vegetarian (31days)
         </button>
-        <button className="challangeBtn" onClick={Pop}>Take the bike to work (14days)</button>
-        <button className="challangeBtn" onClick={Pop}>
+        <button className="challangeBtn" onClick={DialogON}>Take the bike to work (14days)</button>
+        <button className="challangeBtn" onClick={DialogON}>
           Recycle your plastic bottles (31days)
         </button>
-        <button className="challangeBtn" onClick={Pop}>
+        <button className="challangeBtn" onClick={DialogON}>
           Use public transport to commute (31days)
         </button>
-        <button className="challangeBtn"onClick={Pop}>
+        <button className="challangeBtn"onClick={DialogON}>
           Don't fly an airplane (365days)
         </button>
       </div>

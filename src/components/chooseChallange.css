@@ -68,6 +68,10 @@ hr{
     flex-direction: column;
 }
 
+.dialogHide{
+    visibility: hidden;
+}
+
 .buttonArea{
     display: flex;
     flex-direction: row;

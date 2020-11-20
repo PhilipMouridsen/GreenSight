@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./chooseChallange.css";
-import Leaf from "./Leaf.js";
-import Dialog from "./Dialog";
+//import Leaf from "./Leaf.js";
+//import Dialog from "./Dialog";
 import { database }  from "../firebase"
 import Dialog2 from "./Dialog2";
 
@@ -15,12 +15,12 @@ database.collection('Challenges').get().then((snapshot) => {
 //const [isOpen, toggled] = isOpen(false);
 
 function Challange (){
-
+  
+  const [isPopped, setPop] = useState(false);
 
   const Pop = () => {
-    const [isPopped, setPop] = useState(false);
-    setPop(isPopped = true);
-    <Dialog2 />
+     const DialogON = () => isPopped (true);
+     <div className={isPopped ? "dialogBox" : "dialogHide"} > <Dialog2 /> </div>  
   }
 
     return (
@@ -42,8 +42,6 @@ function Challange (){
         <button className="challangeBtn"onClick={Pop}>
           Don't fly an airplane (365days)
         </button>
-
-       <div className="dialogBox" > <Dialog2 /> </div>  
       </div>
     );
 

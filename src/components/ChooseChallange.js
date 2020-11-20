@@ -7,7 +7,7 @@ function Challange() {
   const [isPopped, setPop] = useState(false);
 
   const pop = () => {
-    setPop(true);
+    setPop(!isPopped);
   };
 
   return (

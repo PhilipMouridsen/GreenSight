@@ -7,7 +7,6 @@ function Dialog2 (){
     const [isOpen, setOpennes] = useState(true);
 
     const Close = () => {
-        console.log("reached DialogBOx2");
         setOpennes(false);
     }
 

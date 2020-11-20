@@ -47,6 +47,5 @@ h3{
 .progressbar{
     padding:24px;
     box-sizing: border-box;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    padding-top: 0px;
 }

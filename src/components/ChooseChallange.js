@@ -30,7 +30,6 @@ function Challange() {
   };
 
 
-
   return (
     <div className="challanges">
       <h1 className="newchallenge">Choose New Challange</h1>

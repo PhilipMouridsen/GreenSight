@@ -1,34 +1,38 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./LoginPage.css";
-import Leaf from "../leaf.png";
+import Header from "../header/Header";
+import { firebaseAppAuth, provider } from "../../firebase";
 
-function LoginPage() {
+export default function LoginPage() {
+  const handleSignIn = () => firebaseAppAuth.signInWithPopup(provider);
+
   return (
-    <div className="App">
+    <div className="loginPage">
+      <Header />
+      
       <br />
       <br />
       <br />
       <br />
-      <input type="text" placeholder="Username" id="username" name="username" />
-      <input
-        type="password"
-        placeholder="Password"
-        id="password"
-        name="password"
-      />
+      <h1>Welcome to GreenSight!</h1>
+      <h2>The app that helps you save CO2</h2>
       <br />
       <br />
-      <button>Login</button>
+      <br />
+      <div class="google-btn" onClick={handleSignIn}>
+        <div class="google-icon-wrapper">
+          <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+        </div>
+        <p class="btn-text"><b>Sign in with google</b></p>
+      </div>
+  
       <br />
       <Link to="/create">
-        <button id="create-button">
-          Don't have an account yet? Create one here!
-        </button>
+        
       </Link>
-          {/* <img src={Leaf} alt="leaf"></img> */}
+      {/* <img src={Leaf} alt="leaf"></img> */}
     </div>
+   
   );
 }
-
-export default LoginPage;

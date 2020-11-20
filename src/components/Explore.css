@@ -1,0 +1,77 @@
+.popoular{
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    padding-bottom: 0px;
+    padding-top:25px;
+    color: #A2C08B;
+    font-weight: normal;
+    
+}
+
+#ecostudentspicture{
+    width: 100px;
+    height: 100px;
+    margin-top: 12px;
+    margin-right: 15px;
+    float: left;
+}
+
+.ArticleComponent{
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    margin-top: 5px;
+    margin-right: 20px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+    /*border: 2px solid #ADE7FF;*/
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    box-shadow:5px 5px 18px #888888;
+    border-radius: 20px;
+    background-color: white;
+}
+
+h3{
+    margin-top: 35px;
+    margin-left: 25px;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+}
+
+a{
+    color: black;
+}
+
+/*.textblog{
+    margin-top: 10px;
+    margin-left: 15px;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+}*/
+
+.article{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+
+#backbutton{
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+h1{
+    padding: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+

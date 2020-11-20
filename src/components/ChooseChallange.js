@@ -6,7 +6,7 @@ import { firebaseAppAuth, database }  from "../firebase"
 
 database.collection('Challenges').get().then((snapshot) => {
   snapshot.docs.forEach(doc  => {
-    console.log(doc.data());
+    // console.log(doc.data());
   })
 })
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./Dashboard.css";
 import { Route, Switch, Link } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
@@ -9,6 +9,7 @@ import PictureUploader from "./PictureUploader";
 
 import Header from "./header/Header";
 import { firebaseAppAuth, database } from "../firebase";
+import { render } from "@testing-library/react";
 
 
 
@@ -20,33 +21,42 @@ const testData = [
 
 export default function Dashboard() {
 
-  const challengelist = document.querySelector('#challange-list')
-
+  // const challengelist = document.querySelector('#challange-list')
+  const [challs, setChalls] = useState([])
   // create element and render challenges 
-  function renderCafe(doc)
-  {
-    let li = document.createElement('li');
-    let name = document.createElement('span')
-    let CO2 = document.createElement('span')
+  // function renderCafe(doc)
+  // {
+  //   let li = document.createElement('li');
+  //   let name = document.createElement('span')
+  //   let CO2 = document.createElement('span')
 
-    li.setAttribute('data-is', doc.id);
-    name.textContent = doc.data().ChallangeName;
-    CO2.textContent = doc.data().CO2saved;
+  //   li.setAttribute('data-is', doc.id);
+  //   name = doc.data().ChallengeName;
+  //   CO2 = doc.data().CO2saved;
 
-    li.appendChild(name);
-    li.appendChild(CO2);
+  //   li.appendChild(name);
+  //   li.appendChild(CO2);
 
-    challengelist.appendChild(li);
-  }
+  //   challengelist.append(document.createElement('li'));
+  //   challengelist.append(name)
+  // }
 
-  database.collection('Challenges').get().then((snapshot) => {
-    snapshot.docs.forEach(doc  => {
-      renderCafe(doc);
-    })
-  })
+    useEffect(() =>{
+      const fetchData = async() => {
+        var challs = []
+        await database.collection('Challenges').get().then((snapshot) => {
+            snapshot.docs.forEach(doc  => {
+                challs.push(doc.data().ChallengeName);
+              })
+            })
+          setChalls(challs);
+          };
+        fetchData();
+    }, []);
+    
 
-  return (
-    <div className="Dashboard">
+    return (
+      <div className="Dashboard">
       <Header />
       <div className="circle">
         <img id="leafpicture" src={leafpic} alt="eco-picture" />
@@ -56,17 +66,20 @@ export default function Dashboard() {
         </div>
       </div>
       <div>
-        <ul id="challange-list"></ul>
+        <ul id="challange-list">
+          {challs.map(ch => <li key={ch}>{ch}</li>)}
+        </ul>
+
       </div>
       <div className="progressbar"> 
         <h3>Track your challenges!</h3>
         {testData.map((item, idx) => (
           <ProgressBar
-            key={idx}
-            bgcolor={item.bgcolor}
-            completed={item.completed}
+          key={idx}
+          bgcolor={item.bgcolor}
+          completed={item.completed}
           />
-        ))}
+          ))}
       </div>
     </div>
   );

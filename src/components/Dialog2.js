@@ -6,8 +6,10 @@ function Dialog2 (){
     
     const [isOpen, setOpennes] = useState(true);
 
-    const Close = () => setOpennes(false);
-
+    const Close = () => {
+        console.log("reached Dialog2");
+        setOpennes(false);
+    }
 
         return(
             <div className={isOpen ? "dialogBox" : "dialogHide"}>

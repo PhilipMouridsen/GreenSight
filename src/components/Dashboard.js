@@ -8,6 +8,9 @@ import PictureUploader from "./PictureUploader";
 
 
 import Header from "./header/Header";
+import { firebaseAppAuth, database } from "../firebase";
+
+
 
 const testData = [
   { bgcolor: "#ADE7FF", completed: 60 },

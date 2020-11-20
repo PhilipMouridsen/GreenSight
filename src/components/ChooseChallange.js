@@ -2,8 +2,14 @@ import React, { Component } from "react";
 import "./chooseChallange.css";
 import Leaf from "./Leaf.js";
 import Dialog from "./Dialog";
+import { database }  from "../firebase"
 
-
+//takes the data correctly, next -> make the co2 consumption go to dashboard
+database.collection('Challenges').get().then((snapshot) => {
+  snapshot.docs.forEach(doc  => {
+    console.log(doc.data());
+  })
+})
 //const [isOpen, toggled] = isOpen(false);
 
 class Challange extends Component {

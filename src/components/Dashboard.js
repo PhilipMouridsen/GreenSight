@@ -52,7 +52,7 @@ export default function Dashboard() {
           setChalls(challs);
           };
         fetchData();
-    }, []);
+    }, []); 
     
 
     return (

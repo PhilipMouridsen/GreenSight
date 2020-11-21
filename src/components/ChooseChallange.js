@@ -11,8 +11,16 @@ database.collection('Challenges').get().then((snapshot) => {
   })
 })
 
+<<<<<<< HEAD
+//const [isOpen, toggled] = isOpen(false);
+
+class Challange extends Component {
+  state = {
+    isOpen: false,
+=======
   const pop = () => {
     setPop(true);
+>>>>>>> parent of 77e8803... popup working
   };
 
 

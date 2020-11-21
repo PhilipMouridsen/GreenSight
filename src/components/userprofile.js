@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import "./userprofile.css";
 import { Link } from "react-router-dom";
 import eco from "./img/planet-earth.png";
-import "antd/dist/antd.css";
+import 'antd/dist/antd.css'
+import {Avatar} from 'antd';
+import PictureUploader from "./PictureUploader";
 import Leaf from "./Leaf.js";
 import UserInfo from "../components/UserInfo";
 

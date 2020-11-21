@@ -21,23 +21,6 @@ export default function Dashboard() {
 
   // const challengelist = document.querySelector('#challange-list')
   const [challs, setChalls] = useState([])
-  // create element and render challenges 
-  // function renderCafe(doc)
-  // {
-  //   let li = document.createElement('li');
-  //   let name = document.createElement('span')
-  //   let CO2 = document.createElement('span')
-
-  //   li.setAttribute('data-is', doc.id);
-  //   name = doc.data().ChallengeName;
-  //   CO2 = doc.data().CO2saved;
-
-  //   li.appendChild(name);
-  //   li.appendChild(CO2);
-
-  //   challengelist.append(document.createElement('li'));
-  //   challengelist.append(name)
-  // }
 
     useEffect(() =>{
       const fetchData = async() => {

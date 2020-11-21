@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import "./chooseChallange.css";
-import { database } from "../firebase";
 import Dialog2 from "./Dialog2";
 
 function Challange() {
   const [isPopped, setPop] = useState(false);
 
   const pop = () => {
-    setPop(!isPopped);
+    setPop(true);
   };
 
   return (

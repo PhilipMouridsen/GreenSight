@@ -19,8 +19,10 @@ class Challange extends Component {
   };
 
 
-  render() {
-    return (
+  return (
+    //Fragments
+    <>
+      {isPopped && <Dialog2 />}
       <div className="challanges">
         <h1 className="newchallenge">Choose New Challange</h1>
         <button
@@ -42,7 +44,8 @@ class Challange extends Component {
 
        <div className="dialogBox" > <Dialog isOpen={this.state.isOpen} onClose = {(e) => this.setState({isOpen: false})}>Do you accept the challange?</Dialog> </div>  
       </div>
-    );
+    </>
+      );
   }
 }
 

@@ -42,44 +42,32 @@ hr{
 }
 
 .dialogBox{
+    width: 250px;
+    max-width: 100%;
     margin: 0 auto;
-    position: absolute;
+    position: fixed;
     background-color: #f5f5f5;
     display: flex;
     justify-content: center;
-    width: 75vw;
-    height: 30vw;
+    width: 80vw;
     box-sizing: border-box;
-    flex-direction: column;
-    justify-content: space-around;
-    border-style: solid;
-    border-color: #ade7ff;
-    margin-top: 230px;
-    margin-left: 50px;
-
-}
-
-.guziki{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
 }
 
 .approvalButton{
-    margin-bottom: 15px;
-    background-color: #ade7ff;
-    border-color: #ade7ff;
-    padding: 8px 20px;
-    text-decoration: solid;
-
+    border-radius: 10px;
+    height: 50%;
+    border-color: white;
+    background-color: #c77fc7;
+    margin-left: 20px;
+    padding: 7px;
 }
 
-
-.dialogHide{
-    position: absolute;
-    visibility: hidden;
+.dialog{
+    display: flex;
+    flex-direction: column;
 }
 
-#header{
-    margin-top: 10px;
+.buttonArea{
+    display: flex;
+    flex-direction: row;
 }

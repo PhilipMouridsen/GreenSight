@@ -13,7 +13,8 @@
 
 .Dashboard{
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
+    width: 100%;
     font-family: 'Lato', sans-serif;
 }
 
@@ -44,6 +45,7 @@ h3{
 }
 
 .progressbar{
+    width: 100%;
     padding:24px;
     box-sizing: border-box;
     padding-top: 0px;

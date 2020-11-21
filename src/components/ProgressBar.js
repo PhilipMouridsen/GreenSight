@@ -1,6 +1,5 @@
 import React from 'react';
 import "./ProgressBar.css";
-import Update from './Update.js';
 
 
 
@@ -28,14 +27,11 @@ const ProgressBar = (props) => {
     }
   
     return (
-    <div className="barAndBtn">
      <div className="bars" style={containerStyles}> 
         <div style={fillerStyles}>
-          <span style={labelStyles}>{`${completed}%`}
+          <span style={labelStyles}>{`${completed}%`}<button className="updatebtn"></button>
 </span> 
         </div>
-      </div>
-      <button className="updatebtn"><Update></Update></button>
       </div>
     );
   };

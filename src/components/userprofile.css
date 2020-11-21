@@ -89,7 +89,7 @@ a:focus
 #ecopicture{
     width: 80px;
     height: 80px;
-    margin-top: 20px;
+    margin-top: auto;
     margin-bottom: auto;
 
 }
@@ -129,14 +129,9 @@ a:focus
 }
 
 .textfriend{
-    margin-top: 1px;  
-    padding-top: 0px; 
+    margin-top: 10px;   
     padding-left: 30px;
     text-align: left;
     background-color: white;
 
-}
-
-.name{
-    margin-top: 10x;  
 }

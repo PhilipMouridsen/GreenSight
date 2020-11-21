@@ -10,7 +10,9 @@ function Challange() {
     setPop(!isPopped);
   };
 
+
   return (
+    //Fragments
     <>
       {isPopped && <Dialog2 />}
       <div className="challanges">

@@ -2,16 +2,7 @@ import React, { Component } from "react";
 import "./userprofile.css";
 import { Link } from "react-router-dom";
 import eco from "./img/planet-earth.png";
-<<<<<<< HEAD
 import "antd/dist/antd.css";
-=======
-import 'antd/dist/antd.css'
-import {Avatar} from 'antd';
-import PictureUploader from "./PictureUploader";
-import Philip from "../profilepics/philip.jpg";
-import Simona from "../profilepics/Simona.jpg";
-import ania from "../profilepics/ania.jpg";
->>>>>>> parent of 77e8803... popup working
 import Leaf from "./Leaf.js";
 import UserInfo from "../components/UserInfo";
 

@@ -6,9 +6,6 @@ import eco from "./img/planet-earth.png";
 import 'antd/dist/antd.css'
 import {Avatar} from 'antd';
 import PictureUploader from "./PictureUploader";
-import Philip from "../profilepics/philip.jpg";
-import Simona from "../profilepics/Simona.jpg";
-import ania from "../profilepics/ania.jpg";
 import Leaf from "./Leaf.js";
 
 class userprofile extends Component {

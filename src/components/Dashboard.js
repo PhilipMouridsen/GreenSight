@@ -7,7 +7,7 @@ import leafpic from "./leaf.png";
 import PictureUploader from "./PictureUploader";
 
 
-import Header from "./header/Header";
+import Header from "./Header";
 import { firebaseAppAuth, database } from "../firebase";
 import { render } from "@testing-library/react";
 

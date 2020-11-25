@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./LoginPage.css";
-import Header from "../header/Header";
-import { firebaseAppAuth, provider } from "../../firebase";
+import Header from "./Header";
+import { firebaseAppAuth, provider } from "../firebase";
 
 export default function LoginPage() {
   const handleSignIn = () => firebaseAppAuth.signInWithPopup(provider);

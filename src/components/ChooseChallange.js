@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { v4 as uuid } from "uuid";
+//import { v4 as uuid } from "uuid";
 import "./chooseChallange.css";
 import { database } from "../firebase";
 import Dialog2 from "./Dialog2";
@@ -9,8 +9,9 @@ function Challange() {
 
   const plsWork = (e) =>{
     setPop(!isPopped);
-    const theOne = challs[e]
+    const theOne = challs[e];
     console.log(theOne);
+    addToFire(theOne);
   }
 
   const [challs, setChalls] = useState([]);
@@ -31,27 +32,25 @@ function Challange() {
     fetchData();
   }, []);
 
-  const addToDash = (addThatCh) => {
-    const user = uuid();
+   const addToFire = (addThatCh) => {
+    const buttonChall = addThatCh;
+    const co2c = 20;
     database
       .collection("Users")
       .add({
-        name: user,
-        selectedChall: addThatCh,
+        chall: buttonChall,
+        Co2Consumption: co2c,
       })
       .then((newDocument) => {
-        // This will run if adding data was successful
+        //how to change the ID to not have an automatic id
         console.log("New document created with ID: ", newDocument.id);
       })
       .catch((error) => {
-        // If saving data failed, this will run and we will log an error to the console.
-        // Here you should give a message to users as well!
         console.error(error.message);
       });
-  };
-
+  }; 
+//user with collection of challanges!!! the ID needs to be the name of the challenge! co2 is inside
   
-
 
   return (
     <>

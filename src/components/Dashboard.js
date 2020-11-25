@@ -4,13 +4,11 @@ import { Route, Switch, Link } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
 import "./Dashboard.css";
 import leafpic from "./leaf.png";
-import PictureUploader from "./PictureUploader";
 
 
 import Header from "./header/Header";
 import { firebaseAppAuth, database } from "../firebase";
 import { render } from "@testing-library/react";
-
 
 
 const testData = [
@@ -21,7 +19,6 @@ const testData = [
 
 export default function Dashboard() {
 
-  // const challengelist = document.querySelector('#challange-list')
   const [selectedChalls, setChalls] = useState([]);
 
   useEffect(() => {
@@ -32,7 +29,7 @@ export default function Dashboard() {
         .get()
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
-            selectedChalls.push(doc.data().selectedChall);
+          selectedChalls.push(doc.data().selectedChall);
           });
         });
       setChalls(selectedChalls);
@@ -40,9 +37,7 @@ export default function Dashboard() {
     fetchData();
   }, []);
 
-
-  console.log(selectedChalls[1]);
-
+  console.log(selectedChalls[0]); 
 
     return (
       <div className="Dashboard">
@@ -51,16 +46,14 @@ export default function Dashboard() {
         <img id="leafpicture" src={leafpic} alt="eco-picture" />
         <div className="textIn">
           <h1> You saved </h1>
-           <h5>0.00 CO2</h5>
+          <h5>0.00 CO2</h5>
         </div>
       </div>
       <div>
-
-
       </div>
       <div className="progressbar"> 
         <h3>Track your challenges!</h3>
-    <div>{selectedChalls[1]}</div>
+    <div>{selectedChalls[0]}</div>
         {testData.map((item, idx) => (
           <ProgressBar
           key={idx}

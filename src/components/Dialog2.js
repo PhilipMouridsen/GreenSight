@@ -9,7 +9,6 @@ function Dialog2 (){
     const Close = () => {
         setOpennes(false);
     }
-
         return(
             <div className={isOpen ? 'dialogBox' : 'dialogHide'}>
                 <h3 id="header">Do you accept the challange?</h3>

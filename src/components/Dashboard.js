@@ -18,7 +18,7 @@ const testData = [
 ];
 
 export default function Dashboard() {
-
+/* 
   const [selectedChalls, setChalls] = useState([]);
 
   useEffect(() => {
@@ -29,16 +29,27 @@ export default function Dashboard() {
         .get()
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
-          selectedChalls.push(doc.data().selectedChall);
+          selectedChalls.push(doc.data().selectedChalls);
           });
         });
       setChalls(selectedChalls);
     };
     fetchData();
-  }, []);
+  }, []); */
 
-  console.log(selectedChalls[0]); 
+  database.collection("Dashboard")
+  .get()
+  .then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " => ", doc.data());
+      });
+  })
+  .catch(function(error) {
+      console.log("Error getting documents: ", error);
+  });
 
+  
     return (
       <div className="Dashboard">
       <Header />
@@ -53,7 +64,9 @@ export default function Dashboard() {
       </div>
       <div className="progressbar"> 
         <h3>Track your challenges!</h3>
-    <div>{selectedChalls[0]}</div>
+    <div>
+
+        </div>
         {testData.map((item, idx) => (
           <ProgressBar
           key={idx}

@@ -34,9 +34,10 @@ function Challange() {
 
    const addToFire = (addThatCh) => {
     const buttonChall = addThatCh;
+    //take that from db if possible
     const co2c = 20;
     database
-      .collection("Users")
+      .collection("Dashboard")
       .add({
         chall: buttonChall,
         Co2Consumption: co2c,

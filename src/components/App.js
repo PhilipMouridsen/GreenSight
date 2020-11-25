@@ -34,7 +34,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Dashboard} />
         <Route path="/create" component={Create} />
-        <Route path="/userprofile" component={userprofile} />
+        <Route path="/userProfile" component={userprofile} />
         <Route path="/settings" component={Settings} />
         <Route path="/friends" component={friends} />
         <Route path="/challange" component={Challanges} />

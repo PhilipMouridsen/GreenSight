@@ -17,7 +17,7 @@ export default function userInfo() {
       <div className="info">
         <div className="profilebox">
           <img id="profilepic" src={photoUrl} alt="profile-picture" />
-          <div className="text">
+          <div className="profileText">
             <h2>Name: {name}</h2>
             <h2>CO2 saved: None :D</h2>
           </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./chooseChallange.css";
 import { database } from "../firebase";
-import Dialog2 from "./Dialog2";
+import Dialog from "./Dialog";
 import Leaf from "../components/Leaf.js";
 
 
@@ -15,7 +15,7 @@ function Challange() {
   return (
     //Fragments
     <>
-      {isPopped && <Dialog2 />}
+      {isPopped && <Dialog />}
       <div className="chooseChallenge">
         {/* <Leaf/> */}
         <h1 className="newchallenge">New Challange</h1>

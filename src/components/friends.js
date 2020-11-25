@@ -8,7 +8,6 @@ import UserInfo from "../components/UserInfo";
 function friends() {
   return (
     <div className="profile">
-      {" "}
       <Leaf></Leaf>
       <h1>Social</h1>
       <hr />
@@ -16,7 +15,7 @@ function friends() {
       <UserInfo />
       <div className="buttons">
         <Link to="/userprofile"> Achievements</Link>
-        <Link to="/friends"> Friends</Link>
+        <Link to="/friends" className="blue"> Friends</Link>
       </div>
       <hr />
       <div className="friendsComponent">

@@ -15,27 +15,25 @@ function userProfile() {
       <br />
       <UserInfo />
       <div className="buttons">
-        {" "}
-        Achievements
-        <Link to="/userprofile"></Link>
+        <Link to="/userprofile" className="blue"> Achievements</Link>
         <Link to="/friends"> Friends</Link>
       </div>
       <hr />
-      <div className="schievmentComponent">
+      <div className="achievmentComponent">
         <img id="ecopicture" src={eco} alt="eco-picture" />
         <div className="textachievment">
           <h3>Congratulations!</h3>
           <p>You biked for the entire week! Keep it up!</p>
         </div>
       </div>
-      <div className="schievmentComponent">
+      <div className="achievmentComponent">
         <img id="ecopicture" src={eco} alt="eco-picture" />
         <div className="textachievment">
           <h3>Congratulations!</h3>
           <p>You recycled for a month! Keep it up!</p>
         </div>
       </div>
-      <div className="schievmentComponent">
+      <div className="achievmentComponent">
         <img id="ecopicture" src={eco} alt="eco-picture" />
         <div className="textachievment">
           <h3>Congratulations!</h3>

@@ -17,7 +17,7 @@ import { firebaseAppAuth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "antd/dist/antd.css";
 
-import ScrollToTop from "./ScrollToTop";
+import ScrollToTop from "../ScrollToTop";
 
 function App() {
   const [user, loading] = useAuthState(firebaseAppAuth);

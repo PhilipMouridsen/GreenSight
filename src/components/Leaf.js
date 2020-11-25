@@ -1,6 +1,6 @@
 import React from "react";
 import "./leaf.css";
-import leaf from "./leaf.png";
+import leaf from "./img/leaf.png";
 
 function Leaf(){
     return(

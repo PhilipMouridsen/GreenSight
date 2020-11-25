@@ -6,13 +6,11 @@ import Dialog2 from "./Dialog2";
 function Challange() {
   const [isPopped, setPop] = useState(false);
 
-
   const plsWork = (e) =>{
     setPop(!isPopped);
     const theOne = challs[e]
     console.log(theOne);
   }
-
 
   const [challs, setChalls] = useState([]);
 

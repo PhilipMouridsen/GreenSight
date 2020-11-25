@@ -5,7 +5,6 @@ import ProgressBar from "./ProgressBar";
 import "./Dashboard.css";
 import leafpic from "./leaf.png";
 import PictureUploader from "./PictureUploader";
-import challs, {movetheChall} from "./ChooseChallange";
 
 
 import Header from "./header/Header";
@@ -23,6 +22,26 @@ const testData = [
 export default function Dashboard() {
 
   // const challengelist = document.querySelector('#challange-list')
+  const [selectedChalls, setChalls] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      var selectedChalls = [];
+      await database
+        .collection("Users")
+        .get()
+        .then((snapshot) => {
+          snapshot.docs.forEach((doc) => {
+            selectedChalls.push(doc.data().selectedChall);
+          });
+        });
+      setChalls(selectedChalls);
+    };
+    fetchData();
+  }, []);
+
+
+  console.log(selectedChalls[1]);
 
 
     return (
@@ -36,12 +55,12 @@ export default function Dashboard() {
         </div>
       </div>
       <div>
-//insert the chall here?
-movetheChall();
+
 
       </div>
       <div className="progressbar"> 
         <h3>Track your challenges!</h3>
+    <div>{selectedChalls[1]}</div>
         {testData.map((item, idx) => (
           <ProgressBar
           key={idx}

@@ -8,9 +8,8 @@ function Challange() {
 
   const pop = () => {
     setPop(!isPopped);
-    console.log("pop");
+    console.log("pop")
   };
-
 
 
   const plsWork = (e) =>{

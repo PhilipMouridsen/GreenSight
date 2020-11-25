@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./userprofile.css";
 import "antd/dist/antd.css";
 import firebase from "firebase/app";

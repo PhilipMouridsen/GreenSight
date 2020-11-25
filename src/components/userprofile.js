@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./userprofile.css";
 import { Link } from "react-router-dom";
 import eco from "./img/planet-earth.png";

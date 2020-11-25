@@ -1,6 +1,5 @@
 import React from "react";
 import NavBar from "./NavBar.js";
-import "./App.css";
 import LoginPage from "./LoginPage";
 import Dashboard from "./Dashboard";
 import Create from "./Create";

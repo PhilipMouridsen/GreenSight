@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./LoginPage.css";
 import Header from "./Header";
 import { firebaseAppAuth, provider } from "../firebase";

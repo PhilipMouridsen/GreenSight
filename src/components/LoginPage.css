@@ -1,3 +1,15 @@
+.App-header {
+  color: #a2c08b;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 14px;
+}
+
+img{
+  width: 100%;
+}
+
 .loginPage {
   text-align: center;
   font-family: "Lato", sans-serif;

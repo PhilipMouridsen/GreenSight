@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
-import { Route, Switch, Link } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
 import "./Dashboard.css";
 import leafpic from "./img/leaf.png";
-import PictureUploader from "./PictureUploader";
 
 import Header from "./Header";
-import { firebaseAppAuth, database } from "../firebase";
-import { render } from "@testing-library/react";
+import { database } from "../firebase";
+
 
 const testData = [
   { bgcolor: "#ADE7FF", completed: 60 },

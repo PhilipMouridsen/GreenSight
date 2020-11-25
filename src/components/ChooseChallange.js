@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./chooseChallange.css";
-import { database } from "../firebase";
 import Dialog from "./Dialog";
-import Leaf from "../components/Leaf.js";
 
 
 function Challange() {

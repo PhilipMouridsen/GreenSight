@@ -54,6 +54,7 @@ export default function Dashboard() {
         const takenco2 = doc.data().Co2Consumption;
         console.log(challenge);
         console.log(takenco2);
+        handleChall(challenge);
         handleCo2(takenco2);
         //causes an infinite loop
       });

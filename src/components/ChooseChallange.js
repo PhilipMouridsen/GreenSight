@@ -5,37 +5,61 @@ import { database } from "../firebase";
 import Dialog2 from "./Dialog2";
 
 function Challange() {
+  const [challs, setChalls] = useState([]);
   const [isPopped, setPop] = useState(false);
+  const [co2, setco2] = useState(0);
+
+  const handleco2 = (e) => setco2(e);
 
   const plsWork = (e) =>{
     setPop(!isPopped);
     const theOne = challs[e];
-    console.log(theOne);
+    const theco2 = co2[e];
     addToFire(theOne);
   }
 
-  const [challs, setChalls] = useState([]);
-
+//get challange
   useEffect(() => {
     const fetchData = async () => {
       var challs = [];
+      //var co2 =0;
       await database
         .collection("Challenges")
         .get()
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
             challs.push(doc.data().ChallengeName);
+            //co2.push(doc.data().CO2saved);
           });
         });
       setChalls(challs);
+      //setco2(co2);
+    };
+    fetchData();
+  }, []);
+
+//get co2consumption
+  useEffect(() => {
+    const fetchData = async () => {
+      var co2 =0;
+      
+      await database
+        .collection("Challenges")
+        .get()
+        .then((snapshot) => {
+          snapshot.docs.forEach((doc) => {
+            const takenco2 = doc.data().CO2saved;
+            handleco2(takenco2);
+          });
+        });
+        console.log(co2);
     };
     fetchData();
   }, []);
 
    const addToFire = (addThatCh) => {
     const buttonChall = addThatCh;
-    //take that from db if possible
-    const co2c = 20;
+    const co2c = co2;
     database
       .collection("Dashboard")
       .add({
@@ -44,13 +68,12 @@ function Challange() {
       })
       .then((newDocument) => {
         //how to change the ID to not have an automatic id
-        console.log("New document created with ID: ", newDocument.id);
+        console.log("New document created with ID: ", newDocument.id );
       })
       .catch((error) => {
         console.error(error.message);
       });
   }; 
-//user with collection of challanges!!! the ID needs to be the name of the challenge! co2 is inside
   
 
   return (

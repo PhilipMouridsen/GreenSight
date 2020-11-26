@@ -11,7 +11,6 @@ function Dialog2(props){
         setOpen(false);
         props.onClose();
     }
-
         return(
             <div className={isOpen ? 'dialogBox' : 'dialogHide'}>
                 <h3 id="header">Do you accept the challange?</h3>

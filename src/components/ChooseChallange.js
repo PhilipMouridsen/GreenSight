@@ -15,6 +15,7 @@ function Challange() {
     setPop(!isPopped);
     const theOne = challs[e];
     const theco2 = co2[e];
+    handleco2(theco2);
     addToFire(theOne);
   }
 
@@ -41,18 +42,18 @@ function Challange() {
 //get co2consumption
   useEffect(() => {
     const fetchData = async () => {
-      var co2 =0;
+      var co2 =[];
       
       await database
         .collection("Challenges")
         .get()
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
-            const takenco2 = doc.data().CO2saved;
+            const takenco2 = co2.push(doc.data().CO2saved);
             handleco2(takenco2);
           });
         });
-        console.log(co2);
+        console.log("outside foreach",co2[0]);
     };
     fetchData();
   }, []);

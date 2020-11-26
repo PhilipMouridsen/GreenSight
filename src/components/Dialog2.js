@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import "./chooseChallange.css"
+import Challange from "./ChooseChallange"
 
 
-function Dialog2 (){
+function Dialog2(props){
     
-    const [isOpen, setOpennes] = useState(true);
+    const [isOpen, setOpen] = useState(true);
 
     const Close = () => {
-        setOpennes(false);
+        setOpen(false);
+        props.onClose();
     }
 
         return(

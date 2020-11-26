@@ -6,11 +6,15 @@ import Dialog2 from "./Dialog2";
 function Challange() {
   const [isPopped, setPop] = useState(false);
 
+  function closePopup() {
+    setPop(false);
+  }
+
 
   const plsWork = (e) =>{
     setPop(!isPopped);
     const theOne = challs[e]
-    console.log(theOne);
+    
   }
 
 
@@ -35,11 +39,11 @@ function Challange() {
 
   return (
     <>
-      {isPopped && <Dialog2 />}
+      {isPopped && <Dialog2 onClose={closePopup} />}
       <div className="challanges">
         <h1 className="newchallenge">Choose New Challange</h1>
         <button className="challangeBtn" onClick={() => plsWork(0)} >
-          {challs[0]} (31days)
+          {challs[0]} (31days) 
         </button>
         <button className="challangeBtn" onClick={() => plsWork(1)} >
           {challs[1]} (14days)

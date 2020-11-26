@@ -1,15 +1,13 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
 import { Route, Switch, Link } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
 import "./Dashboard.css";
 import leafpic from "./leaf.png";
 
-
 import Header from "./header/Header";
 import { firebaseAppAuth, database } from "../firebase";
 import { render } from "@testing-library/react";
-
 
 const testData = [
   { bgcolor: "#ADE7FF", completed: 60 },
@@ -18,7 +16,7 @@ const testData = [
 ];
 
 export default function Dashboard() {
-/* 
+  /* 
   const [selectedChalls, setChalls] = useState([]);
 
   useEffect(() => {
@@ -37,43 +35,57 @@ export default function Dashboard() {
     fetchData();
   }, []); */
 
-  database.collection("Dashboard")
-  .get()
-  .then(function(querySnapshot) {
-      querySnapshot.forEach(function(doc) {
-          // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, " => ", doc.data());
-      });
-  })
-  .catch(function(error) {
-      console.log("Error getting documents: ", error);
-  });
+  const [challs, setChall] = useState([]);
+  const [co2, setco2] = useState(0);
 
-  
-    return (
-      <div className="Dashboard">
+  const handleChall = (e) => setChall(e);
+  let getMe = (e) => (getMe = e);
+  const handleCo2 = (e) => {
+    setco2(co2 + e);
+  };
+
+  database
+    .collection("Dashboard")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach(function (doc) {
+        const challenge = doc.data().chall;
+        const takenco2 = doc.data().Co2Consumption;
+        console.log(challenge);
+        getMe(challenge);
+        //handleCo2(takenco2);
+        //causes an infinite loop
+      });
+      handleChall(getMe);
+      console.log(challs);
+    })
+    .catch(function (error) {
+      console.log("Error getting documents: ", error);
+    });
+
+  return (
+    <div className="Dashboard">
       <Header />
       <div className="circle">
         <img id="leafpicture" src={leafpic} alt="eco-picture" />
         <div className="textIn">
           <h1> You saved </h1>
-          <h5>0.00 CO2</h5>
+          <h5>{co2} CO2</h5>
         </div>
       </div>
-      <div>
-      </div>
-      <div className="progressbar"> 
+      <div></div>
+      <div className="progressbar">
         <h3>Track your challenges!</h3>
-    <div>
-
+        <div>
+          <div> {challs} </div>
         </div>
         {testData.map((item, idx) => (
           <ProgressBar
-          key={idx}
-          bgcolor={item.bgcolor}
-          completed={item.completed}
+            key={idx}
+            bgcolor={item.bgcolor}
+            completed={item.completed}
           />
-          ))}
+        ))}
       </div>
     </div>
   );

@@ -39,11 +39,12 @@ export default function Dashboard() {
   const [co2, setco2] = useState(0);
 
   const handleChall = (e) => setChall(e);
-  let getMe = (e) => (getMe = e);
   const handleCo2 = (e) => {
     setco2(co2 + e);
   };
 
+  useEffect(() => {
+    console.log("works");
   database
     .collection("Dashboard")
     .get()
@@ -52,17 +53,17 @@ export default function Dashboard() {
         const challenge = doc.data().chall;
         const takenco2 = doc.data().Co2Consumption;
         console.log(challenge);
-        getMe(challenge);
-        //handleCo2(takenco2);
+        console.log(takenco2);
+        handleCo2(takenco2);
         //causes an infinite loop
       });
-      handleChall(getMe);
+      //handleChall(getMe);
       console.log(challs);
     })
     .catch(function (error) {
       console.log("Error getting documents: ", error);
     });
-
+  }, [])
   return (
     <div className="Dashboard">
       <Header />

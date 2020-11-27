@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import eco from "./img/planet-earth.png";
 import "antd/dist/antd.css";
 import Leaf from "./Leaf.js";
-import UserInfo from "../components/UserInfo";
+import UserInfo from "./UserInfo";
 
 function userProfile() {
   return (

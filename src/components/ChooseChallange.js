@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 //import { v4 as uuid } from "uuid";
 import "./chooseChallange.css";
 import { database } from "../firebase";
-import Dialog2 from "./Dialog";
+import Dialog from "./Dialog";
 
 function Challange() {
   const [challs, setChalls] = useState([]);
@@ -82,7 +82,7 @@ function Challange() {
 
   return (
     <>
-      {isPopped && <Dialog2 onClose={closePopup} />}
+      {isPopped && <Dialog onClose={closePopup} />}
       <div className="challanges">
         <h1 className="newchallenge">Choose New Challange</h1>
         <button className="challangeBtn" onClick={() => plsWork(0)} >

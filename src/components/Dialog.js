@@ -3,7 +3,7 @@ import "./chooseChallange.css";
 import {Link} from "react-router-dom";
 
 
-function Dialog2 (){
+function Dialog (){
     
     const [isOpen, setOpennes] = useState(true);
 
@@ -24,4 +24,4 @@ function Dialog2 (){
         )
     }
 
-export default Dialog2;
+export default Dialog;

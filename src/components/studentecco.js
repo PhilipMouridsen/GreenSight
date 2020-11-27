@@ -91,5 +91,4 @@ function studentecco() {
     </div>
   );
 }
-
 export default studentecco;

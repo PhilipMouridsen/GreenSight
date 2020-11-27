@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 //import { v4 as uuid } from "uuid";
 import "./chooseChallange.css";
-import Dialog2 from "./Dialog2";
 import { database } from "../firebase";
+import Dialog2 from "./Dialog";
 
 function Challange() {
   const [challs, setChalls] = useState([]);
@@ -35,11 +35,9 @@ function Challange() {
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
             challs.push(doc.data().ChallengeName);
-            //co2.push(doc.data().CO2saved);
           });
         });
       setChalls(challs);
-      //setco2(co2);
     };
     fetchData();
   }, []);
@@ -55,10 +53,10 @@ function Challange() {
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
             const takenco2 = doc.data().CO2saved;
+            console.log("taken co2", takenco2);
             handleco2(takenco2);
           });
         });
-        console.log("outside foreach",co2[0]);
     };
     fetchData();
   }, []);

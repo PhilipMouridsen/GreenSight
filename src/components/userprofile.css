@@ -1,75 +1,75 @@
 #profilepic {
-  border-radius: 50%;
-  border: 2px solid #a2c08b;
-  margin: auto;
-  box-shadow: 5px 5px 18px #888888;
-}
-
-p {
-  font-size: 15px;
-  margin-left: 22px;
-  color: black;
-}
-
-.profilebox {
-  display: flex;
-  margin: 20px 30px auto;
-  padding: 2px;
-  background-color: white;
-  box-shadow: 5px 5px 18px #888888;
-  border-radius: 20px;
-}
-
-.profile {
-  font-family: "Lato", sans-serif;
-}
-
-.profileText {
-  flex-direction: column;
-  margin: 20px 20px;
-  color: #404040;
-}
-
-.buttons {
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-evenly;
-  box-sizing: border-box;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.blue {
-  color: #83c6fb;
-}
-
-#ecopicture {
-  width: 80px;
-  height: 80px;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.achievmentComponent {
-  display: flex;
-  flex-direction: row;
-  margin: 30px;
-  padding: 10px;
-  background-color: white;
-  box-shadow: 5px 5px 18px #888888;
-  border-radius: 20px;
-}
-
-.friendsComponent {
-  display: flex;
-  flex-direction: row;
-  margin: 30px;
-  padding: 10px;
-  background-color: white;
-  box-shadow: 5px 5px 18px #888888;
-  border-radius: 20px;
-}
-
-.textfriend {
-  margin: auto;
-}
+    border-radius: 50%;
+    border: 2px solid #a2c08b;
+    margin: auto;
+    box-shadow: 5px 5px 18px #888888;
+  }
+  
+  p {
+    font-size: 15px;
+    margin-left: 22px;
+    color: black;
+  }
+  
+  .profilebox {
+    display: flex;
+    margin: 20px 30px auto;
+    padding: 2px;
+    background-color: white;
+    box-shadow: 5px 5px 18px #888888;
+    border-radius: 20px;
+  }
+  
+  .profile {
+    font-family: "Lato", sans-serif;
+  }
+  
+  .profileText {
+    flex-direction: column;
+    margin: 20px 20px;
+    color: #404040;
+  }
+  
+  .buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .blue {
+    color: #83c6fb;
+  }
+  
+  #ecopicture {
+    width: 80px;
+    height: 80px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  .achievmentComponent {
+    display: flex;
+    flex-direction: row;
+    margin: 30px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 5px 5px 18px #888888;
+    border-radius: 20px;
+  }
+  
+  .friendsComponent {
+    display: flex;
+    flex-direction: row;
+    margin: 30px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 5px 5px 18px #888888;
+    border-radius: 20px;
+  }
+  
+  .textfriend {
+    margin: auto;
+  }

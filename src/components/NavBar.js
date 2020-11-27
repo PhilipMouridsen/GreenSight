@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./navBar.css";
 import home from "./img/menu-home.png";
@@ -42,7 +43,7 @@ function NavBar() {
         </div>
       </div>
 
-      <div className="iconText">
+      {/* <div className="iconText">
         <h4 className="iconName" id="dashboard">
           Dashboard
         </h4>
@@ -58,7 +59,7 @@ function NavBar() {
         <h4 className="iconName" id="settings">
           Settings
         </h4>
-      </div>
+      </div> */}
     </div>
   );
 }

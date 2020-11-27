@@ -6,43 +6,25 @@ import leafpic from "./img/leaf.png";
 
 import Header from "./Header";
 import { database } from "../firebase";
+import { firebaseAppAuth, database } from "../firebase";
+import { render } from "@testing-library/react";
 
 const testData = [
-  { bgcolor: "#ADE7FF", completed: 60 },
-  { bgcolor: "#ADE7FF", completed: 30 },
-  { bgcolor: "#ADE7FF", completed: 53 },
+  { bgcolor: "#ADE7FF", completed: 5 }
 ];
 
 export default function Dashboard() {
-  /* 
-  const [selectedChalls, setChalls] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      var selectedChalls = [];
-      await database
-        .collection("Users")
-        .get()
-        .then((snapshot) => {
-          snapshot.docs.forEach((doc) => {
-          selectedChalls.push(doc.data().selectedChalls);
-          });
-        });
-      setChalls(selectedChalls);
-    };
-    fetchData();
-  }, []); */
 
   const [challs, setChall] = useState([]);
   const [co2, setco2] = useState(0);
 
   const handleChall = (e) => setChall(e);
   const handleCo2 = (e) => {
-    setco2(co2 + e);
+    const addedCo2 = co2 + e;
+    setco2(addedCo2);
   };
 
   useEffect(() => {
-    console.log("works");
   database
     .collection("Dashboard")
     .get()
@@ -54,10 +36,8 @@ export default function Dashboard() {
         console.log(takenco2);
         handleChall(challenge);
         handleCo2(takenco2);
-        //causes an infinite loop
+        console.log("taken co2",takenco2);
       });
-      //handleChall(getMe);
-      console.log(challs);
     })
     .catch(function (error) {
       console.log("Error getting documents: ", error);
@@ -87,7 +67,8 @@ export default function Dashboard() {
           />
         ))}
       </div>
-      <br />
+      <br/>
+      <br/>
     </div>
   );
 }

@@ -81,5 +81,4 @@ function paperarticle() {
     </div>
   );
 }
-
 export default paperarticle;

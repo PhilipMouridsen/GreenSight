@@ -16,24 +16,6 @@ const testData = [
 ];
 
 export default function Dashboard() {
-  /* 
-  const [selectedChalls, setChalls] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      var selectedChalls = [];
-      await database
-        .collection("Users")
-        .get()
-        .then((snapshot) => {
-          snapshot.docs.forEach((doc) => {
-          selectedChalls.push(doc.data().selectedChalls);
-          });
-        });
-      setChalls(selectedChalls);
-    };
-    fetchData();
-  }, []); */
 
   const [challs, setChall] = useState([]);
   const [co2, setco2] = useState(0);
@@ -44,7 +26,6 @@ export default function Dashboard() {
   };
 
   useEffect(() => {
-    console.log("works");
   database
     .collection("Dashboard")
     .get()
@@ -56,10 +37,8 @@ export default function Dashboard() {
         console.log(takenco2);
         handleChall(challenge);
         handleCo2(takenco2);
-        //causes an infinite loop
+        console.log("here", co2);
       });
-      //handleChall(getMe);
-      console.log(challs);
     })
     .catch(function (error) {
       console.log("Error getting documents: ", error);

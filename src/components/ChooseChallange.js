@@ -17,6 +17,7 @@ function Challange() {
     const theco2 = co2[e];
     handleco2(theco2);
     addToFire(theOne);
+    handleco2(co2);
   }
 
 //get challange
@@ -30,11 +31,9 @@ function Challange() {
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
             challs.push(doc.data().ChallengeName);
-            //co2.push(doc.data().CO2saved);
           });
         });
       setChalls(challs);
-      //setco2(co2);
     };
     fetchData();
   }, []);
@@ -49,11 +48,11 @@ function Challange() {
         .get()
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
-            const takenco2 = co2.push(doc.data().CO2saved);
+            const takenco2 = doc.data().CO2saved;
+            console.log("taken co2", takenco2);
             handleco2(takenco2);
           });
         });
-        console.log("outside foreach",co2[0]);
     };
     fetchData();
   }, []);

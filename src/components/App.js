@@ -4,7 +4,7 @@ import LoginPage from "./LoginPage";
 import Dashboard from "./Dashboard";
 import Create from "./Create";
 import { Route, Switch, Link } from "react-router-dom";
-import userprofile from "./Userprofile";
+import userprofile from "./userprofile";
 import Settings from "./Settings";
 import friends from "./friends";
 import Challanges from "./ChooseChallange";

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
 import ProgressBar from "./ProgressBar";
 import "./Dashboard.css";
-import leafpic from "./leaf.png";
+import leafpic from "./img/leaf.png";
 
-import Header from "./header/Header";
+import Header from "./Header";
 import { firebaseAppAuth, database } from "../firebase";
 import { render } from "@testing-library/react";
 

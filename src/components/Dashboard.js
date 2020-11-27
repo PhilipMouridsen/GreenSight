@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
 import ProgressBar from "./ProgressBar";
 import "./Dashboard.css";
-import leafpic from "./img/leaf.png";
+import leafpic from "./leaf.png";
 
-import Header from "./Header";
-import { database } from "../firebase";
+import Header from "./header/Header";
+import { firebaseAppAuth, database } from "../firebase";
+import { render } from "@testing-library/react";
 
 const testData = [
   { bgcolor: "#ADE7FF", completed: 60 },
@@ -14,42 +15,55 @@ const testData = [
 ];
 
 export default function Dashboard() {
-  // const challengelist = document.querySelector('#challange-list')
-  const [challs, setChalls] = useState([]);
-  // create element and render challenges
-  // function renderCafe(doc)
-  // {
-  //   let li = document.createElement('li');
-  //   let name = document.createElement('span')
-  //   let CO2 = document.createElement('span')
-
-  //   li.setAttribute('data-is', doc.id);
-  //   name = doc.data().ChallengeName;
-  //   CO2 = doc.data().CO2saved;
-
-  //   li.appendChild(name);
-  //   li.appendChild(CO2);
-
-  //   challengelist.append(document.createElement('li'));
-  //   challengelist.append(name)
-  // }
+  /* 
+  const [selectedChalls, setChalls] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      var challs = [];
+      var selectedChalls = [];
       await database
-        .collection("Challenges")
+        .collection("Users")
         .get()
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
-            challs.push(doc.data().ChallengeName);
+          selectedChalls.push(doc.data().selectedChalls);
           });
         });
-      setChalls(challs);
+      setChalls(selectedChalls);
     };
     fetchData();
-  }, []);
+  }, []); */
 
+  const [challs, setChall] = useState([]);
+  const [co2, setco2] = useState(0);
+
+  const handleChall = (e) => setChall(e);
+  const handleCo2 = (e) => {
+    setco2(co2 + e);
+  };
+
+  useEffect(() => {
+    console.log("works");
+  database
+    .collection("Dashboard")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach(function (doc) {
+        const challenge = doc.data().chall;
+        const takenco2 = doc.data().Co2Consumption;
+        console.log(challenge);
+        console.log(takenco2);
+        handleChall(challenge);
+        handleCo2(takenco2);
+        //causes an infinite loop
+      });
+      //handleChall(getMe);
+      console.log(challs);
+    })
+    .catch(function (error) {
+      console.log("Error getting documents: ", error);
+    });
+  }, [])
   return (
     <div className="Dashboard">
       <Header />
@@ -57,18 +71,15 @@ export default function Dashboard() {
         <img id="leafpicture" src={leafpic} alt="eco-picture" />
         <div className="textIn">
           <h1> You saved </h1>
-          <h5>0.00 CO2</h5>
+          <h5>{co2} CO2</h5>
         </div>
       </div>
-      <div>
-        <ul id="challange-list">
-          {challs.map((ch) => (
-            <li key={ch}>{ch}</li>
-          ))}
-        </ul>
-      </div>
+      <div></div>
       <div className="progressbar">
         <h3>Track your challenges!</h3>
+        <div>
+          <div> {challs} </div>
+        </div>
         {testData.map((item, idx) => (
           <ProgressBar
             key={idx}

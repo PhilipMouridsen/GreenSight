@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
 import { Route, Switch, Link } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
-import "./Dashboard.css";
 import leafpic from "./leaf.png";
 
 import Header from "./header/Header";

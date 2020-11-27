@@ -1,13 +1,16 @@
 import React from "react";
 import "./Settings.css";
-import Leaf from "../Leaf.js";
+import Leaf from "./Leaf.js";
 import { Link } from "react-router-dom";
+import { firebaseAppAuth } from "../firebase";
+import "firebase/auth";
 
-function App() {
+export default function settings() {
+  const handleSignIn = () => firebaseAppAuth.signOut();
+
   return (
     <div className="settings">
-      {" "}
-      <Leaf></Leaf>
+      <Leaf />
       <h1>Settings </h1>
       <hr />
       <br />
@@ -21,8 +24,7 @@ function App() {
           className="diet-option"
         />
         <label for="vegan" className="diet-label">
-          {" "}
-          Vegan{" "}
+          Vegan
         </label>
         <input
           type="radio"
@@ -32,8 +34,7 @@ function App() {
           className="diet-option"
         />
         <label for="vegetarian" className="diet-label">
-          {" "}
-          Vegetarian{" "}
+          Vegetarian
         </label>
         <input
           type="radio"
@@ -43,8 +44,7 @@ function App() {
           className="diet-option"
         />
         <label for="pescetarian" className="diet-label">
-          {" "}
-          Pescetarian{" "}
+          Pescetarian
         </label>
         <input
           type="radio"
@@ -54,8 +54,7 @@ function App() {
           className="diet-option"
         />
         <label for="omnivore" className="diet-label">
-          {" "}
-          Omnivore{" "}
+          Omnivore
         </label>
       </form>
       <p className="Transport">Transport Preferences</p>
@@ -68,8 +67,7 @@ function App() {
           className="transport-option"
         />
         <label for="car" className="transport-label">
-          {" "}
-          Car{" "}
+          Car
         </label>
         <input
           type="radio"
@@ -79,8 +77,7 @@ function App() {
           className="transport-option"
         />
         <label for="bike" className="transport-label">
-          {" "}
-          Bike{" "}
+          Bike
         </label>
         <input
           type="radio"
@@ -90,8 +87,7 @@ function App() {
           className="transport-option"
         />
         <label for="public" className="transport-label">
-          {" "}
-          Public Transportation{" "}
+          Public Transportation
         </label>
         <input
           type="radio"
@@ -101,8 +97,7 @@ function App() {
           className="transport-option"
         />
         <label for="walking" className="transport-label">
-          {" "}
-          Walking{" "}
+          Walking
         </label>
       </form>
       <p className="Recycle">Recycling habbits</p>
@@ -115,8 +110,7 @@ function App() {
           className="recycle-option"
         />
         <label for="none" className="recycle-label">
-          {" "}
-          None{" "}
+          None
         </label>
         <input
           type="radio"
@@ -126,8 +120,7 @@ function App() {
           className="recycle-option"
         />
         <label for="bags" className="recycle-label">
-          {" "}
-          Plastic Bags{" "}
+          Plastic Bags
         </label>
         <input
           type="radio"
@@ -137,8 +130,7 @@ function App() {
           className="recycle-option"
         />
         <label for="others" className="recycle-label">
-          {" "}
-          Others{" "}
+          Others
         </label>
         <input
           type="radio"
@@ -148,23 +140,18 @@ function App() {
           className="recycle-option"
         />
         <label for="all" className="recycle-label">
-          {" "}
-          All Plastics{" "}
+          All Plastics
         </label>
       </form>
       <br />
-      <br />
       <Link to="/">
-        <button type="button" className="logoutbtn">
+        <button type="button" className="logoutbtn" onClick={handleSignIn}>
           Logout
         </button>
       </Link>
       <br />
       <br />
       <br />
-      <br />
     </div>
   );
 }
-
-export default App;

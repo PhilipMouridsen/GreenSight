@@ -1,143 +1,75 @@
-#profilepic{
-    vertical-align: middle;
-    width: 120px;
-    height: 120px;
+#profilepic {
     border-radius: 50%;
-    border: 2px solid #A2C08B;
-    margin-top: 23px;
-    margin-bottom: 23px;
-    
-    display: flex;
-    box-shadow:5px 5px 18px #888888;
-}
-
-p{
+    border: 2px solid #a2c08b;
+    margin: auto;
+    box-shadow: 5px 5px 18px #888888;
+  }
+  
+  p {
     font-size: 15px;
-    margin-left: 25px;
-}
-
-.profilebox{
+    margin-left: 22px;
+    color: black;
+  }
+  
+  .profilebox {
     display: flex;
-    align-self: center;
-    flex-direction: row;
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-left: 30px;
-    margin-bottom: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin: 20px 30px auto;
+    padding: 2px;
     background-color: white;
-    box-shadow:5px 5px 18px #888888;
+    box-shadow: 5px 5px 18px #888888;
     border-radius: 20px;
-}
-
-.profile{
-    font-family: 'Lato', sans-serif;
-    background-color: #fdfbef;
-}
-
-
-.info{
-    display: flex;
-    align-self: center;
-    flex-direction: row;
-    
-}
-
-.text{
+  }
+  
+  .profile {
+    font-family: "Lato", sans-serif;
+  }
+  
+  .profileText {
     flex-direction: column;
-    margin-top: 25px;
-    padding-left: 30px;
-    text-align: left;
-    color:#404040;
-}
-
-.testtest{
-    display: flex;
-    align-self: center;
-    flex-direction: row;
-    margin-left: 20px;
-}
-
-#uploadButton{
-margin-top: 10px;
-margin-left: 20px;
-}
-
-.buttons{
+    margin: 20px 20px;
+    color: #404040;
+  }
+  
+  .buttons {
     margin-top: 30px;
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
-    padding: 0 24px;
     box-sizing: border-box;
-    width: 100%;
     font-size: 18px;
     font-weight: bold;
-    color: black;
-}
-
-a:link{
-    text-decoration: none;
-    
-}
-
-a:focus 
-{ color: #83c6fb; }
-
-
-
-#ecopicture{
+  }
+  
+  .blue {
+    color: #83c6fb;
+  }
+  
+  #ecopicture {
     width: 80px;
     height: 80px;
-    margin-top: 20px;
+    margin-top: auto;
     margin-bottom: auto;
-
-}
-
-.schievmentComponent{
+  }
+  
+  .achievmentComponent {
     display: flex;
-    align-self: center;
     flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 20px;
-    margin-right: 30px;
-    margin-left: 30px;
-    margin-bottom: 30px;
-    /*border: 2px solid #A2C08B;*/
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 10px;
+    margin: 30px;
+    padding: 10px;
     background-color: white;
-    box-shadow:5px 5px 18px #888888;
+    box-shadow: 5px 5px 18px #888888;
     border-radius: 20px;
-}
-
-.friendsComponent{
+  }
+  
+  .friendsComponent {
     display: flex;
-    align-self: center;
     flex-direction: row;
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-left: 30px;
-    margin-bottom: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 10px;
+    margin: 30px;
+    padding: 10px;
     background-color: white;
-    box-shadow:5px 5px 18px #888888;
-    border-radius: 20px;  
-}
-
-.textfriend{
-    margin-top: 1px;  
-    padding-top: 0px; 
-    padding-left: 30px;
-    text-align: left;
-    background-color: white;
-
-}
-
-.name{
-    margin-top: 10x;  
-}
+    box-shadow: 5px 5px 18px #888888;
+    border-radius: 20px;
+  }
+  
+  .textfriend {
+    margin: auto;
+  }

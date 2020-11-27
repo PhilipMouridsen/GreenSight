@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 //import { v4 as uuid } from "uuid";
 import "./chooseChallange.css";
 import { database } from "../firebase";
-import Dialog2 from "./Dialog2";
+import Dialog2 from "./Dialog";
 
 function Challange() {
   const [challs, setChalls] = useState([]);

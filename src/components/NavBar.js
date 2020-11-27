@@ -43,11 +43,21 @@ function NavBar() {
       </div>
 
       <div className="iconText">
-        <h4 className="iconName" id="dashboard">Dashboard</h4>
-        <h4 className="iconName" id="explore">Explore</h4>
-        <h4 className="iconName" id="challenge">challenges</h4>
-        <h4 className="iconName" id="profile">Profile</h4>
-        <h4 className="iconName" id="settings">Settings</h4>
+        <h4 className="iconName" id="dashboard">
+          Dashboard
+        </h4>
+        <h4 className="iconName" id="explore">
+          Explore
+        </h4>
+        <h4 className="iconName" id="challenge">
+          challenges
+        </h4>
+        <h4 className="iconName" id="profile">
+          Profile
+        </h4>
+        <h4 className="iconName" id="settings">
+          Settings
+        </h4>
       </div>
     </div>
   );

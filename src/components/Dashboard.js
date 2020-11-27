@@ -7,7 +7,6 @@ import leafpic from "./img/leaf.png";
 import Header from "./Header";
 import { database } from "../firebase";
 
-
 const testData = [
   { bgcolor: "#ADE7FF", completed: 60 },
   { bgcolor: "#ADE7FF", completed: 30 },

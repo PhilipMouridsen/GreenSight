@@ -1,48 +1,45 @@
-import React, {Component} from 'react';
-import 'antd/dist/antd.css';
-import { Modal, Button} from 'antd';
+import React, { Component } from "react";
+import "antd/dist/antd.css";
+import { Modal, Button } from "antd";
 import "./userprofile.css";
 
-class PictureUploader extends Component{
+class PictureUploader extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visible: false,
+      imagesArray: [props.philip, props.simona, props.ania],
+    };
+  }
 
-    constructor(props){
-        super(props)
-        this.state={
-            visible: false,
-            imagesArray: [props.philip, props.simona, props.ania]
-        }
-    }
-    
-    showModal = () => {
-      this.setState({
-        visible: true,
-      });
-    };
-  
-    handleOk = e => {
-      console.log(e);
-      this.setState({
-        visible: false,
-      });
-    };
-  
-    handleCancel = e => {
-      console.log(e);
-      this.setState({
-        visible: false,
-      });
-    };
+  showModal = () => {
+    this.setState({
+      visible: true,
+    });
+  };
 
-    render(){
-        const imageMapper = this.state.imagesArray.map((image, index) => {
-            return(
-                <img src={image} 
-                onClick={() => this.props.handleImageChange(image)}
-                />
-            )
-        })
-        return(
-            <div className="ProfilePicChanger">
+  handleOk = (e) => {
+    console.log(e);
+    this.setState({
+      visible: false,
+    });
+  };
+
+  handleCancel = (e) => {
+    console.log(e);
+    this.setState({
+      visible: false,
+    });
+  };
+
+  render() {
+    const imageMapper = this.state.imagesArray.map((image, index) => {
+      return (
+        <img src={image} onClick={() => this.props.handleImageChange(image)} />
+      );
+    });
+    return (
+      <div className="ProfilePicChanger">
         <Button id="uploadButton" type="primary" onClick={this.showModal}>
           Upload
         </Button>
@@ -52,10 +49,10 @@ class PictureUploader extends Component{
           onOk={this.handleOk}
           onCancel={this.handleCancel}
         >
-            {imageMapper}
+          {imageMapper}
         </Modal>
-            </div>
-        )
-    }
+      </div>
+    );
+  }
 }
 export default PictureUploader;

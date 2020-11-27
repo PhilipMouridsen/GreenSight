@@ -15,7 +15,9 @@ function friends() {
       <UserInfo />
       <div className="buttons">
         <Link to="/userprofile"> Achievements</Link>
-        <Link to="/friends" className="blue"> Friends</Link>
+        <Link to="/friends" className="blue">
+          Friends
+        </Link>
       </div>
       <hr />
       <div className="friendsComponent">

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./chooseChallange.css";
 import Dialog from "./Dialog";
 
-
 function Challange() {
   const [isPopped, setPop] = useState(false);
 

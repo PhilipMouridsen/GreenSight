@@ -1,13 +1,13 @@
-.bars{
-    margin-top: 15px;
-    margin-bottom: 30px;
-    box-shadow:5px 5px 18px #888888;
+.bars {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  box-shadow: 5px 5px 18px #888888;
 }
 
-.updatebtn{
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    background-color: #eeb4c0;
-    border-color: #eeb4c0;
+.updatebtn {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  background-color: #eeb4c0;
+  border-color: #eeb4c0;
 }

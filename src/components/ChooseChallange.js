@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 //import { v4 as uuid } from "uuid";
 import "./chooseChallange.css";
-import Dialog from "./Dialog";
+import Dialog2 from "./Dialog2";
+import { database } from "../firebase";
 
 function Challange() {
   const [challs, setChalls] = useState([]);
@@ -52,7 +53,7 @@ function Challange() {
         .get()
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
-            const takenco2 = co2.push(doc.data().CO2saved);
+            const takenco2 = doc.data().CO2saved;
             handleco2(takenco2);
           });
         });

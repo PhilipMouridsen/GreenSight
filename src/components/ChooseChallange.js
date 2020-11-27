@@ -21,6 +21,7 @@ function Challange() {
     const theco2 = co2[e];
     handleco2(theco2);
     addToFire(theOne);
+    handleco2(co2);
   }
 
 //get challange

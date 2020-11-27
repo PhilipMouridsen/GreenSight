@@ -1,6 +1,6 @@
 import React from "react";
 import "./update.css";
-import update from "./update.png";
+import update from "./img/update.png";
 
 function Update(){
     return(

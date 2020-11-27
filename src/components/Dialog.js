@@ -12,7 +12,7 @@ function Dialog() {
     <div className={isOpen ? "dialogBox" : "dialogHide"}>
       <h3 id="header">Do you accept the challange?</h3>
       <div className="guziki">
-        <Link to="/dashboard">
+        <Link to="/">
           <button className="approvalButton" onClick={Close}>
             {" "}
             Approve{" "}

@@ -10,9 +10,7 @@ import { firebaseAppAuth, database } from "../firebase";
 import { render } from "@testing-library/react";
 
 const testData = [
-  { bgcolor: "#ADE7FF", completed: 60 },
-  { bgcolor: "#ADE7FF", completed: 30 },
-  { bgcolor: "#ADE7FF", completed: 53 },
+  { bgcolor: "#ADE7FF", completed: 5 }
 ];
 
 export default function Dashboard() {
@@ -22,7 +20,8 @@ export default function Dashboard() {
 
   const handleChall = (e) => setChall(e);
   const handleCo2 = (e) => {
-    setco2(co2 + e);
+    const addedCo2 = co2 + e;
+    setco2(addedCo2);
   };
 
   useEffect(() => {
@@ -37,7 +36,7 @@ export default function Dashboard() {
         console.log(takenco2);
         handleChall(challenge);
         handleCo2(takenco2);
-        console.log("here", co2);
+        console.log("taken co2",takenco2);
       });
     })
     .catch(function (error) {

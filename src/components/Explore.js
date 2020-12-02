@@ -6,6 +6,7 @@ import lessplastic from "./img/lessplastic.jpg";
 import paper from "./img/paper.webp";
 import Leaf from "./Leaf.js";
 
+
 function Explore() {
   return (
     <div className="popoular">

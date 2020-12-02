@@ -8,40 +8,55 @@ import Header from "./Header";
 import { database } from "../firebase";
 import { render } from "@testing-library/react";
 
-const testData = [
-  { bgcolor: "#ADE7FF", completed: 5 }
-];
+import {ProgressBarContainer} from './newprogressbar';
+
 
 export default function Dashboard() {
-
+  
   const [challs, setChall] = useState([]);
   const [co2, setco2] = useState(0);
 
   const handleChall = (e) => setChall(e);
   const handleCo2 = (e) => {
-    const addedCo2 = co2 + e;
-    setco2(addedCo2);
+    setco2(e);
+    console.log("eeeeeee", e)
   };
 
   useEffect(() => {
   database
-    .collection("Dashboard")
+    .collection("Challenges")
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach(function (doc) {
-        const challenge = doc.data().chall;
-        const takenco2 = doc.data().Co2Consumption;
+        const challenge = doc.data().ChallengeName;
+        const takenco2 = doc.data().CO2saved;
         console.log(challenge);
         console.log(takenco2);
         handleChall(challenge);
         handleCo2(takenco2);
         console.log("taken co2",takenco2);
+        console.log("taken challenge",challenge);
+
       });
     })
     .catch(function (error) {
       console.log("Error getting documents: ", error);
     });
   }, [])
+
+  const handleChange = (percentRange) => {
+    database
+    .collection('ChallangesChosen')
+    .doc('cUR3crtYYygwPdNgA0NW')
+    .update({
+      ProgressPercentageage: percentRange + 10
+  })
+  .then(() => {
+    console.log('progress updated!');
+  });
+  }  
+
+
   return (
     <div className="Dashboard">
       <Header />
@@ -58,16 +73,12 @@ export default function Dashboard() {
         <div>
           <div> {challs} </div>
         </div>
-        {testData.map((item, idx) => (
-          <ProgressBar
-            key={idx}
-            bgcolor={item.bgcolor}
-            completed={item.completed}
-          />
-        ))}
+        <ProgressBarContainer onChange={handleChange} />
       </div>
       <br/>
       <br/>
     </div>
   );
+        
 }
+

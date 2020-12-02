@@ -71,11 +71,12 @@ function Challange() {
 //get co2consumption
   useEffect(() => {
   database
-        .collection("Challanges")
+        .collection("Challenges")
         .get()
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
             const takenco2 = doc.data().CO2saved;
+            console.log(takenco2);  
             console.log("taken co2", takenco2);
             handleco2(takenco2);
           });

@@ -9,18 +9,19 @@ import UserInfo from "./UserInfo";
 function userProfile() {
   return (
     <div className="profile">
-      <Leaf></Leaf>
-      <h1>Profile</h1>
-      <hr />
+      <h1 className="title">Profile</h1>
+      <Leaf />
       <br />
+      <br />
+      <hr />
       <UserInfo />
       <div className="buttons">
         <Link to="/userprofile" className="blue">
           Achievements
         </Link>
-        <Link to="/friends"> Friends</Link>
+        <Link to="/friends">Friends</Link>
       </div>
-      <hr />
+      <hr className="line"/>
       <div className="achievmentComponent">
         <img id="ecopicture" src={eco} alt="eco-picture" />
         <div className="textachievment">

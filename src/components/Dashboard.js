@@ -5,7 +5,7 @@ import "./Dashboard.css";
 import leafpic from "./img/leaf.png";
 
 import Header from "./Header";
-import { firebaseAppAuth, database } from "../firebase";
+import { database } from "../firebase";
 import { render } from "@testing-library/react";
 
 import {ProgressBarContainer} from './newprogressbar';

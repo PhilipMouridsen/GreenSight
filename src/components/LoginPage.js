@@ -26,7 +26,7 @@ export default function LoginPage() {
           />
         </div>
         <p class="btn-text">
-          <b>Sign in with google</b>
+          <b>Sign in with Google</b>
         </p>
       </div>
       <br />

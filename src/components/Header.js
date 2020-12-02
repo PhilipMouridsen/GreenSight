@@ -6,7 +6,7 @@ function Header() {
   return (
     <div className="header">
       <header className="App-header">
-        <Link to="/dashboard">
+        <Link to="/">
           <img className="logo" src={Logo} alt="logo"></img>
         </Link>
       </header>

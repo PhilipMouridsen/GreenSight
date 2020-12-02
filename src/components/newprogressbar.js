@@ -1,0 +1,50 @@
+// ProgressBar.js
+
+import React, { useState, useEffect } from "react";
+import './newprogressbar.css';
+import { firebaseAppAuth, database } from "../firebase";
+
+
+export const ProgressBarContainer = (props) => {
+
+let [percentRange, setProgress] = useState(0);
+
+
+const handleUpdate = () => {
+    setProgress(percentRange < 100 ? percentRange + 10 : 100);
+    props.onChange(percentRange + 10);
+}
+
+const Range = (props) => {
+    return (
+        <div className="range" style={{width: `${props.percentRange}%`}}/>
+    );
+};
+
+const ProgressBar = (props) => {
+    return (
+        <div className="progress-bar">
+            <Range percentRange={props.percentRange}/>
+        </div>
+    );
+};
+
+useEffect(() => {
+    database
+    .collection('ChallangesChosen')
+    .add({
+    ProgressPercentageage: percentRange
+  })
+  .then(() => {
+    console.log('added!');
+  });
+    }, [])
+
+
+    return (
+        <div id="progresscontainer">
+            <ProgressBar percentRange={percentRange} />
+            <button id="updatepic" onClick={handleUpdate}>Daily Update</button>
+        </div>
+    );
+};

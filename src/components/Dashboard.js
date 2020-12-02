@@ -8,12 +8,15 @@ import Header from "./Header";
 import { firebaseAppAuth, database } from "../firebase";
 import { render } from "@testing-library/react";
 
+import {ProgressBarContainer} from './newprogressbar';
+
+
 const testData = [
   { bgcolor: "#ADE7FF", completed: 5 }
 ];
 
 export default function Dashboard() {
-
+  
   const [challs, setChall] = useState([]);
   const [co2, setco2] = useState(0);
 
@@ -42,6 +45,20 @@ export default function Dashboard() {
       console.log("Error getting documents: ", error);
     });
   }, [])
+
+  const handleChange = (percentRange) => {
+    database
+    .collection('ChallangesChosen')
+    .doc('cUR3crtYYygwPdNgA0NW')
+    .update({
+      ProgressPercentageage: percentRange + 10
+  })
+  .then(() => {
+    console.log('progress updated!');
+  });
+  }  
+
+
   return (
     <div className="Dashboard">
       <Header />
@@ -59,15 +76,13 @@ export default function Dashboard() {
           <div> {challs} </div>
         </div>
         {testData.map((item, idx) => (
-          <ProgressBar
-            key={idx}
-            bgcolor={item.bgcolor}
-            completed={item.completed}
-          />
+        <ProgressBarContainer onChange={handleChange} />
         ))}
       </div>
       <br/>
       <br/>
     </div>
   );
+        
 }
+

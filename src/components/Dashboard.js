@@ -11,10 +11,6 @@ import { render } from "@testing-library/react";
 import {ProgressBarContainer} from './newprogressbar';
 
 
-const testData = [
-  { bgcolor: "#ADE7FF", completed: 5 }
-];
-
 export default function Dashboard() {
   
   const [challs, setChall] = useState([]);
@@ -22,23 +18,25 @@ export default function Dashboard() {
 
   const handleChall = (e) => setChall(e);
   const handleCo2 = (e) => {
-    const addedCo2 = co2 + e;
-    setco2(addedCo2);
+    setco2(e);
+    console.log("eeeeeee", e)
   };
 
   useEffect(() => {
   database
-    .collection("Dashboard")
+    .collection("Challenges")
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach(function (doc) {
-        const challenge = doc.data().chall;
-        const takenco2 = doc.data().Co2Consumption;
+        const challenge = doc.data().ChallengeName;
+        const takenco2 = doc.data().CO2saved;
         console.log(challenge);
         console.log(takenco2);
         handleChall(challenge);
         handleCo2(takenco2);
         console.log("taken co2",takenco2);
+        console.log("taken challenge",challenge);
+
       });
     })
     .catch(function (error) {
@@ -75,9 +73,7 @@ export default function Dashboard() {
         <div>
           <div> {challs} </div>
         </div>
-        {testData.map((item, idx) => (
         <ProgressBarContainer onChange={handleChange} />
-        ))}
       </div>
       <br/>
       <br/>

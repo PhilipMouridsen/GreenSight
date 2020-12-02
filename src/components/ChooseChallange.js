@@ -8,12 +8,20 @@ function Challange() {
   const [challs, setChalls] = useState([]);
   const [isPopped, setPop] = useState(false);
   const [co2, setco2] = useState(0);
+  const [challID, setChallID] = useState(0);
+
 
   function closePopup() {
     setPop(false);
   }
     
   const handleco2 = (e) => setco2(e);
+  //console.log("lol",handleco2);
+
+
+ const handleChall = (ch) => setChallID (ch);
+ //console.log("ups",handleChall);
+
 
   const plsWork = (e) =>{
     setPop(!isPopped);
@@ -22,6 +30,8 @@ function Challange() {
     handleco2(theco2);
     addToFire(theOne);
     handleco2(co2);
+
+    handleChall(challID);
   }
 
 //get challange
@@ -35,6 +45,7 @@ function Challange() {
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
             challs.push(doc.data().ChallengeName);
+
           });
         });
       setChalls(challs);
@@ -42,12 +53,24 @@ function Challange() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    database
+      .collection("Challenges")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach(function (doc) {
+          const challengeName = doc.data().ChallengeName;
+          console.log(challengeName);  
+        });
+      })
+      .catch(function (error) {
+        console.log("Error getting documents: ", error);
+      });
+    }, [])
+
 //get co2consumption
   useEffect(() => {
-    const fetchData = async () => {
-      var co2 =[];
-      
-      await database
+  database
         .collection("Challenges")
         .get()
         .then((snapshot) => {
@@ -57,18 +80,36 @@ function Challange() {
             handleco2(takenco2);
           });
         });
-    };
-    fetchData();
   }, []);
+
+//get the chellange id
+useEffect(() => {
+  database
+    .collection("Challenges")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach(function (doc) {
+        const challID = doc.data().ChallangeID;
+        console.log(challID);  
+        handleChall(challID);
+      });
+    })
+    .catch(function (error) {
+      console.log("Error getting documents: ", error);
+    });
+  }, [])
+
 
    const addToFire = (addThatCh) => {
     const buttonChall = addThatCh;
     const co2c = co2;
+    const chID = challID;
     database
-      .collection("Dashboard")
+      .collection("ChallangesChosen")
       .add({
         chall: buttonChall,
         Co2Consumption: co2c,
+        ChallangeID: chID,
       })
       .then((newDocument) => {
         //how to change the ID to not have an automatic id

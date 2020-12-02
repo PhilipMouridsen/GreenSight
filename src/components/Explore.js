@@ -9,9 +9,10 @@ import Leaf from "./Leaf.js";
 function Explore() {
   return (
     <div className="popoular">
-      <Leaf></Leaf>
-      <h1>Popular Articles</h1>
-
+      <Leaf />
+      <h1 className="title">Popular Articles</h1>
+      <br />
+      <br />
       <hr />
       <br />
       <div className="ArticleComponent">

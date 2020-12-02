@@ -14,9 +14,10 @@ function friends() {
   return (
     <div className="profile">
       <Leaf />
-      <h1>Social</h1>
-      <hr />
+      <h1 className="title">Social</h1>
       <br />
+      <br />
+      <hr />
       <UserInfo />
       <div className="buttons">
         <Link to="/userprofile"> Achievements</Link>
@@ -24,30 +25,30 @@ function friends() {
           Friends
         </Link>
       </div>
-      <hr />
+      <hr className="line" />
       <div className="friendsComponent">
-        <img id="ecopicture"src={ania} alt="eco-picture" />
+        <img id="ecopicture" src={ania} alt="eco-picture" />
         <div className="textfriend">
           <h3 className="name">Anna Johanson</h3>
           <p>CO2 saved: 256</p>
         </div>
       </div>
       <div className="friendsComponent">
-        <img id="ecopicture"src={Simona} alt="eco-picture" />
+        <img id="ecopicture" src={Simona} alt="eco-picture" />
         <div className="textfriend">
           <h3 className="name">Simona Hansen</h3>
           <p>CO2 saved: 490</p>
         </div>
       </div>
       <div className="friendsComponent">
-        <img id="ecopicture"src={Philip} alt="eco-picture" />
+        <img id="ecopicture" src={Philip} alt="eco-picture" />
         <div className="textfriend">
           <h3 className="name">Philip Greenberg</h3>
           <p>CO2 saved: 859</p>
         </div>
       </div>
       <div className="friendsComponent">
-        <img id="ecopicture"src={Bobby} alt="eco-picture" />
+        <img id="ecopicture" src={Bobby} alt="eco-picture" />
         <div className="textfriend">
           <h3 className="name">Bobby Marley</h3>
           <p>CO2 saved: 420</p>

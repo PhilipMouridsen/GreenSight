@@ -10,8 +10,10 @@ export default function settings() {
 
   return (
     <div className="settings">
+      <h1 className="title">Settings</h1>
       <Leaf />
-      <h1>Settings </h1>
+      <br />
+      <br />
       <hr />
       <br />
       <p className="Diet">Diet Preferences</p>

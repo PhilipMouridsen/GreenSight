@@ -6,7 +6,6 @@ import leafpic from "./img/leaf.png";
 
 import Header from "./Header";
 import { database } from "../firebase";
-import { firebaseAppAuth, database } from "../firebase";
 import { render } from "@testing-library/react";
 
 const testData = [

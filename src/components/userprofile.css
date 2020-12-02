@@ -5,9 +5,15 @@
     box-shadow: 5px 5px 18px #888888;
   }
   
+  .title{
+    position: absolute;
+    float: left;
+    left: 30px;
+  }
+
   p {
     font-size: 15px;
-    margin-left: 22px;
+    margin-left: 30px;
     color: black;
   }
   
@@ -40,7 +46,8 @@
   }
   
   .blue {
-    color: #83c6fb;
+    color: #055899;
+    text-decoration: underline;
   }
   
   #ecopicture {
@@ -72,4 +79,8 @@
   
   .textfriend {
     margin: auto;
+  }
+
+  .line{
+    margin-top: 5%;
   }

@@ -3,6 +3,7 @@ import "./Dashboard.css";
 import ProgressBar from "./ProgressBar";
 import "./Dashboard.css";
 import leafpic from "./img/leaf.png";
+import TakeChallenge from "./TakeChallenge";
 
 import Header from "./Header";
 import { database } from "../firebase";
@@ -22,27 +23,7 @@ export default function Dashboard() {
     console.log("eeeeeee", e)
   };
 
-  useEffect(() => {
-  database
-    .collection("Challenges")
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach(function (doc) {
-        const challenge = doc.data().ChallengeName;
-        const takenco2 = doc.data().CO2saved;
-        console.log(challenge);
-        console.log(takenco2);
-        handleChall(challenge);
-        handleCo2(takenco2);
-        console.log("taken co2",takenco2);
-        console.log("taken challenge",challenge);
 
-      });
-    })
-    .catch(function (error) {
-      console.log("Error getting documents: ", error);
-    });
-  }, [])
 
   const handleChange = (percentRange) => {
     database
@@ -67,7 +48,7 @@ export default function Dashboard() {
           <h5>{co2} CO2</h5>
         </div>
       </div>
-      <div></div>
+      <div><TakeChallenge id="2"/></div>
       <div className="progressbar">
         <h3>Track your challenges!</h3>
         <div>

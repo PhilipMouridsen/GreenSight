@@ -25,7 +25,7 @@ export default function Dashboard() {
 
 
 
-  const handleChange = (percentRange) => {
+/*   const handleChange = (percentRange) => {
     database
     .collection('ChallangesChosen')
     .doc('cUR3crtYYygwPdNgA0NW')
@@ -35,7 +35,13 @@ export default function Dashboard() {
   .then(() => {
     console.log('progress updated!');
   });
-  }  
+  }   
+  
+  
+  below]
+  
+  <ProgressBarContainer onChange={handleChange} />
+  */
 
 
   return (
@@ -54,7 +60,7 @@ export default function Dashboard() {
         <div>
           <div> {challs} </div>
         </div>
-        <ProgressBarContainer onChange={handleChange} />
+        
       </div>
       <br/>
       <br/>
@@ -62,4 +68,3 @@ export default function Dashboard() {
   );
         
 }
-

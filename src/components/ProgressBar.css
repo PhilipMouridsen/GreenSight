@@ -1,26 +1,26 @@
-.barAndBtn{
-    width: 100%;
+.barAndBtn {
+  width: 100%;
 }
 
-.bars{
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-right: 0.5em;
-    box-shadow:5px 5px 18px #888888;
-    width: 85%;
-    float: left;
+.bars {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 0.5em;
+  box-shadow: 5px 5px 18px #888888;
+  width: 85%;
+  float: left;
 }
 
-.updatebtn{
-    margin-top: 10px;
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    background-color: #eeb4c0;
-    border-color: #eeb4c0;
-    float: right;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.updatebtn {
+  margin-top: 10px;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  background-color: #eeb4c0;
+  border-color: #eeb4c0;
+  float: right;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

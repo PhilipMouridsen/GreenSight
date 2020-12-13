@@ -1,0 +1,51 @@
+.App-header {
+  color: #a2c08b;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 14px;
+}
+
+img {
+  width: 100%;
+}
+
+.loginPage {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.google-btn {
+  margin: auto;
+  width: 225px;
+  height: 42px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.google-icon-wrapper {
+  position: absolute;
+  margin-top: 1px;
+  margin-left: 1px;
+  background-color: white;
+}
+
+.google-icon {
+  position: absolute;
+  margin-top: 11px;
+  margin-left: 11px;
+  width: 18px;
+  height: 18px;
+}
+
+.btn-text {
+  float: left;
+  margin: 11px 11px 0 45px;
+  color: black;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}

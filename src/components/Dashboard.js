@@ -1,69 +1,65 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
-import { Route, Switch, Link } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
 import "./Dashboard.css";
-import leafpic from "./leaf.png";
-import PictureUploader from "./PictureUploader";
+import leafpic from "./img/leaf.png";
+import TakeChallenge from "./TakeChallenge";
 
-
-import Header from "./header/Header";
-import { firebaseAppAuth, database } from "../firebase";
+import Header from "./Header";
+import { database } from "../firebase";
 import { render } from "@testing-library/react";
 
+import {ProgressBarContainer} from './newprogressbar';
 
-
-const testData = [
-  { bgcolor: "#ADE7FF", completed: 60 },
-  { bgcolor: "#ADE7FF", completed: 30 },
-  { bgcolor: "#ADE7FF", completed: 53 },
-];
 
 export default function Dashboard() {
+  
+  const [challs, setChall] = useState([]);
+  const [co2, setco2] = useState(0);
 
-  // const challengelist = document.querySelector('#challange-list')
-  const [challs, setChalls] = useState([])
+  const handleChall = (e) => setChall(e);
+  const handleCo2 = (e) => {
+    setco2(e);
+    console.log("eeeeeee", e)
+  };
 
-    useEffect(() =>{
-      const fetchData = async() => {
-        var challs = []
-        await database.collection('Challenges').get().then((snapshot) => {
-            snapshot.docs.forEach(doc  => {
-                challs.push(doc.data().ChallengeName);
-              })
-            })
-          setChalls(challs);
-          };
-        fetchData();
-    }, []); 
-    
 
-    return (
-      <div className="Dashboard">
+
+  const handleChange = (percentRange) => {
+    database
+    .collection('ChallangesChosen')
+    .doc('cUR3crtYYygwPdNgA0NW')
+    .update({
+      ProgressPercentageage: percentRange + 10
+  })
+  .then(() => {
+    console.log('progress updated!');
+  });
+  }  
+
+
+  return (
+    <div className="Dashboard">
       <Header />
       <div className="circle">
         <img id="leafpicture" src={leafpic} alt="eco-picture" />
         <div className="textIn">
           <h1> You saved </h1>
-           <h5>0.00 CO2</h5>
+          <h5>{co2} CO2</h5>
         </div>
       </div>
-      <div>
-        <ul id="challange-list">
-          {challs.map(ch => <li key={ch}>{ch}</li>)}
-        </ul>
-
-      </div>
-      <div className="progressbar"> 
+      <div><TakeChallenge id="2"/></div>
+      <div className="progressbar">
         <h3>Track your challenges!</h3>
-        {testData.map((item, idx) => (
-          <ProgressBar
-          key={idx}
-          bgcolor={item.bgcolor}
-          completed={item.completed}
-          />
-          ))}
+        <div>
+          <div> {challs} </div>
+        </div>
+        <ProgressBarContainer onChange={handleChange} />
       </div>
+      <br/>
+      <br/>
     </div>
   );
+        
 }
+

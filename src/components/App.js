@@ -1,19 +1,18 @@
 import React from "react";
-import NavBar from "../NavBar.js";
-import "./App.css";
-import LoginPage from "../LoginPage/LoginPage";
-import Dashboard from "../Dashboard";
-import Create from "../Create";
+import NavBar from "./NavBar.js";
+import LoginPage from "./LoginPage";
+import Dashboard from "./Dashboard";
+import Create from "./Create";
 import { Route, Switch, Link } from "react-router-dom";
-import userprofile from "../userprofile";
-import Settings from "../settings/Settings";
-import friends from "../friends";
-import Challanges from "../ChooseChallange";
-import Explore from "../Explore";
-import studentecco from "../studentecco";
-import plasticarticle from "../plasticarticle";
-import paperarticle from "../paperarticle";
-import { firebaseAppAuth } from "../../firebase";
+import userprofile from "./userprofile";
+import Settings from "./Settings";
+import friends from "./friends";
+import Challanges from "./ChooseChallange";
+import Explore from "./Explore";
+import studentecco from "./studentecco";
+import plasticarticle from "./plasticarticle";
+import paperarticle from "./paperarticle";
+import { firebaseAppAuth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "antd/dist/antd.css";
 
@@ -27,18 +26,14 @@ function App() {
   }
 
   return user ? (
-    <div className="Dashboard">
+    <div className="Main">
       <ScrollToTop />
       <NavBar />
 
-
       <Switch>
-        {Dashboard}
-        <Route exact path="/" component={LoginPage} />
-        <Route path="/dashboard" component={Dashboard} />
-        <Route path="/login" component={LoginPage} />
+        <Route exact path="/" component={Dashboard} />
         <Route path="/create" component={Create} />
-        <Route path="/userprofile" component={userprofile} />
+        <Route path="/userProfile" component={userprofile} />
         <Route path="/settings" component={Settings} />
         <Route path="/friends" component={friends} />
         <Route path="/challange" component={Challanges} />

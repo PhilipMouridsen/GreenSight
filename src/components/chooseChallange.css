@@ -1,86 +1,67 @@
-.challangesContainer{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    background-color: #fdfbef;
+.challangesContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #fdfbef;
 }
 
-h1{
-    font-size: 21px;
+h1 {
+  font-size: 21px;
 }
 
-hr{
-    margin-left: 0;
-    margin-right: 0;
+hr {
+  margin: 0;
 }
 
-.challangeBtn{
-    border-radius: 10px;
-    height: 50%;
-    border-color: #7FC79E;
-    background-color: #7FC79E;
-    padding: 17px;
-    font-family: 'Lato', sans-serif;
-    box-shadow:5px 5px 18px #888888;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    font-size: 18px;
+.challangeBtn {
+  display: flex;
+  margin: 40px auto;
+  width: 84%;
+  border-radius: 10px;
+  border-color: #7fc79e;
+  background-color: #7fc79e;
+  padding: 17px;
+  font-family: "Lato", sans-serif;
+  box-shadow: 5px 5px 18px #888888;
+  font-size: 18px;
 }
 
-.challanges{
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-left: 40px;
-    margin-bottom: 60px;
-    width: 80%;
-    font-family: 'Lato', sans-serif;
-}
-.newchallenge{
-    margin-bottom: 1px;
-    margin-top: 5px;
+.challanges {
+  font-family: "Lato", sans-serif;
 }
 
-.dialogBox{
-    margin: 0 auto;
-    position: absolute;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    width: 75vw;
-    height: 30vw;
-    box-sizing: border-box;
-    flex-direction: column;
-    justify-content: space-around;
-    border-style: solid;
-    border-color: #ade7ff;
-    margin-top: 230px;
-    margin-left: 50px;
-
+.newchallenge {
+  margin-bottom: 1px;
+  margin-top: 5px;
 }
 
-.guziki{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+.dialogBox {
+  position: absolute;
+  background-color: #f5f5f5;
+  border-style: solid;
+  border-color: #ade7ff;
+  margin: 75% 20% auto;
+  padding: 0 2%;
 }
 
-.approvalButton{
-    margin-bottom: 15px;
-    background-color: #ade7ff;
-    border-color: #ade7ff;
-    padding: 8px 20px;
-    text-decoration: solid;
-
+.approvalButtons {
+  display: flex;
+  justify-content: space-around;
 }
 
-
-.dialogHide{
-    position: absolute;
-    visibility: hidden;
+.approvalButton {
+  margin-bottom: 15px;
+  background-color: #ade7ff;
+  border-color: #ade7ff;
+  padding: 8px 20px;
+  text-decoration: solid;
 }
 
-#header{
-    margin-top: 10px;
+.dialogHide {
+  position: absolute;
+  visibility: hidden;
+}
+
+#header {
+  margin-top: 10px;
 }

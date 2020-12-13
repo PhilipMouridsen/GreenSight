@@ -3,11 +3,8 @@ import "./Dashboard.css";
 import { Route, Switch, Link } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
 import "./Dashboard.css";
-import leafpic from "./img/leaf.png";
-import GiveChallDetails from "./GiveChallengeDetails";
-import firebase from "firebase/app";
-import GetTheChosenOne from "./CallChallengeChosen";
-import CallDB from "./CallDB";
+import leafpic from "./leaf.png";
+import PictureUploader from "./PictureUploader";
 
 
 import Header from "./header/Header";
@@ -15,39 +12,34 @@ import { firebaseAppAuth, database } from "../firebase";
 import { render } from "@testing-library/react";
 
 
+
+const testData = [
+  { bgcolor: "#ADE7FF", completed: 60 },
+  { bgcolor: "#ADE7FF", completed: 30 },
+  { bgcolor: "#ADE7FF", completed: 53 },
+];
+
 export default function Dashboard() {
-  var user = firebase.auth().currentUser;
-  var email;
 
-  if (user != null) {
-    email = user.email;
-  }
+  // const challengelist = document.querySelector('#challange-list')
+  const [challs, setChalls] = useState([])
 
-  const [co2, setco2] = useState(0);
+    useEffect(() =>{
+      const fetchData = async() => {
+        var challs = []
+        await database.collection('Challenges').get().then((snapshot) => {
+            snapshot.docs.forEach(doc  => {
+                challs.push(doc.data().ChallengeName);
+              })
+            })
+          setChalls(challs);
+          };
+        fetchData();
+    }, []); 
+    
 
-  const handleCo2 = (e) => {
-    setco2(e);
-    console.log("eeeeeee", e)
-  };
-//GET DATA FROM CHALLENGECHOSEN if loggedInUser is = to email from firebase
-
-/* 
-  const handleChange = (percentRange) => {
-    database
-    .collection('ChallangesChosen')
-    .doc('cUR3crtYYygwPdNgA0NW')
-    .update({
-      ProgressPercentageage: percentRange + 10
-  })
-  .then(() => {
-    console.log('progress updated!');
-  });
-  }  
- */
-
-// add below <ProgressBarContainer onChange={handleChange} />
-  return (
-    <div className="Dashboard">
+    return (
+      <div className="Dashboard">
       <Header />
       <div className="circle">
         <img id="leafpicture" src={leafpic} alt="eco-picture" />
@@ -56,14 +48,22 @@ export default function Dashboard() {
            <h5>0.00 CO2</h5>
         </div>
       </div>
-      <div className="progressbar">
-        <h3>Track your challenges!</h3>
-        <CallDB />
-        <div>
-          <div> <GiveChallDetails id="2"/> </div>
-        </div>
+      <div>
+        <ul id="challange-list">
+          {challs.map(ch => <li key={ch}>{ch}</li>)}
+        </ul>
 
       </div>
+      <div className="progressbar"> 
+        <h3>Track your challenges!</h3>
+        {testData.map((item, idx) => (
+          <ProgressBar
+          key={idx}
+          bgcolor={item.bgcolor}
+          completed={item.completed}
+          />
+          ))}
+      </div>
     </div>
-  );     
+  );
 }

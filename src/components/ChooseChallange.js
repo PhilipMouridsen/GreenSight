@@ -1,51 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "./chooseChallange.css";
 import { database } from "../firebase";
-import Dialog from "./Dialog";
-import firebase from "firebase/app";
-import GiveChallDetails from "./GiveChallengeDetails";
-
-
-const addToFire = (addThatCh) => {
-  var user = firebase.auth().currentUser;
-  var email;
-
-  if (user != null) {
-    email = user.email;
-  }
-  const chID = addThatCh +1;
-  database
-    .collection("ChallangesChosen")
-    .add({
-      chID: chID,
-      Email: email
-    })
-    .then((newDocument) => {
-      //how to change the ID to not have an automatic id
-      console.log("New document created with ID: ", newDocument.id );
-    })
-    .catch((error) => {
-      console.error(error.message);
-    });
-}; 
-
+import Dialog2 from "./Dialog2";
 
 function Challange() {
-
-  const [challs, setChalls] = useState([]);
   const [isPopped, setPop] = useState(false);
-  const [challIDs, setChallID] = useState([]);
+
+  const pop = () => {
+    setPop(!isPopped);
+    console.log("pop");
+  };
 
 
-  function closePopup() {
-    setPop(false);
-  }
 
   const plsWork = (e) =>{
-    setPop(!isPopped);
-    let temp = e;
-    addToFire(temp);
-    //set id and send
+    const theOne = challs[e]
+    console.log(theOne);
   }
 
 
@@ -67,25 +37,6 @@ function Challange() {
     fetchData();
   }, []);
 
-  //chall ids here sajdhia
-  useEffect(() => {
-    database
-      .collection("Challenges")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach(function (doc) {
-          let dbchallID = doc.data().ChallangeID;
-          console.log("DB CHALL IDS",dbchallID);  
-          //in here prints one by one, not adding to an array
-          //setChallID([...challIDs, dbchallID]);          
-        });
-        //console.log("inner",challIDs);
-        //we need to add shit to dbchallIDs to creat an array
-      })
-      .catch(function (error) {
-        console.log("Error getting documents: ", error);
-      });
-    }, [])
 
   return (
     <>

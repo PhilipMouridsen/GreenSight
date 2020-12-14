@@ -3,32 +3,41 @@ import "./Dashboard.css";
 import ProgressBar from "./ProgressBar";
 import "./Dashboard.css";
 import leafpic from "./img/leaf.png";
+import GiveChallDetails from "./GiveChallengeDetails";
+import firebase from "firebase/app";
 import TakeChallenge from "./TakeChallenge";
+import GetTheChosenOne from "./CallChallengeChosen";
+import CallDB from "./CallDB";
+import Progress from "./Progress";
+
 
 import Header from "./Header";
-import { database } from "../firebase";
 import { render } from "@testing-library/react";
 
-import {ProgressBarContainer} from './newprogressbar';
-
+import { ProgressBarContainer } from "./newprogressbar";
 
 export default function Dashboard() {
-  
+
+  var user = firebase.auth().currentUser;
+  var email;
+
+  if (user != null) {
+    email = user.email;
+  }
+
   const [challs, setChall] = useState([]);
   const [co2, setco2] = useState(0);
 
   const handleChall = (e) => setChall(e);
   const handleCo2 = (e) => {
     setco2(e);
-    console.log("eeeeeee", e)
+    console.log("eeeeeee", e);
   };
 
-
-
-/*   const handleChange = (percentRange) => {
+  /*   const handleChange = (percentRange) => {
     database
     .collection('ChallangesChosen')
-    .doc('cUR3crtYYygwPdNgA0NW')
+    .doc('29UfS8ewxO3cHFuxEUFx')
     .update({
       ProgressPercentageage: percentRange + 10
   })
@@ -43,7 +52,6 @@ export default function Dashboard() {
   <ProgressBarContainer onChange={handleChange} />
   */
 
-
   return (
     <div className="Dashboard">
       <Header />
@@ -51,20 +59,24 @@ export default function Dashboard() {
         <img id="leafpicture" src={leafpic} alt="eco-picture" />
         <div className="textIn">
           <h1> You saved </h1>
-          <h5>{co2} CO2</h5>
+          <h5> <Progress mail={email}/> CO2</h5>
         </div>
       </div>
-      <div><TakeChallenge id="2"/></div>
+      <div>
+        <TakeChallenge id="2" />
+      </div>
       <div className="progressbar">
         <h3>Track your challenges!</h3>
         <div>
+          {" "}
+          <CallDB />
+        </div>
+        <div>
           <div> {challs} </div>
         </div>
-        
       </div>
-      <br/>
-      <br/>
+      <br />
+      <br />
     </div>
   );
-        
 }

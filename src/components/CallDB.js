@@ -55,7 +55,7 @@ export default function CallDb(props) {
   }, []);
 
   const getChallangeName = () => {
-   var chosenID = chId[0];
+   var chosenID = chId;
     var obj = {};
     for (var i = 0; i < ids.length; i++) {
       //set the keys and values

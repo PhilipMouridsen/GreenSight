@@ -2,17 +2,17 @@
 
 import React, { useState, useEffect } from "react";
 import './newprogressbar.css';
-import { firebaseAppAuth, database } from "../firebase";
+import {database } from "../firebase";
 
 
 export const ProgressBarContainer = (props) => {
 
-let [percentRange, setProgress] = useState(0);
+let [progress, setProgress] = useState(0);
 
 
 const handleUpdate = () => {
-    setProgress(percentRange < 100 ? percentRange + 10 : 100);
-    props.onChange(percentRange + 10);
+    setProgress(progress < 100 ? progress + 10 : 100);
+    props.onChange(progress + 10);
 }
 
 const Range = (props) => {
@@ -28,12 +28,12 @@ const ProgressBar = (props) => {
         </div>
     );
 };
-
+//adds a new document with the only field being Progress so that's not ideal
 useEffect(() => {
     database
     .collection('ChallangesChosen')
     .add({
-    ProgressPercentageage: percentRange
+    Progress: progress
   })
   .then(() => {
     console.log('added!');
@@ -43,7 +43,7 @@ useEffect(() => {
 
     return (
         <div id="progresscontainer">
-            <ProgressBar percentRange={percentRange} />
+            <ProgressBar percentRange={progress} />
             <button id="updatepic" onClick={handleUpdate}>Daily Update</button>
         </div>
     );

@@ -9,12 +9,11 @@ import TakeChallenge from "./TakeChallenge";
 import GetTheChosenOne from "./CallChallengeChosen";
 import CallDB from "./CallDB";
 import Progress from "./Progress";
-
+import { ProgressBarContainer } from "./newprogressbar";
 
 import Header from "./Header";
 import { render } from "@testing-library/react";
 
-import { ProgressBarContainer } from "./newprogressbar";
 
 export default function Dashboard() {
 
@@ -34,8 +33,8 @@ export default function Dashboard() {
     console.log("eeeeeee", e);
   };
 
-  /*   const handleChange = (percentRange) => {
-    database
+/*    const handleChange = (percentRange) => {
+    firebase
     .collection('ChallangesChosen')
     .doc('29UfS8ewxO3cHFuxEUFx')
     .update({
@@ -45,12 +44,9 @@ export default function Dashboard() {
     console.log('progress updated!');
   });
   }   
-  
-  
-  below]
-  
-  <ProgressBarContainer onChange={handleChange} />
-  */
+
+            <ProgressBarContainer onChange={handleChange} />
+   */
 
   return (
     <div className="Dashboard">
@@ -69,7 +65,6 @@ export default function Dashboard() {
         <h3>Track your challenges!</h3>
         <div>
           {" "}
-          <CallDB />
         </div>
         <div>
           <div> {challs} </div>

@@ -44,7 +44,7 @@ export default function CallDb(props) {
         .get()
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
-            console.log("Checking doc data now",doc.data());
+            console.log("Checking doc data now",doc.data().chID);
             dbChoice.push(doc.data().chID);
           });
           setChId(dbChoice);

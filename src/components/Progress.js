@@ -4,12 +4,12 @@ import { database } from "../firebase";
 export default function Progress(props) {
   const [user, setUser] = useState("");
   const [progress, setProgress] = useState(0);
-
+//find a way to filter through the documents and print out information only relevant for them
+//or alternatively maybe print out details for the latest added doument? but I don't know if they are created chronologically
   useEffect(() => {
     const fetchData = async () => {
       var dbProgress = 0;
       var dbMail = "";
-
       await database
         .collection("ChallangesChosen")
         .get()
@@ -23,8 +23,7 @@ export default function Progress(props) {
           console.log("dbProgress", progress);
           setUser(dbMail);
         });
-      console.log("How much progress?", dbProgress);
-      console.log("which user", user);
+
     };
     fetchData();
   }, []);

@@ -49,12 +49,12 @@ export default function Dashboard() {
     database
     .collection('Users')
     .doc(email)
-    .set({name: user.displayName})
+    .set({name: user.displayName,
+          co2 : 0})
   .then(() => {
     console.log('added!');
   });
     }, [])
-
 
   return (
     <div className="Dashboard">
@@ -66,7 +66,7 @@ export default function Dashboard() {
           <h5>{co2} CO2</h5>
         </div>
       </div>
-      <div><TakeChallenge id="2"/></div>
+      
       <div className="progressbar">
         <h3>Track your challenges!</h3>
         <div>

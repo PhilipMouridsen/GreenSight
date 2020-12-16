@@ -27,15 +27,18 @@ function Challange() {
 
 
  const handleChall = (ch) => setChallID (ch);
- //console.log("ups",handleChall);
+ //console.log("This is handleChalls setChallID", challs);
+
+ //const handleID = (i) => set
 
 
   const plsWork = (e) =>{
     setPop(!isPopped);
     const theOne = challs[e];
     const theco2 = co2[e];
+    const theID = challID[e];
     handleco2(theco2);
-    addToFire(theOne);
+    addToFire(theOne, theco2);
     handleco2(co2);
 
     handleChall(challID);
@@ -60,7 +63,7 @@ function Challange() {
     fetchData();
   }, []);
 
-  useEffect(() => {
+  /*useEffect(() => {
     database
       .collection("Challenges")
       .get()
@@ -73,22 +76,27 @@ function Challange() {
       .catch(function (error) {
         console.log("Error getting documents: ", error);
       });
-    }, [])
+    }, [])*/
 
 //get co2consumption
   useEffect(() => {
-  database
+    const fetchData = async () => {
+      var co2 = [];
+  await database
         .collection("Challenges")
         .get()
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
-            const takenco2 = doc.data().CO2saved;
-            console.log(takenco2);  
-            console.log("taken co2", takenco2);
-            handleco2(takenco2);
+            co2.push(doc.data().CO2saved);
+            
           });
         });
-  }, []);
+        setco2(co2);
+      };
+      fetchData();
+  },[] );
+
+
 
 //get the chellange id
 useEffect(() => {
@@ -108,9 +116,9 @@ useEffect(() => {
   }, [])
 
 
-   const addToFire = (addThatCh) => {
+   const addToFire = (addThatCh, co2cc) => {
     const buttonChall = addThatCh;
-    const co2c = co2;
+    const co2c = co2cc;
     const chID = challID;
     const progress = 0;
     database

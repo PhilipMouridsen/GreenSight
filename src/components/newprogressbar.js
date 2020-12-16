@@ -33,7 +33,7 @@ useEffect(() => {
     database
     .collection('ChallangesChosen')
     .add({
-    ProgressPercentageage: percentRange
+    Progress: percentRange
   })
   .then(() => {
     console.log('added!');

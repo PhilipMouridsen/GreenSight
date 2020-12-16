@@ -105,12 +105,14 @@ useEffect(() => {
     const buttonChall = addThatCh;
     const co2c = co2;
     const chID = challID;
+    const progress = 0;
     database
       .collection("ChallangesChosen")
       .add({
         chall: buttonChall,
         Co2Consumption: co2c,
         ChallangeID: chID,
+        Progress : progress
       })
       .then((newDocument) => {
         //how to change the ID to not have an automatic id
@@ -119,6 +121,8 @@ useEffect(() => {
       .catch((error) => {
         console.error(error.message);
       });
+
+
   }; 
   
 

@@ -8,19 +8,27 @@ import TakeChallenge from "./TakeChallenge";
 import Header from "./Header";
 import { database } from "../firebase";
 import { render } from "@testing-library/react";
+import firebase from "firebase/app";
 
 import {ProgressBarContainer} from './newprogressbar';
 
 
 export default function Dashboard() {
   
+  var user = firebase.auth().currentUser;
+  var email;
+
+  if (user != null) {
+    email = user.email;
+  }
+
   const [challs, setChall] = useState([]);
   const [co2, setco2] = useState(0);
 
   const handleChall = (e) => setChall(e);
   const handleCo2 = (e) => {
     setco2(e);
-    console.log("eeeeeee", e)
+    console.log("eeeeeee", e);
   };
 
 
@@ -30,12 +38,22 @@ export default function Dashboard() {
     .collection('ChallangesChosen')
     .doc('cUR3crtYYygwPdNgA0NW')
     .update({
-      ProgressPercentageage: percentRange + 10
+      Progress: percentRange + 10
   })
   .then(() => {
     console.log('progress updated!');
   });
   }  
+
+  useEffect(() => {
+    database
+    .collection('Users')
+    .doc(email)
+    .set({name: user.displayName})
+  .then(() => {
+    console.log('added!');
+  });
+    }, [])
 
 
   return (

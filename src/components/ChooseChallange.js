@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./chooseChallange.css";
 import { database } from "../firebase";
 import Dialog from "./Dialog";
+import firebase from "firebase/app";
 
 function Challange() {
   const [challs, setChalls] = useState([]);
@@ -10,6 +11,12 @@ function Challange() {
   const [co2, setco2] = useState(0);
   const [challID, setChallID] = useState(0);
 
+  var user = firebase.auth().currentUser;
+  var email;
+
+  if (user != null) {
+    email = user.email;
+  }
 
   function closePopup() {
     setPop(false);
@@ -107,7 +114,9 @@ useEffect(() => {
     const chID = challID;
     const progress = 0;
     database
-      .collection("ChallangesChosen")
+      .collection("Users")
+      .doc(email)
+      .collection("ChosenChallenge")
       .add({
         chall: buttonChall,
         Co2Consumption: co2c,

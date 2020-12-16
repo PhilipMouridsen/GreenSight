@@ -1,86 +1,99 @@
 #profilepic {
-    border-radius: 50%;
-    border: 2px solid #a2c08b;
-    margin: auto;
-    box-shadow: 5px 5px 18px #888888;
-  }
-  
-  .title{
-    position: absolute;
-    float: left;
-    left: 30px;
-  }
+  border-radius: 10%;
+  border: 2px solid black;
+  margin: auto;
+  box-shadow: 5px 5px 18px #888888;
+  width: 300px;
+}
 
-  p {
-    font-size: 15px;
-    margin-left: 30px;
-    color: black;
-  }
-  
-  .profilebox {
-    display: flex;
-    margin: 20px 30px auto;
-    padding: 2px;
-    background-color: white;
-    box-shadow: 5px 5px 18px #888888;
-    border-radius: 20px;
-  }
-  
-  .profile {
-    font-family: "Lato", sans-serif;
-  }
-  
-  .profileText {
-    flex-direction: column;
-    margin: 20px 20px;
-    color: #404040;
-  }
-  
-  .buttons {
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-evenly;
-    box-sizing: border-box;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .blue {
-    color: #055899;
-    text-decoration: underline;
-  }
-  
-  #ecopicture {
-    width: 80px;
-    height: 80px;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-  
-  .achievmentComponent {
-    display: flex;
-    flex-direction: row;
-    margin: 30px;
-    padding: 10px;
-    background-color: white;
-    box-shadow: 5px 5px 18px #888888;
-    border-radius: 20px;
-  }
-  
-  .friendsComponent {
-    display: flex;
-    flex-direction: row;
-    margin: 30px;
-    padding: 10px;
-    background-color: white;
-    box-shadow: 5px 5px 18px #888888;
-    border-radius: 20px;
-  }
-  
-  .textfriend {
-    margin: auto;
-  }
+.title {
+  position: absolute;
+  float: left;
+  left: 30px;
+}
 
-  .line{
-    margin-top: 5%;
-  }
+p {
+  font-size: 15px;
+  margin-left: 30px;
+  color: black;
+}
+
+.profilebox {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 30px auto;
+  padding: 20px 20px;
+  background-color: white;
+  box-shadow: 5px 5px 18px #888888;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.profile {
+  font-family: "Lato", sans-serif;
+}
+
+.profileText {
+  margin: 20px 10px;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.blue {
+  color: #055899;
+  text-decoration: underline;
+  border: 2px solid #055899;
+  border-radius: 10px;
+}
+
+.notBlue {
+  border: 2px solid #383838;
+  border-radius: 10px;
+}
+
+.buttonDiv {
+  padding: 7px;
+  box-shadow: 5px 5px 10px #888888;
+}
+
+#ecopicture {
+  width: 80px;
+  height: 80px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.achievmentComponent {
+  display: flex;
+  flex-direction: row;
+  margin: 30px;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 5px 5px 18px #888888;
+  border-radius: 20px;
+}
+
+.friendsComponent {
+  display: flex;
+  flex-direction: row;
+  margin: 30px;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 5px 5px 18px #888888;
+  border-radius: 20px;
+}
+
+.textfriend {
+  margin: auto;
+}
+
+.line {
+  margin-top: 5%;
+}

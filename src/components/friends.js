@@ -20,9 +20,11 @@ function friends() {
       <hr />
       <UserInfo />
       <div className="buttons">
-        <Link to="/userprofile"> Achievements</Link>
+        <Link to="/userprofile" className="notBlue">
+          <div className="buttonDiv">Achievements</div>
+        </Link>
         <Link to="/friends" className="blue">
-          Friends
+          <div className="buttonDiv">Friends</div>
         </Link>
       </div>
       <hr className="line" />

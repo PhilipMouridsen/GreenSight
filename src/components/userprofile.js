@@ -17,11 +17,13 @@ function userProfile() {
       <UserInfo />
       <div className="buttons">
         <Link to="/userprofile" className="blue">
-          Achievements
+          <div className="buttonDiv">Achievements</div>
         </Link>
-        <Link to="/friends">Friends</Link>
+        <Link to="/friends" className="notBlue">
+          <div className="buttonDiv">Friends</div>
+        </Link>
       </div>
-      <hr className="line"/>
+      <hr className="line" />
       <div className="achievmentComponent">
         <img id="ecopicture" src={eco} alt="eco-picture" />
         <div className="textachievment">

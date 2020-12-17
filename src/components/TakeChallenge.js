@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { database } from "../firebase";
 
 export default function CallDb(props) {
+
   const [ids, setIds] = useState([]);
   const [challs, setChalls] = useState([]);
   const [co2s, setco2] = useState([]);

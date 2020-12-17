@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
-import ProgressBar from "./ProgressBar";
-import "./Dashboard.css";
 import leafpic from "./img/leaf.png";
-import GiveChallDetails from "./GiveChallengeDetails";
 import firebase from "firebase/app";
 import TakeChallenge from "./TakeChallenge";
-import GetTheChosenOne from "./CallChallengeChosen";
-import CallDB from "./CallDB";
 import Progress from "./Progress";
 import { ProgressBarContainer } from "./newprogressbar";
+import Find from "./Find";
 
 import Header from "./Header";
 import { render } from "@testing-library/react";
@@ -24,14 +20,6 @@ export default function Dashboard() {
     email = user.email;
   }
 
-  const [challs, setChall] = useState([]);
-  const [co2, setco2] = useState(0);
-
-  const handleChall = (e) => setChall(e);
-  const handleCo2 = (e) => {
-    setco2(e);
-    console.log("eeeeeee", e);
-  };
 
 /*    const handleChange = (percentRange) => {
     firebase
@@ -59,19 +47,14 @@ export default function Dashboard() {
         </div>
       </div>
       <div>
-        <TakeChallenge id="2" />
       </div>
       <div className="progressbar">
         <h3>Track your challenges!</h3>
         <div>
           {" "}
-        </div>
-        <div>
-          <div> {challs} </div>
+          <Find loggedIn={email} />
         </div>
       </div>
-      <br />
-      <br />
     </div>
   );
 }

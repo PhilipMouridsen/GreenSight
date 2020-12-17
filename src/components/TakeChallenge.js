@@ -28,17 +28,15 @@ export default function CallDb(props) {
         handleChalls(dbChalls);
         setIds(dbIds);
         setco2(dbCo2);
-      console.log("show me id",ids);
-      console.log("co2 now", dbCo2);
-      console.log("chalss from TakeChallange", dbChalls);
     };
     fetchData();
   }, []);
 
 //create a dictionary taking all
 const getDetails= (e) => {
+  //<div> {ids[e]}, {challs[e]}, {co2s[e]}</div>
     return(
-        <div> {ids[e]}, {challs[e]}, {co2s[e]}</div>
+        <div> {challs[e]}</div>
     );
 }
 

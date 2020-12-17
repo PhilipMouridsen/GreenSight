@@ -35,8 +35,8 @@ p {
 }
 
 .diet-option:checked + .diet-label:before {
-  background-color: #eeb4c0;
-  border-color: #eeb4c0;
+  background-color: #ADE7FF;
+  border-color: #ADE7FF;
 }
 
 .diet-option {
@@ -67,8 +67,8 @@ p {
 }
 
 .transport-option:checked + .transport-label:before {
-  background-color: #eeb4c0;
-  border-color: #eeb4c0;
+  background-color: #ADE7FF;
+  border-color: #ADE7FF;
 }
 
 .transport-option {
@@ -105,8 +105,8 @@ p {
 }
 
 .recycle-option:checked + .recycle-label:before {
-  background-color: #eeb4c0;
-  border-color: #eeb4c0;
+  background-color:#ADE7FF;
+  border-color: #ADE7FF;
 }
 
 .recycle-option {

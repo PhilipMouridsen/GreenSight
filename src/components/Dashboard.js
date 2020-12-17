@@ -6,9 +6,11 @@ import TakeChallenge from "./TakeChallenge";
 import { ProgressBarContainer } from "./newprogressbar";
 import Find from "./Find";
 import FindId from "./FindId";
+import Progress from "./Progress";
 
 import Header from "./Header";
 import { render } from "@testing-library/react";
+import CalucalteProgress from "./CalculateProgress";
 
 
 export default function Dashboard() {
@@ -35,6 +37,10 @@ export default function Dashboard() {
 
             <ProgressBarContainer onChange={handleChange} />
    */
+  const handleChange = () => {
+    <CalucalteProgress loggedIn={email} />
+  }
+
 
   return (
     <div className="Dashboard">
@@ -53,6 +59,7 @@ export default function Dashboard() {
         <div>
           {" "}
           <Find loggedIn={email} />
+          <Progress onChange={handleChange}/>
         </div>
       </div>
     </div>

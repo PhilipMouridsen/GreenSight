@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { database } from "../firebase";
+import Calculate from "./CalculateProgress";
 
 export default function Co2Consumption(props) {
 
@@ -30,6 +31,7 @@ console.log(co2s[e]);
         <div> {co2s[e]}</div>
     );
 }
+<Calculate />
 
 //update function ?
 

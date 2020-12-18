@@ -17,7 +17,7 @@ const ProgressBar = () => {
 };
 
 const Filler = (props) => {
-    setProgress(100);
+    setProgress(294);
     return (
         <div className="filler" style={{width: progress}} >
             
@@ -25,9 +25,14 @@ const Filler = (props) => {
     );
 }
 
+const updateProgress = (e) => {
+
+}
+
     return (
         <div id="progresscontainer">
             <ProgressBar />
+            <button className="update-button" onChange={updateProgress()}>Update</button>
         </div>
     );
 };

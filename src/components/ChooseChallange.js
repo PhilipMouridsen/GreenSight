@@ -98,19 +98,19 @@ function Challange() {
       <div className="challanges">
         <h1 className="newchallenge">Choose New Challange</h1>
         <button className="challangeBtn" onClick={() => plsWork(0)}>
-          {challs[0]} (31days)
+          {challs[0]} (14days)
         </button>
         <button className="challangeBtn" onClick={() => plsWork(1)}>
           {challs[1]} (14days)
         </button>
         <button className="challangeBtn" onClick={() => plsWork(2)}>
-          {challs[2]} (31days)
+          {challs[2]} (14days)
         </button>
         <button className="challangeBtn" onClick={() => plsWork(3)}>
-          {challs[3]} (31days)
+          {challs[3]} (14days)
         </button>
         <button className="challangeBtn" onClick={() => plsWork(4)}>
-          {challs[4]} (365days)
+          {challs[4]} (14days)
         </button>
       </div>
     </>

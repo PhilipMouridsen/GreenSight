@@ -19,9 +19,7 @@ function Find(props) {
         console.log(doc.id, " => ", doc.data());
         var chId = doc.data().chID;
         setDocument(doc.data().DocID);
-        console.log("getting chID here: ",chId);
         setchosenID(chId);
-        console.log("check for set", chosenId);
       });
     })
     .catch(function (error) {

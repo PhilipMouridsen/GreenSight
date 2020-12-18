@@ -22,22 +22,6 @@ export default function Dashboard() {
     email = user.email;
   }
 
-
-/*    const handleChange = (percentRange) => {
-    firebase
-    .collection('ChallangesChosen')
-    .doc('29UfS8ewxO3cHFuxEUFx')
-    .update({
-      ProgressPercentageage: percentRange + 10
-  })
-  .then(() => {
-    console.log('progress updated!');
-  });
-  }   
-
-            <ProgressBarContainer onChange={handleChange} />
-   */
-
   return (
     <div className="Dashboard">
       <Header />

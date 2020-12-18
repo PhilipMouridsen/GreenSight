@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { database } from "../firebase";
 import Co2Cosumption from "./Co2Consumption";
 
-function Find(props) {
+function FindId(props) {
+  //FindID actually return CO2
+
   // Create a reference to the cities collection
   const [chosenId, setchosenID] = useState(0);
   const [document, setDocument] = useState("");
@@ -33,4 +35,4 @@ function Find(props) {
     )
 }
 
-export default Find;
+export default FindId;

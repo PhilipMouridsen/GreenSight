@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './Progress.css';
 import {database } from "../firebase";
-
+import UpdateProgress from "./UpdateProgress";
 
 export default function Progress (props) {
 
@@ -25,8 +25,10 @@ const Filler = (props) => {
     );
 }
 
-const updateProgress = (e) => {
+const updateProgress = (oneDay) => {
 
+//oneDay will be co2 from that challange
+<UpdateProgress amount={oneDay}/>
 }
 
     return (

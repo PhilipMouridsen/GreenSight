@@ -9,46 +9,61 @@ function Challange() {
   const [challs, setChalls] = useState([]);
   const [isPopped, setPop] = useState(false);
   const [co2, setco2] = useState(0);
-  const [challID, setChallID] = useState(0);
-
-  var user = firebase.auth().currentUser;
-  var email;
-
-  if (user != null) {
-    email = user.email;
-  }
+  
 
   function closePopup() {
     setPop(false);
   }
     
-  const handleco2 = (e) => setco2(e);
-  //console.log("lol",handleco2);
 
-
- const handleChall = (ch) => setChallID (ch);
- //console.log("This is handleChalls setChallID", challs);
-
- //const handleID = (i) => set
-
-
-  const plsWork = (e) =>{
+  const plsWork = (n) =>{
     setPop(!isPopped);
-    const theOne = challs[e];
-    const theco2 = co2[e];
-    const theID = challID[e];
-    handleco2(theco2);
-    addToFire(theOne, theco2);
-    handleco2(co2);
-
-    handleChall(challID);
+    let challengeID = n;
+    const theco2 = co2[n];
+    const theChallName = challs[n];
+    addToFire(challengeID, theco2, theChallName); 
   }
+
+  const addToFire = (challID, co2cc, chName) => {
+    var user = firebase.auth().currentUser;
+    var email = user.email;
+    const challName = chName;
+    const co2c = co2cc;
+    const progress = 0;
+    const chID = challID +1; 
+    database
+      .collection("Users")
+      .doc(email)
+      .collection("ChosenChallenge")
+      .add({
+        chID : chID,
+        chall: challName,
+        Co2Consumption: co2c,
+        Progress : progress
+      })
+      .then((newDocument) => {
+          //how to change the ID to not have an automatic id
+          var newDocID = newDocument.id;
+          console.log("New document created with ID: ", newDocID);
+          database
+          .collection("ChallangesChosen")
+          .doc(newDocID)
+          .update({
+            DocID: newDocID,
+          })
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+
+
+  }; 
+  
 
 //get challange
   useEffect(() => {
     const fetchData = async () => {
       var challs = [];
-      //var co2 =0;
       await database
         .collection("Challenges")
         .get()
@@ -62,21 +77,6 @@ function Challange() {
     };
     fetchData();
   }, []);
-
-  /*useEffect(() => {
-    database
-      .collection("Challenges")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach(function (doc) {
-          const challengeName = doc.data().ChallengeName;
-          console.log(challengeName);  
-        });
-      })
-      .catch(function (error) {
-        console.log("Error getting documents: ", error);
-      });
-    }, [])*/
 
 //get co2consumption
   useEffect(() => {
@@ -97,71 +97,25 @@ function Challange() {
   },[] );
 
 
-
-//get the chellange id
-useEffect(() => {
-  database
-    .collection("Challenges")
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach(function (doc) {
-        const challID = doc.data().ChallangeID;
-        console.log(challID);  
-        handleChall(challID);
-      });
-    })
-    .catch(function (error) {
-      console.log("Error getting documents: ", error);
-    });
-  }, [])
-
-
-   const addToFire = (addThatCh, co2cc) => {
-    const buttonChall = addThatCh;
-    const co2c = co2cc;
-    const chID = challID;
-    const progress = 0;
-    database
-      .collection("Users")
-      .doc(email)
-      .collection("ChosenChallenge")
-      .add({
-        chall: buttonChall,
-        Co2Consumption: co2c,
-        ChallangeID: chID,
-        Progress : progress
-      })
-      .then((newDocument) => {
-        //how to change the ID to not have an automatic id
-        console.log("New document created with ID: ", newDocument.id );
-      })
-      .catch((error) => {
-        console.error(error.message);
-      });
-
-
-  }; 
-  
-
   return (
     <>
       {isPopped && <Dialog onClose={closePopup} />}
       <div className="challanges">
         <h1 className="newchallenge">Choose New Challange</h1>
         <button className="challangeBtn" onClick={() => plsWork(0)} >
-          {challs[0]} (31days) 
+          {challs[0]} (14days) 
         </button>
         <button className="challangeBtn" onClick={() => plsWork(1)} >
           {challs[1]} (14days)
         </button>
         <button className="challangeBtn" onClick={() => plsWork(2)} >
-          {challs[2]} (31days)
+          {challs[2]} (14days)
         </button>
         <button className="challangeBtn" onClick={() => plsWork(3)} >
-          {challs[3]} (31days)
+          {challs[3]} (14days)
         </button>
         <button className="challangeBtn" onClick={() => plsWork(4)} >
-          {challs[4]} (365days)
+          {challs[4]} (14days)
         </button>
       </div>
     </>

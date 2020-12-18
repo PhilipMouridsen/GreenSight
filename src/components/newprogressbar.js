@@ -11,8 +11,8 @@ let [percentRange, setProgress] = useState(0);
 
 
 const handleUpdate = () => {
-    setProgress(percentRange < 100 ? percentRange + 10 : 100);
-    props.onChange(percentRange + 10);
+    setProgress(percentRange < 99 ? percentRange + 7.14285714 : 100);
+    props.onChange(percentRange + 7.14285714);
 }
 
 const Range = (props) => {

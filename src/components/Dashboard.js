@@ -38,7 +38,7 @@ export default function Dashboard() {
         {size.map((challenge) => (
           <div key={challenge}>
             <p>{challenge}</p>
-            <ProgressBarContainer onChange={handleChange} />
+            <ProgressBarContainer id={challenge} onChange={handleChange} />
           </div>
         ))}
       </div>

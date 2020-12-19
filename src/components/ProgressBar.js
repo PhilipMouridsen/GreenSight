@@ -47,7 +47,7 @@ useEffect(() => {
             .collection("Users")
             .doc(email)
             .collection("ChosenChallenge")
-            .doc(doc.id)
+            .doc(props.id)
             .update({
               Progress: percentRange,
             });

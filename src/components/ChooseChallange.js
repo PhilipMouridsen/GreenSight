@@ -34,29 +34,19 @@ function Challange() {
       .collection("Users")
       .doc(email)
       .collection("ChosenChallenge")
-      .add({
+      .doc(challName)
+      .set({
         chID : chID,
         chall: challName,
         Co2Consumption: co2c,
         Progress : progress
-      })
-      .then((newDocument) => {
-          //how to change the ID to not have an automatic id
-          var newDocID = newDocument.id;
-          console.log("New document created with ID: ", newDocID);
-          database
-          .collection("ChallangesChosen")
-          .doc(newDocID)
-          .update({
-            DocID: newDocID,
-          })
       })
       .catch((error) => {
         console.error(error.message);
       });
 
 
-  }; 
+  };
   
 
 //get challange

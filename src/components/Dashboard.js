@@ -3,6 +3,7 @@ import "./Dashboard.css";
 import "./Dashboard.css";
 import leafpic from "./img/leaf.png";
 import TakeChallenge from "./TakeChallenge";
+import Co2 from './Co2';
 
 
 import Header from "./Header";
@@ -21,15 +22,7 @@ export default function Dashboard() {
     email = user.email;
   }
 
-  const [challs, setChall] = useState([]);
-  const [co2, setco2] = useState(0);
   const [showProgressBar, setShowProgressBar] = useState(false);
-
-  const handleChall = (e) => setChall(e);
-  const handleCo2 = (e) => {
-    setco2(e);
-    console.log("eeeeeee", e);
-  };
 
   function allowProgressBar() {
     setShowProgressBar(true);
@@ -111,17 +104,13 @@ export default function Dashboard() {
         <img id="leafpicture" src={leafpic} alt="eco-picture" />
         <div className="textIn">
           <h1> You saved </h1>
-          <h5>{co2} kg CO2</h5>
+          <h5>kg CO2</h5>
         </div>
       </div>
       <div className="progressbar">
         <h3>Track your challenges!</h3>
         <div>
           {renderProgressBar()}
-          <div>
-            {" "}
-            {challs}
-          </div>
         </div>
       </div>
       <br />

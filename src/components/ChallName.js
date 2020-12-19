@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { database } from "../firebase";
 
-export default function CallDb(props) {
+export default function ChallName(props) {
   var result;
   const [challName, setChallName] = useState("");
 

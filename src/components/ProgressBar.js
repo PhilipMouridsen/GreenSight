@@ -1,8 +1,8 @@
 // ProgressBar.js
 
 import React, { useState, useEffect } from "react";
-import "./Progressbar.css";
-import { firebaseAppAuth, database } from "../firebase";
+import "./ProgressBar.css";
+import { database } from "../firebase";
 import Update from "./Update.js";
 import firebase from "firebase/app";
 
@@ -10,12 +10,14 @@ export const ProgressBarContainer = (props) => {
   var user = firebase.auth().currentUser;
   var email = user.email;
 
-  let [percentRange, setProgress] = useState(0);
+  const [percentRange, setProgress] = useState(0);
+  const [co2, setCo2] = useState(0);
 
   const handleUpdate = () => {
     setProgress(percentRange < 99 ? percentRange + 7.14285714 : 100);
     props.onChange(percentRange + 7.14285714);
-
+    let calculate = percentRange + co2;
+    setCo2(calculate);
     database
       .collection("Users")
       .doc(email)
@@ -32,15 +34,11 @@ export const ProgressBarContainer = (props) => {
             .update({
               Progress: percentRange,
             });
-            database
-            .collection("Users")
-            .doc(email)
-            .update({
-              co2: percentRange,
-            })
+          database.collection("Users").doc(email).update({
+            co2: co2,
+          });
         });
       });
-    console.log("updated");
   };
 
   const Range = (props) => {

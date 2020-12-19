@@ -3,7 +3,7 @@ import { database } from "../firebase";
 
 export default function Co2(props) {
 
-  const [co2, setCo2] = useState("");
+  const [co2Total, setCo2Total] = useState("");
 
 useEffect(() => {
     database
@@ -11,14 +11,21 @@ useEffect(() => {
     .get()
     .then((snapshot) => {
       snapshot.docs.forEach((doc) => {
-        if (doc.id == props.user){
-          setCo2(doc.data().co2);
-          console.log(" co2",co2);
+        if (doc.id === props.user){
+          setCo2Total(doc.data().co2);
+          console.log(" co2",co2Total);
         }
       });
     });
 }, [])
+
+const co2update = () => {
+  setCo2Total((prev) => prev +co2Total);
+  return (
+    {co2: co2Total}
+  )
+}
   
-  return <>{co2}</>;
+  return <>{co2Total}</>;
 }
 

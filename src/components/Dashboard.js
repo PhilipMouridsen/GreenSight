@@ -3,15 +3,13 @@ import "./Dashboard.css";
 import "./Dashboard.css";
 import leafpic from "./img/leaf.png";
 import TakeChallenge from "./TakeChallenge";
-import Co2 from './Co2';
-
 
 import Header from "./Header";
 import { database } from "../firebase";
 import { render } from "@testing-library/react";
 import firebase from "firebase/app";
 
-import { ProgressBarContainer } from "./Progressbar";
+import { ProgressBarContainer } from "./ProgressBar";
 
 export default function Dashboard() {
   var user = firebase.auth().currentUser;
@@ -23,8 +21,11 @@ export default function Dashboard() {
   }
 
   const [showProgressBar, setShowProgressBar] = useState(false);
+  const [co2Total, setCo2Total] = useState(0);
 
-  const handleSetSize = (e) =>{ setSize(e);}
+  const handleSetSize = (e) => {
+    setSize(e);
+  };
 
   function allowProgressBar() {
     setShowProgressBar(true);
@@ -32,37 +33,41 @@ export default function Dashboard() {
   }
 
   function createMultipleProgressBars() {
-    return <div>{size.map(challenge => (<div key={challenge}>
-         <p>{challenge}</p>
-         <ProgressBarContainer onChange={handleChange} />
-       </div>))}</div>
- }
+    return (
+      <div>
+        {size.map((challenge) => (
+          <div key={challenge}>
+            <p>{challenge}</p>
+            <ProgressBarContainer onChange={handleChange} />
+          </div>
+        ))}
+      </div>
+    );
+  }
 
- useEffect(() => {
-   const fetchData = async () => {
-     var challs = [];
-     await database
-       .collection("Users")
-       .doc(email)
-       .collection("ChosenChallenge")
-       .get()
-       .then((snapshot) => {
-         snapshot.docs.forEach((doc) => {
-           challs.push(doc.data().chall);
-           console.log("this is from .then", challs);
-         });
-       });
-       handleSetSize(challs); // update size value;
-     console.log("global size is", size)
-     console.log("size.lenght is ", size.length);
-     if (challs.length > 0){
-       allowProgressBar();
-     }
-   };
-   fetchData();
- }, []);
-
-
+  useEffect(() => {
+    const fetchData = async () => {
+      var challs = [];
+      await database
+        .collection("Users")
+        .doc(email)
+        .collection("ChosenChallenge")
+        .get()
+        .then((snapshot) => {
+          snapshot.docs.forEach((doc) => {
+            challs.push(doc.data().chall);
+            console.log("this is from .then", challs);
+          });
+        });
+      handleSetSize(challs); // update size value;
+      console.log("global size is", size);
+      console.log("size.lenght is ", size.length);
+      if (challs.length > 0) {
+        allowProgressBar();
+      }
+    };
+    fetchData();
+  }, []);
 
   const handleChange = () => {
     /* database
@@ -77,13 +82,26 @@ export default function Dashboard() {
   };
 
   useEffect(() => {
-    database
+/*     database
       .collection("Users")
       .doc(email)
       .set({ name: user.displayName, co2: 0 })
       .then(() => {
         console.log("added!");
       });
+ */
+    database
+      .collection("Users")
+      .get()
+      .then((snapshot) => {
+        snapshot.docs.forEach((doc) => {
+          if (doc.id === email) {
+            setCo2Total(doc.data().co2);
+            console.log(" co2TOtal", co2Total);
+          }
+        });
+      });
+
   }, []);
 
   const renderProgressBar = () => {
@@ -101,7 +119,6 @@ export default function Dashboard() {
   };
 
 
-  /*<ProgressBarContainer onChange={handleChange} />*/
   return (
     <div className="Dashboard">
       <Header />
@@ -109,14 +126,12 @@ export default function Dashboard() {
         <img id="leafpicture" src={leafpic} alt="eco-picture" />
         <div className="textIn">
           <h1> You saved </h1>
-          <h5><Co2 user= {email} />kg CO2</h5>
+          <h5> {co2Total} kg CO2</h5>
         </div>
       </div>
       <div className="progressbar">
         <h3>Track your challenges!</h3>
-        <div>
-          {renderProgressBar()}
-        </div>
+        <div>{renderProgressBar()}</div>
       </div>
       <br />
       <br />

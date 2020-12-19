@@ -5,7 +5,8 @@ export default function ChallName(props) {
   var result;
   const [challName, setChallName] = useState("");
 
-  database
+useEffect(() => {
+    database
     .collection("Users")
     .doc(props.user)
     .collection("ChosenChallenge")
@@ -17,6 +18,7 @@ export default function ChallName(props) {
       });
     });
   console.log("updated");
-
+}, [])
+  
   return <>{challName}</>;
 }

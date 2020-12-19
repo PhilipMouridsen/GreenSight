@@ -104,7 +104,7 @@ export default function Dashboard() {
         <img id="leafpicture" src={leafpic} alt="eco-picture" />
         <div className="textIn">
           <h1> You saved </h1>
-          <h5>kg CO2</h5>
+          <h5><Co2 user= {email} />kg CO2</h5>
         </div>
       </div>
       <div className="progressbar">

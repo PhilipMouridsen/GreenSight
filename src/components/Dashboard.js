@@ -42,22 +42,27 @@ export default function Dashboard() {
   }
 
   useEffect(() => {
-    var user = firebase.auth().currentUser;
-    var email = user.email;
-
-    database
-      .collection("Users")
-      .doc(email)
-      .collection("ChosenChallenge")
-      .get()
-      .then((snap) => {
-        size = snap.size;
-        console.log(size);
-        if (size > 0) {
-          allowProgressBar();
-        } // will return the collection size
-      });
-    /*render equally as many progressbars as number in size*/
+    const fetchData = async () => {
+      var challs = [];
+      await database
+        .collection("Users")
+        .doc(email)
+        .collection("ChosenChallenge")
+        .get()
+        .then((snapshot) => {
+          snapshot.docs.forEach((doc) => {
+            challs.push(doc.data().chall);
+            console.log("this is from .then", challs);
+          });
+        });
+        size = challs;
+      console.log("global size is", size)
+      console.log("size.lenght is ", size.length);
+      if (size.length > 0){
+        allowProgressBar();
+      }
+    };
+    fetchData();
   }, []);
 
   const handleChange = () => {

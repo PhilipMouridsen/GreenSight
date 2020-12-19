@@ -5,7 +5,6 @@ import "./ProgressBar.css";
 import { database } from "../firebase";
 import Update from "./Update.js";
 import firebase from "firebase/app";
-import Dashboard from "./Dashboard";
 
 export const ProgressBarContainer = (props) => {
   var user = firebase.auth().currentUser;
@@ -14,9 +13,26 @@ export const ProgressBarContainer = (props) => {
   const [percentRange, setProgress] = useState(0);
   const [co2, setCo2] = useState(0);
 
+//to save the progressbar level when user logs in
+useEffect(() => {
+  database
+    .collection("Users")
+    .doc(email)
+    .collection("ChosenChallenge")
+    .get()
+    .then((snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        setProgress(doc.data().Progress)
+      });
+    });
+
+}, []);
+
+
   const handleUpdate = () => {
     setProgress(percentRange < 99 ? percentRange + 7.14285714 : 100);
     props.onChange(percentRange + 7.14285714);
+
     let calculate = percentRange + co2;
     setCo2(calculate);
     database

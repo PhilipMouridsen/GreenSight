@@ -3,7 +3,7 @@ import "./Dashboard.css";
 import "./Dashboard.css";
 import leafpic from "./img/leaf.png";
 import TakeChallenge from "./TakeChallenge";
-import UpdateProgress from "./UpdateProgress";
+
 
 import Header from "./Header";
 import { database } from "../firebase";

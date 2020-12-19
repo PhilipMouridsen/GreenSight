@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./chooseChallange.css";
 import { Link } from "react-router-dom";
+import ProgressBar from "./Progressbar";
+import Dashboard from "./Dashboard";
 
 function Dialog() {
   const [isOpen, setOpen] = useState(true);
@@ -11,9 +13,9 @@ function Dialog() {
 
   const Approved = () => {
     setOpen(false);
-/* tager title fra det klikkede element, generere progress bar component. Tag titel og opret progrss bar med titel i dashboard*/
-
+    /*Render a progressbar in dialog*/
   }
+
   return (
     <div className={isOpen ? "dialogBox" : "dialogHide"}>
       <h3 id="header">Do you accept the challange?</h3>

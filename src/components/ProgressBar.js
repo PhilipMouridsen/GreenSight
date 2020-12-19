@@ -1,42 +1,73 @@
-import React from "react";
-import "./ProgressBar.css";
+// ProgressBar.js
+
+import React, { useState, useEffect } from "react";
+import "./Progressbar.css";
+import { firebaseAppAuth, database } from "../firebase";
 import Update from "./Update.js";
+import firebase from "firebase/app";
 
-const ProgressBar = (props) => {
-  const { bgcolor, completed } = props;
+export const ProgressBarContainer = (props) => {
+  var user = firebase.auth().currentUser;
+  var email = user.email;
 
-  const containerStyles = {
-    height: 20,
-    width: "85%",
-    backgroundColor: "#f0efeb",
-    borderRadius: 50,
+  /*database
+    .collection("users")
+    .doc(email)
+    .get()
+    .then((doc) => {
+      if (doc.exists) {
+        database
+          .collection("users")
+          .doc(email)
+          .collection("ChosenChallenge")
+          .get()
+          .then((sub) => {
+            if (sub.docs.length > 0) {
+              console.log("subcollection exists");
+            } else console.log("subcollection does not exist");
+          });
+      }
+      else console.log("did not enter if" + email);
+    });*/
+
+  let [percentRange, setProgress] = useState(0);
+
+  const handleUpdate = () => {
+    setProgress(percentRange < 99 ? percentRange + 7.14285714 : 100);
+    props.onChange(percentRange + 7.14285714);
   };
 
-  const fillerStyles = {
-    height: "100%",
-    width: `${completed}%`,
-    backgroundColor: bgcolor,
-    borderRadius: "inherit",
-    textAlign: "right",
+  const Range = (props) => {
+    return (
+      <div className="range" style={{ width: `${props.percentRange}%` }} />
+    );
   };
 
-  const labelStyles = {
-    padding: 8,
-    color: "black",
+  const ProgressBar = (props) => {
+    return (
+      <div className="progress-bar">
+        <Range percentRange={props.percentRange} />
+      </div>
+    );
   };
+
+  useEffect(() => {
+    database
+      .collection("ChallangesChosen")
+      .add({
+        Progress: percentRange,
+      })
+      .then(() => {
+        console.log("added!");
+      });
+  }, []);
 
   return (
-    <div className="barAndBtn">
-      <div className="bars" style={containerStyles}>
-        <div style={fillerStyles}>
-          <span style={labelStyles}>{`${completed}%`}</span>
-        </div>
-      </div>
-      <button className="updatebtn">
-        <Update></Update>
+    <div id="progresscontainer">
+      <ProgressBar percentRange={percentRange} />
+      <button className="updatebtn" onClick={handleUpdate}>
+        <Update/>
       </button>
     </div>
   );
 };
-
-export default ProgressBar;

@@ -1,12 +1,15 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./Settings.css";
 import Leaf from "./Leaf.js";
 import { Link } from "react-router-dom";
 import { firebaseAppAuth } from "../firebase";
 import "firebase/auth";
 
-export default function settings() {
+export default function Settings() {
   const handleSignIn = () => firebaseAppAuth.signOut();
+  const [diet, setDiet] = useState();
+  const [transport, setTransport] = useState();
+  const [recycle, setRecycle] = useState();
 
   return (
     <div className="settings">

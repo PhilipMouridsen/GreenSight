@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-//import { v4 as uuid } from "uuid";
 import "./chooseChallange.css";
 import { database } from "../firebase";
 import Dialog from "./Dialog";

@@ -16,7 +16,7 @@ import { ProgressBarContainer } from "./Progressbar";
 export default function Dashboard() {
   var user = firebase.auth().currentUser;
   var email;
-  var size = [];
+  const [size, setSize] = useState([]); // add size to the component state
 
   if (user != null) {
     email = user.email;
@@ -24,46 +24,45 @@ export default function Dashboard() {
 
   const [showProgressBar, setShowProgressBar] = useState(false);
 
+  const handleSetSize = (e) =>{ setSize(e);}
+
   function allowProgressBar() {
     setShowProgressBar(true);
     createMultipleProgressBars();
   }
 
   function createMultipleProgressBars() {
-    var arr = [size];
-    console.log("arr size = " + size);
-    var elements = [];
-    for (var i = 0; i < arr.length; i++) {
-      // push the component to elements!
-      //elements.push(<ProgressBarContainer value={ arr[i] } />);
-      <ProgressBarContainer onChange={handleChange} />;
-      console.log(elements);
-    }
-  }
+    return <div>{size.map(challenge => (<div key={challenge}>
+         <p>{challenge}</p>
+         <ProgressBarContainer onChange={handleChange} />
+       </div>))}</div>
+ }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      var challs = [];
-      await database
-        .collection("Users")
-        .doc(email)
-        .collection("ChosenChallenge")
-        .get()
-        .then((snapshot) => {
-          snapshot.docs.forEach((doc) => {
-            challs.push(doc.data().chall);
-            console.log("this is from .then", challs);
-          });
-        });
-        size = challs;
-      console.log("global size is", size)
-      console.log("size.lenght is ", size.length);
-      if (size.length > 0){
-        allowProgressBar();
-      }
-    };
-    fetchData();
-  }, []);
+ useEffect(() => {
+   const fetchData = async () => {
+     var challs = [];
+     await database
+       .collection("Users")
+       .doc(email)
+       .collection("ChosenChallenge")
+       .get()
+       .then((snapshot) => {
+         snapshot.docs.forEach((doc) => {
+           challs.push(doc.data().chall);
+           console.log("this is from .then", challs);
+         });
+       });
+       handleSetSize(challs); // update size value;
+     console.log("global size is", size)
+     console.log("size.lenght is ", size.length);
+     if (challs.length > 0){
+       allowProgressBar();
+     }
+   };
+   fetchData();
+ }, []);
+
+
 
   const handleChange = () => {
     /* database
@@ -89,7 +88,8 @@ export default function Dashboard() {
 
   const renderProgressBar = () => {
     if (showProgressBar) {
-      return <ProgressBarContainer onChange={handleChange} />;
+      //return <ProgressBarContainer onChange={handleChange} />;
+      return createMultipleProgressBars();
     } else {
       return (
         <p>

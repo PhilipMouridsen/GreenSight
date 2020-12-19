@@ -5,7 +5,6 @@ import "./Progressbar.css";
 import { firebaseAppAuth, database } from "../firebase";
 import Update from "./Update.js";
 import firebase from "firebase/app";
-import ChallName from './ChallName'
 
 export const ProgressBarContainer = (props) => {
   var user = firebase.auth().currentUser;
@@ -71,7 +70,6 @@ export const ProgressBarContainer = (props) => {
 
   return (
     <div>
-      <ChallName user = {email}/>
       <div id="progresscontainer">
         <ProgressBar percentRange={percentRange} />
         <button className="updatebtn" onClick={handleUpdate}>

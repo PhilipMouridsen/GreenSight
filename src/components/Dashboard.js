@@ -124,7 +124,7 @@ export default function Dashboard() {
       <Header />
       <div className="circle">
         <img id="leafpicture" src={leafpic} alt="eco-picture" />
-        <div className="textIn">
+        <div className="textIn" onClick={handleChange}>
           <h1> You saved </h1>
           <h5> {co2Total} kg CO2</h5>
         </div>

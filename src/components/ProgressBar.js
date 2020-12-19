@@ -5,6 +5,7 @@ import "./ProgressBar.css";
 import { database } from "../firebase";
 import Update from "./Update.js";
 import firebase from "firebase/app";
+import Dashboard from "./Dashboard";
 
 export const ProgressBarContainer = (props) => {
   var user = firebase.auth().currentUser;

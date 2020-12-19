@@ -35,6 +35,22 @@ export const ProgressBarContainer = (props) => {
   const handleUpdate = () => {
     setProgress(percentRange < 99 ? percentRange + 7.14285714 : 100);
     props.onChange(percentRange + 7.14285714);
+
+    console.log("I'm in update");
+
+    database
+    .collection("Users")
+    .doc(email)
+    .collection("ChosenChallenge")
+    .get()
+    .then((snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        console.log(doc.id, doc.data());
+        database.collection("Users").doc(email).collection("ChosenChallenge").doc(doc.id).update({
+          Progress: percentRange
+        });
+      });
+    });
   };
 
   const Range = (props) => {

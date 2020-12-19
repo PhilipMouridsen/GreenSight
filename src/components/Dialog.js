@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./chooseChallange.css";
 import { Link } from "react-router-dom";
-import ProgressBar from "./Progressbar";
-import Dashboard from "./Dashboard";
+
 
 function Dialog() {
   const [isOpen, setOpen] = useState(true);

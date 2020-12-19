@@ -12,7 +12,6 @@ export const ProgressBarContainer = (props) => {
   var email = user.email;
 
   let [percentRange, setProgress] = useState(0);
-  const [chosenChall, setChosenChall] = useState("");
 
   const handleUpdate = () => {
     setProgress(percentRange < 99 ? percentRange + 7.14285714 : 100);
@@ -34,6 +33,12 @@ export const ProgressBarContainer = (props) => {
             .update({
               Progress: percentRange,
             });
+            database
+            .collection("Users")
+            .doc(email)
+            .update({
+              co2: percentRange,
+            })
         });
       });
     console.log("updated");
@@ -66,7 +71,6 @@ export const ProgressBarContainer = (props) => {
 
   return (
     <div>
-      {chosenChall}
       <ChallName user = {email}/>
       <div id="progresscontainer">
         <ProgressBar percentRange={percentRange} />

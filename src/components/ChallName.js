@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { database } from "../firebase";
 
 export default function CallDb(props) {
-   var result ; 
-   const [challName, setChallName] = useState("");
-    
-    database
+  var result;
+  const [challName, setChallName] = useState("");
+
+  database
     .collection("Users")
     .doc(props.user)
     .collection("ChosenChallenge")
@@ -18,10 +18,5 @@ export default function CallDb(props) {
     });
   console.log("updated");
 
-  return ( 
-    <>
-         {challName}
-    </>
-)
-  
+  return <>{challName}</>;
 }

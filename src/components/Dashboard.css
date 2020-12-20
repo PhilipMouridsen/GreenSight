@@ -1,52 +1,81 @@
-.circle{
+.circle {
     height: 250px;
     width: 250px;
-    background-color:white;
+    background-color: white;
     border-radius: 50%;
-    border: 6px solid #A2C08B;
+    border: 6px solid #a2c08b;
     display: flex;
     align-self: center;
-    position:relative;
+    position: relative;
     margin-top: 20px;
-    box-shadow:5px 5px 18px #888888;
-}
-
-.Dashboard{
+    box-shadow: 5px 5px 18px #888888;
+  }
+  
+  .Dashboard {
     display: flex;
     flex-direction: column;
     width: 100%;
-    font-family: 'Lato', sans-serif;
-}
-
-#leafpicture{
+    font-family: "Lato", sans-serif;
+  }
+  
+  #leafpicture {
     margin-right: auto;
     margin-left: auto;
     margin-top: 1ex;
     width: 100px;
     height: 90px;
-}
-
-.textIn{
+  }
+  
+  .textIn {
     flex-direction: column;
     position: absolute;
     top: 50%;
     left: 50%;
-    
-    transform: translate(-50%,-50%);
+  
+    transform: translate(-50%, -50%);
     color: black;
     font-size: 15px;
     font-weight: bold;
-}
-h5{
+  }
+  h5 {
     margin-left: 35px;
-}
-h3{
-   margin-bottom: 35px;
-}
+  }
 
-.progressbar{
+  #trackChl{
+    margin: 30px 0 20px 7px;
+    font-weight: bold;
+  }
+  
+  .progressbar {
     width: 100%;
-    padding:24px;
+    padding: 24px;
     box-sizing: border-box;
     padding-top: 0px;
-}
+  }
+
+  .progress {
+    background-color: #d8d8d8;
+    border-radius: 20px;
+    position: relative;
+    margin: 15px 0;
+    height: 30px;
+    width: 300px;
+  }
+  
+  .progress-done {
+    background: linear-gradient(to left, #F2709C, #FF9472);
+    box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+    border-radius: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 0;
+    opacity: 0;
+    transition: 1s ease 0.3s;
+  }
+
+  #chlText{
+    margin: 14px 0 0 7px;
+  }

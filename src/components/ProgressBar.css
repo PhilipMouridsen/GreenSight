@@ -1,13 +1,46 @@
-.bars{
-    margin-top: 15px;
-    margin-bottom: 30px;
-    box-shadow:5px 5px 18px #888888;
+#progresscontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
 }
 
-.updatebtn{
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    background-color: #eeb4c0;
-    border-color: #eeb4c0;
+
+.progress-bar {
+    width: 350px;
+    height: 25px;
+    border-radius: 50px;
+    border: 2px solid rgb(129, 128, 128);
+    margin-top: 5px;
 }
+
+.range {
+    background: #ADE7FF;
+    height: 100%;
+    border-radius: inherit;
+    transition: width .3s ease-in;
+}
+
+
+.toggle-buttons button:hover {
+    color: white;
+    background: #666;
+}
+
+
+#updatepic{
+    margin-left: 2px;
+    margin-top: 0px;
+}
+
+.updatebtn {
+    margin: 5px 0 0 7px;
+    border-radius: 50%;
+    width: 30px;
+    background-color: #a2c08b;
+    border-color: #a2c08b;
+    padding: 0;
+    display: flex;
+  }

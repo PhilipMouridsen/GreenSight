@@ -1,17 +1,22 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./Settings.css";
-import Leaf from "../Leaf.js";
+import Leaf from "./Leaf.js";
 import { Link } from "react-router-dom";
-import { firebaseAppAuth, provider } from "../../firebase";
+import { firebaseAppAuth } from "../firebase";
+import "firebase/auth";
 
-export default function settings() {
+export default function Settings() {
   const handleSignIn = () => firebaseAppAuth.signOut();
+  const [diet, setDiet] = useState();
+  const [transport, setTransport] = useState();
+  const [recycle, setRecycle] = useState();
 
   return (
     <div className="settings">
-      {" "}
-      <Leaf></Leaf>
-      <h1>Settings </h1>
+      <h1 className="title">Settings</h1>
+      <Leaf />
+      <br />
+      <br />
       <hr />
       <br />
       <p className="Diet">Diet Preferences</p>
@@ -24,8 +29,7 @@ export default function settings() {
           className="diet-option"
         />
         <label for="vegan" className="diet-label">
-          {" "}
-          Vegan{" "}
+          Vegan
         </label>
         <input
           type="radio"
@@ -35,8 +39,7 @@ export default function settings() {
           className="diet-option"
         />
         <label for="vegetarian" className="diet-label">
-          {" "}
-          Vegetarian{" "}
+          Vegetarian
         </label>
         <input
           type="radio"
@@ -46,8 +49,7 @@ export default function settings() {
           className="diet-option"
         />
         <label for="pescetarian" className="diet-label">
-          {" "}
-          Pescetarian{" "}
+          Pescetarian
         </label>
         <input
           type="radio"
@@ -57,8 +59,7 @@ export default function settings() {
           className="diet-option"
         />
         <label for="omnivore" className="diet-label">
-          {" "}
-          Omnivore{" "}
+          Omnivore
         </label>
       </form>
       <p className="Transport">Transport Preferences</p>
@@ -71,8 +72,7 @@ export default function settings() {
           className="transport-option"
         />
         <label for="car" className="transport-label">
-          {" "}
-          Car{" "}
+          Car
         </label>
         <input
           type="radio"
@@ -82,8 +82,7 @@ export default function settings() {
           className="transport-option"
         />
         <label for="bike" className="transport-label">
-          {" "}
-          Bike{" "}
+          Bike
         </label>
         <input
           type="radio"
@@ -93,8 +92,7 @@ export default function settings() {
           className="transport-option"
         />
         <label for="public" className="transport-label">
-          {" "}
-          Public Transportation{" "}
+          Public Transportation
         </label>
         <input
           type="radio"
@@ -104,8 +102,7 @@ export default function settings() {
           className="transport-option"
         />
         <label for="walking" className="transport-label">
-          {" "}
-          Walking{" "}
+          Walking
         </label>
       </form>
       <p className="Recycle">Recycling habbits</p>
@@ -118,8 +115,7 @@ export default function settings() {
           className="recycle-option"
         />
         <label for="none" className="recycle-label">
-          {" "}
-          None{" "}
+          None
         </label>
         <input
           type="radio"
@@ -129,8 +125,7 @@ export default function settings() {
           className="recycle-option"
         />
         <label for="bags" className="recycle-label">
-          {" "}
-          Plastic Bags{" "}
+          Plastic Bags
         </label>
         <input
           type="radio"
@@ -140,8 +135,7 @@ export default function settings() {
           className="recycle-option"
         />
         <label for="others" className="recycle-label">
-          {" "}
-          Others{" "}
+          Others
         </label>
         <input
           type="radio"
@@ -151,18 +145,15 @@ export default function settings() {
           className="recycle-option"
         />
         <label for="all" className="recycle-label">
-          {" "}
-          All Plastics{" "}
+          All Plastics
         </label>
       </form>
-      <br />
       <br />
       <Link to="/">
         <button type="button" className="logoutbtn" onClick={handleSignIn}>
           Logout
         </button>
       </Link>
-      <br />
       <br />
       <br />
       <br />

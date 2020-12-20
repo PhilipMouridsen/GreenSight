@@ -1,86 +1,146 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
-import { Route, Switch, Link } from "react-router-dom";
-import ProgressBar from "./ProgressBar";
 import "./Dashboard.css";
-import leafpic from "./leaf.png";
-import PictureUploader from "./PictureUploader";
+import leafpic from "./img/leaf.png";
+import TakeChallenge from "./TakeChallenge";
 
-
-import Header from "./header/Header";
-import { firebaseAppAuth, database } from "../firebase";
+import Header from "./Header";
+import { database } from "../firebase";
 import { render } from "@testing-library/react";
+import firebase from "firebase/app";
 
-
-
-const testData = [
-  { bgcolor: "#ADE7FF", completed: 60 },
-  { bgcolor: "#ADE7FF", completed: 30 },
-  { bgcolor: "#ADE7FF", completed: 53 },
-];
+import { ProgressBarContainer } from "./ProgressBar";
 
 export default function Dashboard() {
+  var user = firebase.auth().currentUser;
+  var email;
+  const [size, setSize] = useState([]); // add size to the component state
 
-  // const challengelist = document.querySelector('#challange-list')
-  const [challs, setChalls] = useState([])
-  // create element and render challenges 
-  // function renderCafe(doc)
-  // {
-  //   let li = document.createElement('li');
-  //   let name = document.createElement('span')
-  //   let CO2 = document.createElement('span')
+  if (user != null) {
+    email = user.email;
+  }
 
-  //   li.setAttribute('data-is', doc.id);
-  //   name = doc.data().ChallengeName;
-  //   CO2 = doc.data().CO2saved;
+  const [showProgressBar, setShowProgressBar] = useState(false);
+  const [co2Total, setCo2Total] = useState(0);
 
-  //   li.appendChild(name);
-  //   li.appendChild(CO2);
+  const handleSetSize = (e) => {
+    setSize(e);
+  };
 
-  //   challengelist.append(document.createElement('li'));
-  //   challengelist.append(name)
-  // }
+  function allowProgressBar() {
+    setShowProgressBar(true);
+    createMultipleProgressBars();
+  }
 
-    useEffect(() =>{
-      const fetchData = async() => {
-        var challs = []
-        await database.collection('Challenges').get().then((snapshot) => {
-            snapshot.docs.forEach(doc  => {
-                challs.push(doc.data().ChallengeName);
-              })
-            })
-          setChalls(challs);
-          };
-        fetchData();
-    }, []); 
-    
-
+  function createMultipleProgressBars() {
     return (
-      <div className="Dashboard">
+      <div>
+        {size.map((challenge) => (
+          <div key={challenge}>
+            <p id="chlText">{challenge}</p>
+            <ProgressBarContainer id="chlBar" onChange={handleChange} />
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      var challs = [];
+      await database
+        .collection("Users")
+        .doc(email)
+        .collection("ChosenChallenge")
+        .get()
+        .then((snapshot) => {
+          snapshot.docs.forEach((doc) => {
+            challs.push(doc.data().chall);
+            console.log("this is from .then", challs);
+          });
+        });
+      handleSetSize(challs); // update size value;
+      console.log("global size is", size);
+      console.log("size.lenght is ", size.length);
+      if (challs.length > 0) {
+        allowProgressBar();
+      }
+    };
+    fetchData();
+  }, []);
+
+  const handleChange = () => {
+    /* database
+    .collection('ChallangesChosen')
+    .doc('cUR3crtYYygwPdNgA0NW')
+    .update({
+      Progress: percentRange + 10
+  })
+  .then(() => {
+    console.log('progress updated!');
+  }); */
+  };
+
+  useEffect(() => {
+    database
+      .collection("Users")
+      .doc(email)
+      .set({
+        name: user.displayName,
+        co2Saved: 0,
+      })
+      .then(() => {
+        console.log("user added!");
+      });
+  }, []);
+
+  useEffect(() => {
+    database
+      .collection("Users")
+      .get()
+      .then((snapshot) => {
+        snapshot.docs.forEach((doc) => {
+          if (doc.id === email) {
+            setCo2Total(doc.data().co2Saved);
+            console.log("co2TOtal", co2Total);
+          }
+        });
+      });
+  }, );
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
+  const renderProgressBar = () => {
+    if (showProgressBar) {
+      return createMultipleProgressBars();
+    } else {
+      return (
+        <p>
+          Oh no! You have not committed to any challenges yet. Click on the +
+          sign in the bottom to begin
+        </p>
+      );
+    }
+  };
+
+  return (
+    <div className="Dashboard">
       <Header />
       <div className="circle">
         <img id="leafpicture" src={leafpic} alt="eco-picture" />
         <div className="textIn">
           <h1> You saved </h1>
-           <h5>0.00 CO2</h5>
+          <h5> {co2Total} kg CO2</h5>
         </div>
       </div>
-      <div>
-        <ul id="challange-list">
-          {challs.map(ch => <li key={ch}>{ch}</li>)}
-        </ul>
-
+      <div className="progressbar">
+        <h3 id="trackChl">Track your challenges!</h3>
+        <div>{renderProgressBar()}</div>
       </div>
-      <div className="progressbar"> 
-        <h3>Track your challenges!</h3>
-        {testData.map((item, idx) => (
-          <ProgressBar
-          key={idx}
-          bgcolor={item.bgcolor}
-          completed={item.completed}
-          />
-          ))}
-      </div>
+      <br />
+      <br />
     </div>
   );
 }

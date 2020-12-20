@@ -38,7 +38,7 @@ export default function Dashboard() {
         {size.map((challenge) => (
           <div key={challenge}>
             <p id="chlText">{challenge}</p>
-            <ProgressBarContainer id="chlBar" onChange={handleChange} />
+            <ProgressBarContainer id={challenge} onChange={handleChange} />
           </div>
         ))}
       </div>
@@ -70,15 +70,7 @@ export default function Dashboard() {
   }, []);
 
   const handleChange = () => {
-    /* database
-    .collection('ChallangesChosen')
-    .doc('cUR3crtYYygwPdNgA0NW')
-    .update({
-      Progress: percentRange + 10
-  })
-  .then(() => {
-    console.log('progress updated!');
-  }); */
+
   };
 
   useEffect(() => {

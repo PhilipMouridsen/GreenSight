@@ -82,31 +82,38 @@ export default function Dashboard() {
   };
 
   useEffect(() => {
-/*     database
+    database
       .collection("Users")
       .doc(email)
-      .set({ name: user.displayName, co2: 0 })
+      .set({
+        name: user.displayName,
+        co2Saved: 0,
+      })
       .then(() => {
-        console.log("added!");
+        console.log("user added!");
       });
- */
+  }, []);
+
+  useEffect(() => {
     database
       .collection("Users")
       .get()
       .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
           if (doc.id === email) {
-            setCo2Total(doc.data().co2);
-            console.log(" co2TOtal", co2Total);
+            setCo2Total(doc.data().co2Saved);
+            console.log("co2TOtal", co2Total);
           }
         });
       });
+  }, );
 
-  }, []);
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
   const renderProgressBar = () => {
     if (showProgressBar) {
-      //return <ProgressBarContainer onChange={handleChange} />;
       return createMultipleProgressBars();
     } else {
       return (
@@ -118,13 +125,12 @@ export default function Dashboard() {
     }
   };
 
-
   return (
     <div className="Dashboard">
       <Header />
       <div className="circle">
         <img id="leafpicture" src={leafpic} alt="eco-picture" />
-        <div className="textIn" onClick={handleChange}>
+        <div className="textIn">
           <h1> You saved </h1>
           <h5> {co2Total} kg CO2</h5>
         </div>

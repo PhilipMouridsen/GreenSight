@@ -10,7 +10,7 @@
 
 .progress-bar {
     width: 350px;
-    height: 35px;
+    height: 25px;
     border-radius: 50px;
     border: 2px solid rgb(129, 128, 128);
     margin-top: 5px;
@@ -36,15 +36,11 @@
 }
 
 .updatebtn {
-    margin-top: 10px;
+    margin: 5px 0 0 7px;
     border-radius: 50%;
-    height: 30px;
     width: 30px;
     background-color: #a2c08b;
     border-color: #a2c08b;
-    float: right;
     padding: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
   }

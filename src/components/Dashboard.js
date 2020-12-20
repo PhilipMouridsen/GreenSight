@@ -37,8 +37,8 @@ export default function Dashboard() {
       <div>
         {size.map((challenge) => (
           <div key={challenge}>
-            <p>{challenge}</p>
-            <ProgressBarContainer id={challenge} onChange={handleChange} />
+            <p id="chlText">{challenge}</p>
+            <ProgressBarContainer id="chlBar" onChange={handleChange} />
           </div>
         ))}
       </div>
@@ -130,7 +130,7 @@ export default function Dashboard() {
         </div>
       </div>
       <div className="progressbar">
-        <h3>Track your challenges!</h3>
+        <h3 id="trackChl">Track your challenges!</h3>
         <div>{renderProgressBar()}</div>
       </div>
       <br />

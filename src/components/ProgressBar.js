@@ -53,7 +53,7 @@ export const ProgressBarContainer = (props) => {
         console.log("this is combinedconsump", combinedConsump);
         //this is where the method originally ended
 
-        var calculate = 0;
+        var calculate;
         handleSetCo2(0);
         console.log("this is combined consump before calc", combinedConsump);
         calculate = combinedConsump + co2; 
@@ -83,12 +83,32 @@ export const ProgressBarContainer = (props) => {
       });
   }
 
+  
+
 
   const handleUpdate = () => {
     setProgress(percentRange < 99 ? percentRange + 7.14285714 : 100);
     props.onChange(percentRange + 7.14285714);
-    console.log("this is in the hadndleupdate", co2, typeof co2);
-    calculateCO2();
+    //console.log("this is in the hadndleupdate", co2, typeof co2);
+    //calculateCO22();
+    /*database
+    .collection("Users")
+    .doc(email)
+    .collection("ChosenChallenge")
+    .get()
+    .then((snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        console.log(doc.id, doc.data());*/
+        database
+          .collection("Users")
+          .doc(email)
+          .collection("ChosenChallenge")
+          .doc(props.id)
+          .update({
+            Progress: percentRange,
+          });
+      //});
+    //});
   };
 
   const Range = (props) => {
@@ -127,3 +147,4 @@ export const ProgressBarContainer = (props) => {
     </div>
   );
 };
+

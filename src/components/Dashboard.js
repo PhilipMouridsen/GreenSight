@@ -2,26 +2,23 @@ import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
 import "./Dashboard.css";
 import leafpic from "./img/leaf.png";
-import TakeChallenge from "./TakeChallenge";
-
 import Header from "./Header";
 import { database } from "../firebase";
-import { render } from "@testing-library/react";
 import firebase from "firebase/app";
-
 import { ProgressBarContainer } from "./ProgressBar";
 
 export default function Dashboard() {
   var user = firebase.auth().currentUser;
   var email;
   const [size, setSize] = useState([]); // add size to the component state
+  var combinedConsump = 0;
+  const [userSavedCo2, setUserSavedCo2] = useState(0);
+  const [showProgressBar, setShowProgressBar] = useState(false);
+  const [co2Total, setCo2Total] = useState(0);
 
   if (user != null) {
     email = user.email;
   }
-
-  const [showProgressBar, setShowProgressBar] = useState(false);
-  const [co2Total, setCo2Total] = useState(0);
 
   const handleSetSize = (e) => {
     setSize(e);
@@ -29,7 +26,6 @@ export default function Dashboard() {
 
   function allowProgressBar() {
     setShowProgressBar(true);
-    createMultipleProgressBars();
   }
 
   function createMultipleProgressBars() {
@@ -45,6 +41,7 @@ export default function Dashboard() {
     );
   }
 
+  //the useeffect that evokes allowProgressBar();
   useEffect(() => {
     const fetchData = async () => {
       var challs = [];
@@ -56,12 +53,9 @@ export default function Dashboard() {
         .then((snapshot) => {
           snapshot.docs.forEach((doc) => {
             challs.push(doc.data().chall);
-            console.log("this is from .then", challs);
           });
         });
-      handleSetSize(challs); // update size value;
-      console.log("global size is", size);
-      console.log("size.lenght is ", size.length);
+      handleSetSize(challs);
       if (challs.length > 0) {
         allowProgressBar();
       }
@@ -70,9 +64,9 @@ export default function Dashboard() {
   }, []);
 
   const handleChange = () => {
-
   };
 
+  //the useeffect that sets the name and co2Saved var of the logged in user, in the database
   useEffect(() => {
     database
       .collection("Users")
@@ -86,6 +80,8 @@ export default function Dashboard() {
       });
   }, []);
 
+
+  //the useeffect that sets the hook co2Total to the co2Saved variable in the database of the user
   useEffect(() => {
     database
       .collection("Users")
@@ -94,15 +90,44 @@ export default function Dashboard() {
         snapshot.docs.forEach((doc) => {
           if (doc.id === email) {
             setCo2Total(doc.data().co2Saved);
-            console.log("co2TOtal", co2Total);
           }
         });
       });
   }, );
 
-  function refreshPage() {
-    window.location.reload(false);
+  //The use effect that calculates the CO2 for the circle
+  useEffect(() => {
+    var co2Consump = []; 
+    var i;
+    database
+      .collection("Users")
+      .doc(email)
+      .collection("ChosenChallenge")
+      .get()
+      .then((snapshot) => {
+        snapshot.docs.forEach((doc) => {
+          co2Consump.push(doc.data().Co2Consumption);
+        });
+        for (i = 0; i < co2Consump.length; i++) {
+          combinedConsump = combinedConsump + co2Consump[i];
+        }
+        setUserSavedCo2(combinedConsump);
+        saveCo2InDB();
+      })
+  }, );
+
+  function saveCo2InDB(){
+    database
+      .collection("Users")
+      .doc(email)
+      .set({
+        co2Saved: userSavedCo2,
+      })
+      .then(() => {
+        console.log("co2Saved added in DB");
+      });
   }
+  
 
   const renderProgressBar = () => {
     if (showProgressBar) {
@@ -124,7 +149,7 @@ export default function Dashboard() {
         <img id="leafpicture" src={leafpic} alt="eco-picture" />
         <div className="textIn">
           <h1> You saved </h1>
-          <h5> {co2Total} kg CO2</h5>
+          <h5> {userSavedCo2} kg CO2</h5>
         </div>
       </div>
       <div className="progressbar">
@@ -136,3 +161,4 @@ export default function Dashboard() {
     </div>
   );
 }
+

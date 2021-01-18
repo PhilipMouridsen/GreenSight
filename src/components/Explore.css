@@ -28,7 +28,6 @@ h1 {
 .ArticleComponent {
   display: flex;
   margin: 5px 30px 30px 30px;
-  /*border: 2px solid #ADE7FF;*/
   padding-bottom: 10px;
   box-shadow: 5px 5px 18px #888888;
   border-radius: 20px;
@@ -45,13 +44,6 @@ h3 {
 a {
   color: black;
 }
-
-/*.textblog{
-      margin-top: 10px;
-      margin-left: 15px;
-      font-family: 'Lato', sans-serif;
-      font-size: 18px;
-  }*/
 
 .article {
   margin-left: 10px;
